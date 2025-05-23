@@ -1,0 +1,252 @@
+@charset "utf-8";
+
+
+
+
+
+/* C. Header Area
+========== ========== ========== */
+div#HeaderArea {
+	position: relative;
+	width: 100%;
+	/* background: url("../images/header_bg_old.png"); */
+	height:35px;
+}
+
+
+
+/* C-1. Utility Area
+---------- ---------- */
+div#HeaderArea div#UtilityArea:after {
+	display: block;
+	clear: both;
+	height: 0.1px;
+	line-height: 0;
+	visibility: hidden;
+	content: ".";
+	font-size: 0.1em;
+	overflow: hidden;
+}
+div#HeaderArea div#UtilityArea {
+	padding: 7px 15px;
+	background-color: #97c751;
+	overflow: hidden;
+    zoom:1;
+}
+/* C-1. Category Nav
+---------- */
+div#HeaderArea div#UtilityArea dl#CategoryNav {
+	float: left;
+}
+div#HeaderArea div#UtilityArea dl#CategoryNav dt {
+	position: absolute;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+div#HeaderArea div#UtilityArea dl#CategoryNav dd {
+	float: left;
+	overflow: hidden;
+}
+div#HeaderArea div#UtilityArea dl#CategoryNav dd ul {
+	margin: 0 0 0 -9px;
+	float: left;
+	overflow: hidden;
+}
+div#HeaderArea div#UtilityArea dl#CategoryNav dd ul li {
+	margin: 0;
+	padding: 0 8px 0 9px;
+	border-left: solid 1px #557517;
+	float: left;
+	line-height: 1.1;
+	list-style: none;
+	color: #557517;
+}
+div#HeaderArea div#UtilityArea dl#CategoryNav dd ul li.Current {
+	font-weight: bold;
+}
+div#HeaderArea div#UtilityArea dl#CategoryNav dd ul li a {
+	color: #557517;
+}
+div#HeaderArea div#UtilityArea dl#CategoryNav dd ul li a:link ,
+div#HeaderArea div#UtilityArea dl#CategoryNav dd ul li a:visited {
+	text-decoration: none;
+}
+div#HeaderArea div#UtilityArea dl#CategoryNav dd ul li a:hover ,
+div#HeaderArea div#UtilityArea dl#CategoryNav dd ul li a:focus ,
+div#HeaderArea div#UtilityArea dl#CategoryNav dd ul li a:active {
+	text-decoration: underline;
+}
+/* C-1. Utility Nav
+---------- */
+div#HeaderArea div#UtilityArea dl#UtilityNav {
+	margin-right: -30px;
+	float: right;
+}
+div#HeaderArea div#UtilityArea dl#UtilityNav dt {
+	position: absolute;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+div#HeaderArea div#UtilityArea dl#UtilityNav dd {
+	float: right;
+}
+div#HeaderArea div#UtilityArea dl#UtilityNav dd ul {
+	margin-right: 10px;
+	/*margin-right: -16px;*/
+	float: right;
+}
+div#HeaderArea div#UtilityArea dl#UtilityNav dd ul li {
+	margin: 0 0 0 0;
+	padding: 0 15px 0 25px;
+	border-right: solid 1px #557517;
+	float: left;
+	line-height: 1.1;
+	list-style: none;
+}
+div#HeaderArea div#UtilityArea dl#UtilityNav dd ul li.Help {
+	background: url("../images/header_marker_unav_help.png") 6px 0 no-repeat;
+}
+div#HeaderArea div#UtilityArea dl#UtilityNav dd ul li.Login {
+	background: url("../images/header_marker_unav_login.png") 6px 0 no-repeat;
+}
+div#HeaderArea div#UtilityArea dl#UtilityNav dd ul li a {
+	color: #557517;
+}
+div#HeaderArea div#UtilityArea dl#UtilityNav dd ul li a:link ,
+div#HeaderArea div#UtilityArea dl#UtilityNav dd ul li a:visited {
+	text-decoration: none;
+}
+div#HeaderArea div#UtilityArea dl#UtilityNav dd ul li a:hover ,
+div#HeaderArea div#UtilityArea dl#UtilityNav dd ul li a:focus ,
+div#HeaderArea div#UtilityArea dl#UtilityNav dd ul li a:active {
+	text-decoration: underline;
+}
+
+/* C-1. Header Bottom
+---------- ---------- */
+div#HeaderArea div#HeaderBottom:after {
+	display: block;
+	clear: both;
+	height: 0.1px;
+	line-height: 0;
+	visibility: hidden;
+	content: ".";
+	font-size: 0.1em;
+	overflow: hidden;
+}
+div#HeaderArea div#HeaderBottom {
+zoom:1;
+}
+/* C-1. Title
+---------- */
+div#HeaderArea div#HeaderBottom h1 {
+	margin: 10px 0 0;
+	padding: 0 0 10px;
+	float: left;
+	color: #fff;
+	font-size: 190%;
+	font-family: serif;
+}
+div#HeaderArea div#HeaderBottom h1 span {
+	font-style: italic;
+}
+/* C-1. Search Box
+---------- */
+div#HeaderArea div#HeaderBottom form {
+	margin: 7px 0 0;
+	float: right;
+	width: 300px;
+}
+div#HeaderArea div#HeaderBottom form p.Search input.Text {
+	margin-right: 4px;
+	border: solid 1px #ccc;
+	width: 265px;
+	min-height: 26px;
+	line-height: 26px;
+	vertical-align: middle;
+	background: #fff url("../images/bg_otherkeywords_input_text.png") 0 0 repeat-x;
+}
+* html div#HeaderArea div#HeaderBottom form p.Search input.Text {
+	height: 26px;
+}
+div#HeaderArea div#HeaderBottom form p.Search input.Button {
+	line-height: 29px;
+	vertical-align: middle;
+}
+div#HeaderArea div#HeaderBottom form p.Option {
+	font-size: 11px;
+}
+div#HeaderArea div#HeaderBottom form p.Option a {
+	color: #fff;
+}
+div#HeaderArea div#HeaderBottom form p.Option a:link ,
+div#HeaderArea div#HeaderBottom form p.Option a:visited {
+	text-decoration: none;
+}
+div#HeaderArea div#HeaderBottom form p.Option a:hover ,
+div#HeaderArea div#HeaderBottom form p.Option a:focus ,
+div#HeaderArea div#HeaderBottom form p.Option a:active {
+	text-decoration: underline;
+}
+
+div#HeaderLink {
+	position: absolute;
+	top: 14px;
+	left: 823px;
+	width: 157px;
+	height: 59px;
+}
+	
+div#HeaderLink ul {
+	float: left;
+	list-style: none;
+}
+	
+div#HeaderLink ul li {
+	float: left;
+	margin: 0 7px 0 0;
+	padding: 0 7px 0 0;
+	background: url("../images/header_line02.png") no-repeat top right;
+	display: inline;
+}
+	
+div#HeaderLink ul li:last-child {
+	margin: 0;
+	padding: 0;
+	background: none;
+}
+
+div#HeaderLink ul li a {
+	font-size: 12px;
+	line-height: 1.5;
+	color: #557517;
+}
+
+div#HeaderLink ul li a:link {
+	text-decoration: none;
+}
+
+div#HeaderLink ul li a:visited {
+	text-decoration: none;
+}
+
+div#HeaderLink ul li a:hover {
+	text-decoration: none;
+}
+
+div#HeaderLink ul li a:active {
+	text-decoration: none;
+}
+
+div#HeaderContents h1 {
+	position: absolute;
+	top: 0;
+	left: 10px;
+}
+
+div#HeaderContents > div > h1 img {
+    height: inherit!important;
+    width: 250px!important;
+}

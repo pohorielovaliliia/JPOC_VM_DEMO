@@ -1,0 +1,83 @@
+#ipop {
+    display: none;
+    z-index: 9999;
+	position: absolute;
+	width: 450px;
+	height: 134px;
+	background-color: #D9ECF9;
+	border-top: solid 3px #959595;
+	border-bottom: solid 3px #959595;
+	color: #017FD6;
+}
+#ipop_close img
+{
+	width: 14px;
+	height: 14px;
+	position: absolute;
+	top: 9px;
+	right: 9px;
+	cursor: pointer;
+}
+#ipop_contents
+{
+	width: 450px;
+	height: 80px;
+}
+#ipop_contents div.pop_info
+{
+	width: 450px;
+	height: 30px;
+	padding: 10px 0px 0px 10px;
+}
+#ipop_contents div.pop_contents
+{
+	width: 420px;
+	height: 50px;
+	font-weight: bold;
+	padding: 10px;
+	line-height: 130%;
+}
+#ipop_contents p
+{
+	font-weight: bold;
+}
+#ipop_contents span.empha
+{
+	font-weight: bold;
+	font-size: 24px;
+	color: #4C6730;
+}
+#ipop_footer
+{
+	width: 450px;
+	height: 48px;
+}
+#ipop_footer_contents
+{
+	float: left;
+	width: 320px;
+}
+#ipop_footer_contents p
+{
+	margin: 13px;
+	font-size: 12px;
+}
+#ipop_footer_button
+{
+	float: right;
+	width: 130px;
+}
+#ipop_footer_button a
+{
+	text-align: center;
+	text-decoration: none;
+	color: White;
+	background-color: #017FD6;
+	float: right;
+	padding: 5px;
+	margin: 10px;
+	font-weight: bold;
+	border: solid 1px White;
+	border-radius: 1px;
+	width: 110px;
+}

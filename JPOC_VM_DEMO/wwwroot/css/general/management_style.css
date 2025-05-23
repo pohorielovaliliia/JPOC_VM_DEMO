@@ -1,0 +1,388 @@
+﻿
+/*Import 
+@import ".\general\token-input-facebook.css";
+@import url("reset.css");
+@import "./libs/jquery.ui/jquery.ui.css";
+*/
+
+.BlueButton {
+    background-color: #004f69; /* #008CBA; Blue */
+    border: none;
+    color: white !important;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.CMSGridview {
+    width: 100%;
+}
+
+    .CMSGridview td {
+        padding: 10px;
+        border: solid 1px #CCCCCC;
+    }
+
+    .CMSGridview th {
+        padding: 10px;
+        border: solid 1px #CCCCCC;
+    }
+
+.SUBbutton {
+    background-color: #004f69; /* Green */
+    border: none;
+    color: white !important;
+    padding: 4px 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 2px;
+}
+
+.REDbutton {
+    background-color: red; /* Green */
+    border: none;
+    color: white !important;
+    padding: 4px 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 2px;
+}
+
+.menuheader {
+    text-align: center;
+    border: 1px solid #CCCCCC;
+    background-color: #f8f8f8;
+    height: 15px;
+    padding: 10px;
+}
+
+.pager span {
+    font-weight: bold;
+    text-decoration: none !important;
+}
+
+.textinput {
+    height: 23px;
+    border: solid 1px #ccc;
+    width: 400px;
+}
+
+.dateinput {
+    height: 23px;
+    border: solid 1px #ccc;
+    width: 200px;
+}
+
+.token-input-list-facebook {
+    border: 1px solid #cccccc !important;
+}
+
+.small .token-input-list-facebook {
+    width: 100px;
+}
+
+.valididator {
+    float: left;
+    display: block !important;
+    color: red;
+}
+
+sup {
+    color: red;
+}
+
+.checkboxStyle input {
+    margin-right: 5px;
+}
+
+.checkboxStyle td {
+    border: solid 0px;
+}
+
+.drugcode_info_wrapper .searchBox1 {
+    margin: 0 0 12px 0;
+}
+
+    .drugcode_info_wrapper .searchBox1 li {
+        padding: 3px 10px 0 0;
+    }
+
+    .drugcode_info_wrapper .searchBox1 > li {
+        line-height: 25px;
+    }
+
+    .drugcode_info_wrapper .searchBox1 .token-input-list-facebook {
+        margin-right: 10px;
+        padding-left: 5px;
+    }
+
+    /*.drugcode_info_wrapper .searchBox1 .small{
+    width:40px;
+    text-align:left;
+}*/
+
+    .drugcode_info_wrapper .searchBox1 .token-input-list-facebook {
+        float: left;
+    }
+
+        .drugcode_info_wrapper .searchBox1 .token-input-list-facebook li {
+            padding: 0px 10px 0 0;
+        }
+
+    .drugcode_info_wrapper .searchBox1 .dosage-form .token-input-list-facebook,
+    div.token-input-dropdown-facebook {
+        width: 150px;
+    }
+
+        .drugcode_info_wrapper .searchBox1 .company-name .token-input-list-facebook,
+        div.token-input-dropdown-facebook + div.token-input-dropdown-facebook {
+            width: 300px;
+        }
+
+    /*.drugcode_info_wrapper .searchBox1 .dosage-form {
+        width:300px;
+    }
+
+    .drugcode_info_wrapper .searchBox1 .company-name {
+        width:300px;
+    }*/
+
+    /*.drugcode_info_wrapper .searchBox1 .dosage-form > span,
+    .drugcode_info_wrapper .searchBox1 .company-name > span {
+        float:left;
+    }*/
+
+    .drugcode_info_wrapper .searchBox1 .rbl td label {
+        margin-right: 10px;
+    }
+
+/*.drugcode_info_wrapper .small-margin-right {
+    margin-right:10px;
+}*/
+
+.drugcode_info_wrapper-title,
+.pdf_generate h2 {
+    text-align: left;
+    padding: 10px 15px;
+}
+
+.select2-container--default .select2-selection--single {
+    border-radius: 0px !important;
+    border: solid 1px #ccc !important;
+}
+
+.drugcode_info_wrapper .searchBox1 {
+}
+
+.drugcode_info_wrapper {
+    margin-bottom: 40px;
+    width: 920px;
+    margin: 0 19px;
+}
+
+    .drugcode_info_wrapper .col-one {
+        width: 250px;
+    }
+
+    .drugcode_info_wrapper .col-two {
+        width: 250px;
+    }
+
+    .drugcode_info_wrapper .col-three {
+        width: 370px;
+    }
+
+    .drugcode_info_wrapper .col-one,
+    .drugcode_info_wrapper .col-two,
+    .drugcode_info_wrapper .col-three {
+        text-align: left;
+    }
+
+
+        .drugcode_info_wrapper .col-one .label,
+        .drugcode_info_wrapper .col-two .label,
+        .drugcode_info_wrapper .col-three .label,
+        .drugcode_info_wrapper .col-one .clear,
+        .drugcode_info_wrapper .col-two .clear,
+        .drugcode_info_wrapper .col-three .clear {
+            display: inline-block;
+            text-align: left;
+        }
+
+        .drugcode_info_wrapper .col-one .label,
+        .drugcode_info_wrapper .col-two .label {
+            width: 20%;
+        }
+
+        .drugcode_info_wrapper .col-three .label {
+            width: 15%;
+        }
+
+        .drugcode_info_wrapper .col-one .control,
+        .drugcode_info_wrapper .col-two .control,
+        .drugcode_info_wrapper .col-three .control,
+        .drugcode_info_wrapper .col-one .radiobuttonlist,
+        .drugcode_info_wrapper .col-two .radiobuttonlist,
+        .drugcode_info_wrapper .col-three .radiobuttonlist {
+            display: inline-block;
+            text-align: left;
+        }
+
+        .drugcode_info_wrapper .col-one .control,
+        .drugcode_info_wrapper .col-two .control {
+            width: 52%;
+        }
+
+        .drugcode_info_wrapper .col-three .control {
+            width: 60%;
+        }
+
+        .drugcode_info_wrapper .col-one .control,
+        .drugcode_info_wrapper .col-two .control,
+        .drugcode_info_wrapper .col-three .control {
+            padding-right: 5px;
+        }
+
+        .drugcode_info_wrapper .col-one .control,
+        .drugcode_info_wrapper .col-two .control,
+        .drugcode_info_wrapper .col-three .control,
+        .drugcode_info_wrapper .col-one .label,
+        .drugcode_info_wrapper .col-two .label,
+        .drugcode_info_wrapper .col-three .label,
+        .drugcode_info_wrapper .col-one .radiobuttonlist,
+        .drugcode_info_wrapper .col-two .radiobuttonlist,
+        .drugcode_info_wrapper .col-three .radiobuttonlist {
+            vertical-align: middle;
+        }
+
+        .drugcode_info_wrapper .col-one .clear,
+        .drugcode_info_wrapper .col-two .clear,
+        .drugcode_info_wrapper .col-three .clear {
+            width: 20%;
+        }
+
+        .drugcode_info_wrapper .col-one .radiobuttonlist,
+        .drugcode_info_wrapper .col-two .radiobuttonlist,
+        .drugcode_info_wrapper .col-three .radiobuttonlist {
+            width: 78%;
+        }
+
+            .drugcode_info_wrapper .col-one .radiobuttonlist .rbl label,
+            .drugcode_info_wrapper .col-two .radiobuttonlist .rbl label,
+            .drugcode_info_wrapper .col-three .radiobuttonlist .rbl label {
+                margin-left: 5px;
+            }
+
+    .drugcode_info_wrapper .control input[type="text"] {
+        height: 25px;
+        line-height: 23px;
+        border: solid 1px #ccc;
+        width: 100%;
+        padding-left: 5px;
+        box-sizing: border-box;
+    }
+
+    .drugcode_info_wrapper .select2-container {
+        width: 100% !important;
+    }
+
+/* PDF Generate page */
+
+.pdf_generate .disease_listing {
+    border: 1px solid black;
+}
+
+.linkbutton-blue {
+    background-color: #004f69;
+    border: none;
+    color: white !important;
+    padding: 4px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 2px;
+    vertical-align: middle;
+    width: 145px;
+}
+
+    .linkbutton-blue:link,
+    .linkbutton-blue:visited {
+        text-decoration: none;
+    }
+
+    .linkbutton-blue:hover {
+        background-color: #007094;
+    }
+
+.pdf_generate h2 {
+    text-align: left;
+    padding: 6px;
+    border-bottom: solid 1px #ccc;
+    background-color: #eee;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.pdf_generate .content-wrapper {
+    width: 920px;
+    margin: 0 auto;
+    padding: 20px 10px 20px 10px;
+}
+
+
+.pdf_generate .controls {
+    text-align: left;
+}
+
+.pdf_generate_controls-wrapper {
+    width: 100%;
+    padding: 5px;
+    margin: 0 auto;
+}
+
+.pdf_generate_controls-wrapper {
+    margin-bottom: 20px;
+}
+
+    .pdf_generate_controls-wrapper td {
+        text-align: left;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+
+        .pdf_generate_controls-wrapper td.bold {
+            font-weight: bold;
+        }
+
+        .pdf_generate_controls-wrapper td.half {
+            width: 50%;
+        }
+
+    .pdf_generate_controls-wrapper .FileUpload,
+    .pdf_generate_controls-wrapper .box {
+        margin-bottom: 5px;
+    }
+
+.pdf_generate .checkbox input {
+    height: 15px;
+    width: 15px;
+    margin-right: 5px;
+}
+
+.pdf_generate .table1 td {
+    text-align: center;
+}
+
+.pdf_generate .listing {
+    margin: 10px 5px;
+}
+
+/* End of PDF Generate page */

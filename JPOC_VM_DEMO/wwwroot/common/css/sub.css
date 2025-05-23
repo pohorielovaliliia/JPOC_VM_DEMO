@@ -1,0 +1,293 @@
+﻿@charset "utf-8";
+
+/* Sub Area
+========== ========== ========== */
+
+div#SubArea 
+{
+    z-index: 1;
+	padding: 0;
+    position: fixed;
+	float: left;
+}
+*:first-child+html div#SubArea 
+{
+    /** For IE7 hack. */
+	margin-top: 60px;
+}
+div#SubArea div.left_menu 
+{
+    position: relative ;
+    overflow :auto;
+    width:220px; 
+    max-height : 430px;
+    min-height : 41px;
+}
+
+div#subSelector 
+{
+     padding : 0;
+     height : 31px;
+}
+div#subSelectorSection 
+{
+	margin: 0;
+}
+
+div#SubContents {
+    position: relative;
+    width: 200px;
+	margin: 10px 0 0 0;
+}
+
+div#SubContents a:link {
+	text-decoration: none;
+}
+
+div#SubContents a:visited {
+	text-decoration: none;
+}
+
+/*div#SubContents a:hover {
+	text-decoration: none;
+}
+
+div#SubContents a:active {
+	text-decoration: none;
+}*/
+
+div#SubContents a:hover {
+	text-decoration: underline;
+}
+
+div#SubContents a:active {
+	text-decoration: underline;
+}
+
+div#SubContents div.section,
+div#SubContents div.section3 {
+	margin: 0 0 18px;
+	padding: 10px 5px;
+	border: solid 1px #CCC;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background: url("../images/sub_bg_section.png") 0 0 repeat-x;
+}
+
+div#SubContents div.section2 {
+	margin: 0 0 18px;
+	padding: 0 5px;
+	border-radius: 10px;
+}
+
+div#SubContents div.section h3,
+div#SubContents div.section2 h3,
+div#SubContents div.section3 h3 {
+	margin: 0 0 8px 7px;
+	color: #7EAC37;
+}
+
+div#SubContents div.section p,
+div#SubContents div.section2 p,
+div#SubContents div.section3 p {
+	margin: 10px 0 0 7px;
+}
+
+div#SubContents div.section ul,
+div#SubContents div.section2 ul,
+div#SubContents div.section3 ul {
+	list-style: none;
+}
+
+div#SubContents div.section ul li,
+div#SubContents div.section2 ul li,
+div#SubContents div.section3 ul li {
+	position: relative;
+}
+
+div#SubContents div.section ul li a.Icon {
+	display: inline;
+	position: absolute;
+	top: 3px;
+	right: 0;
+	*right: 20px;
+	margin: 0;
+	padding: 0;
+}
+
+div#SubContents div.section ul a,
+div#SubContents div.section2 ul a,
+div#SubContents div.section3 ul a,
+div#SubContents div.section ul label,
+div#SubContents div.section2 ul label,
+div#SubContents div.section3 ul label,
+div#SubContents div.section ul span,
+div#SubContents div.section2 ul span,
+div#SubContents div.section3 ul span {
+	display: block;
+	padding: 0 0 0 7px;
+}
+
+div#SubContents div.section ul a:link,
+div#SubContents div.section2 ul a:link,
+div#SubContents div.section3 ul a:link {
+	text-decoration: none;
+}
+
+div#SubContents div.section ul a:visited,
+div#SubContents div.section2 ul a:visited,
+div#SubContents div.section3 ul a:visited {
+	text-decoration: none;
+}
+
+div#SubContents div.section ul a:hover,
+div#SubContents div.section ul label:hover,
+div#SubContents div.section2 ul a:hover,
+div#SubContents div.section2 ul label:hover,
+div#SubContents div.section3 ul a:hover,
+div#SubContents div.section3 ul label:hover {
+	text-decoration: none;
+	background-color: #E2EFD3;
+}
+
+div#SubContents div.section ul a:active,
+div#SubContents div.section ul label:active,
+div#SubContents div.section2 ul a:active,
+div#SubContents div.section2 ul label:active,
+div#SubContents div.section3 ul a:active,
+div#SubContents div.section3 ul label:active {
+	text-decoration: none;
+	background-color: #E2EFD3;
+}
+
+div#SubContents div.section ul li input,
+div#SubContents div.section2 ul li input {
+	cursor: pointer;
+}
+
+div#SubContents div.section ul li label,
+div#SubContents div.section2 ul li label {
+	cursor: pointer;
+}
+
+div#SubContents div.section ul li textarea,
+div#SubContents div.section2 ul li textarea {
+	margin: 0 0 0 7px;
+	width: 165px;
+	height: 90px;
+}
+
+div#SubContents div.section .textfield input {
+	margin: 0 0 0 7px;
+	width: 165px;
+	border: 1px solid #CCC;
+	font-size: 10px;
+}
+
+div#SubContents div.section .btn {
+	margin: 10px 0 0 7px;
+}
+
+
+/* 検索結果 */
+
+#subSelectorSection {
+	margin: 0 0 15px 0;
+	display: none;
+}
+
+#subSelectorSection ul {
+	list-style: none;
+	padding: 10px 0 0 15px;
+}
+
+#subSelectorSection ul ul {
+	display: none;
+	list-style: disc;
+	margin: 0 0 0 20px;
+	padding: 0 0 0 15px;
+}
+
+div#SubContents div.section3 div.result_item {
+	margin: 0 0 0 5px;
+}
+
+div#SubContents div.section3 div.result_item h4 {
+	margin: 0 0 3px 0;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+div#SubContents div.section3 div.result_item h5 {
+	margin: 0 0 3px 0;
+	font-size: 12px;
+	color: #017FD6;
+	font-weight: normal;
+}
+div#SubContents div.section3 div.result_item ol {
+	margin: 0 0 15px 0;
+}
+div#SubContents div.section3 div.result_item ol li {
+	margin: 0 0 0 35px;
+}
+div#SubContents div.section3 div.result_item ol li li {
+	margin: 0;
+	padding: 0;
+}
+div#SubContents div.section3 div.result_item ol li li ul {
+	display: none;
+	margin-left: 0;
+}
+div#SubContents div.section3 div.result_item ol li li a {
+	padding: 0 0 0 18px;
+	text-indent: -18px;
+}
+
+div#SubContents div.section3 ul div {
+	display: block;
+	margin-left: 2px;
+	padding: 0 0 0 18px;
+	text-indent: -17px;
+}
+
+div#SubContents div.section3 div.result_item ol li li.check {
+	background: url("../images/w.png");
+	padding: 0;
+}
+div#SubContents div.section3 div.result_item ol li li.check a {
+	display: inline;
+	padding: 0;
+	text-indent: 0;
+}
+div#SubContents div.section3 div.result_item ol li li.check input {
+}
+
+div#SubArea div.feedback_panel
+{
+    margin-top : 10px;
+}
+
+div#SubArea div.feedback_panel a
+{
+    text-decoration : none;
+    color :White ;
+}
+div#SubArea div.feedback_panel a:hover
+{
+    text-decoration : none;
+    color :White ;
+}
+div#SubArea div.feedback_button
+{
+    width:190px; 
+    margin: 0 0 18px; 
+    padding: 10px 5px; 
+    -moz-border-radius: 10px;	
+    -webkit-border-radius: 10px; 
+    border-radius: 10px; 
+    border: 1px solid rgb(83,111,50);
+    background-color: rgb(118,159,60);
+    color :White;        
+}
+

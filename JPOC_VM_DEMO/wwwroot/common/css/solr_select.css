@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+table.resultTable 
+{
+    width:100%;
+    table-layout:fixed;
+    border-collapse:collapse;
+    empty-cells:show;
+}
+table.resultTable th
+{
+    border:1px solid gray;
+    empty-cells:show;
+}
+table.resultTable td
+{
+    border:1px solid gray;
+    empty-cells:show;
+}
+div.auto_complete_term_name
+{
+    margin-right: 5px;
+    text-align:center;
+    border:2px solid darkblue; 
+    background-color: rgb(77, 123, 179);
+    position: relative;
+    top: 3px;
+    width: 90px;
+    float: left;
+    height: auto;
+    line-height: 14px;
+}
+div.auto_complete_term_name span
+{
+    font-size:13px;
+    color:white;
+}
+div#SubContents div.section3 div.result_item ul div
+{
+    margin:0px;
+    padding:0px;
+    text-indent:0px;   
+}

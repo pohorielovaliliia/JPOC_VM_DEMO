@@ -1,0 +1,40 @@
+﻿@charset "utf-8";
+
+/* Sub Area
+========== ========== ========== */
+
+div#WrapperArea 
+{
+	margin: 67px 0 0 0 ;
+	_margin: 0px 0 0 0 ;
+    height: 100%;
+    width: 980px;
+	font-size: 12px;
+	line-height: 1.6;
+	color: #333333;
+}
+
+div#wrapperArea a:link {
+	color: #0066CC;
+}
+
+div#wrapperArea a:visited {
+	color: #0066CC;
+}
+
+div#wrapperArea a:hover {
+	color: #0066CC;
+}
+
+div#wrapperArea a:active {
+	color: #0066CC;
+}
+
+div#wrapperArea strong {
+	font-weight: bold;
+}
+
+#wrap-center {
+	margin: 0 auto;
+    width: 980px;
+}

@@ -1,0 +1,131 @@
+﻿.section {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.subjectlabel {
+    font-weight: bold;
+    color: Black;
+}
+
+.ContentFilter {
+    text-align: left;
+}
+
+    .ContentFilter td {
+        padding: 10px;
+    }
+
+.SUBbutton {
+    background-color: #004f69; /* Green */
+    border: none;
+    color: white !important;
+    padding: 4px 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 2px;
+}
+
+.CMSGridview {
+    width: 100%;
+}
+
+    .CMSGridview td {
+        padding: 10px;
+        border: solid 1px #CCCCCC;
+    }
+
+    .CMSGridview th {
+        padding: 10px;
+        background-color: #F8F8F8;
+        border: solid 1px #CCCCCC;
+    }
+
+.alignleft {
+    padding-top: 10px;
+    text-align: left;
+}
+
+
+.subcontent-table {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 20px;
+}
+
+.blink_text {
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 3s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    animation-name: blinker;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    color: red;
+}
+
+@-moz-keyframes blink_text {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes blink_text {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@keyframes blink_text {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+.row-sm2 {
+    text-align: right;
+}
+
+.Logbutton {
+    width: 70px !important;
+}
+
+.coverpage-listing td {
+    padding: 1px;
+    border: 0px;
+}
+
+.coverpage-listing label {
+    padding-left: 5px;
+}

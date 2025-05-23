@@ -1,0 +1,74 @@
+﻿@model JPOC_VM_DEMO.Models.FooterViewModel
+
+<div id="FooterArea">
+    <div class="hor-line" style="border-bottom: 2px solid #e9711c; height: 24px; clear: both"></div>
+    <div class="footer-Pane">
+        <div class="footer-ElsLogo Logo-Link">
+            <a href="https://www.elsevier.com/" target="_blank">
+                <img src="~/common/images/footer_elsevier_logo.png" width="132" alt="Elsevier" />
+            </a>
+        </div>
+        
+        <div class="footer-term">
+            <ul>
+                <li>
+                    <span>Copyright © @DateTime.Now.Year Elsevier Japan. All rights reserved.</span>
+                    <br>
+                    <span>Cookies are used by this site. To decline or learn more, visit our </span>
+                    <a href="https://www.elsevier.com/legal/use-of-cookies" title="クッキー" target="_blank" class="footer-cookies">Cookie page</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer-relxLogo Logo-Link">
+            <a title="Go to RELX Group Homepage" href="http://www.reedelsevier.com/" target="_blank">
+                <img src="~/common/images/RELX-OrangeGrey-TM.png" alt="RELX Logo" />
+            </a>
+        </div>
+
+        <div class="disclaimer">
+            本サイトの知的財産権は全てエルゼビアまたはコンテンツのライセンサーに帰属します。私的利用及び別途規定されている場合を除き、本サイトの利用はいかなる許諾を与えるものでもありません。
+            本サイト、そのコンテンツ、製品およびサービスのご利用は、お客様ご自身の責任において行ってください。本サイトの利用に基づくいかなる損害についても、エルゼビアは一切の責任及び賠償義務を負いません。
+            また、本サイトの利用を以て、本サイト利用者は、本サイトの利用に基づき第三者に生じるいかなる損害についても、エルゼビアを免責することに合意したことになります。　
+            本サイトを利用される医学・医療提供者は、独自の臨床的判断を行使するべきです。本サイト利用者の判断においてリスクを正当なものとして受け入れる用意がない限り、コンテンツにおいて提案されている検査または処置がなされるべきではありません。
+            医学の急速な進歩に鑑み、エルゼビアは、本サイト利用者が診断方法および投与量について、独自に検証を行うことを推奨いたします。
+
+            <div>
+                <ul style="clear: both">
+                    <li><a href="https://www.elsevier.com/legal/elsevier-website-terms-and-conditions" target="_blank">使用条件</a></li>
+                    <li><a href="https://www.elsevier.com/legal/privacy-policy-ja-jp" target="_blank">プライバシーポリシー</a></li>
+                    <li><a asp-page="/Agreement">ユーザー同意書</a></li>
+                    @if (Model.ShowSpVersion)
+                    {
+                        <li id="spLinkBlock">
+                            <a href="@Model.SpVersionUrl">スマートフォン版を見る</a>
+                        </li>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.VersionInfo))
+                    {
+                        <li>
+                            <p id="VersionInfo">@Model.VersionInfo</p>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (Model.ShowPc2Sp)
+{
+    <script src="~/common/js/jquery.Pc2Sp.js?v=1.02.21"></script>
+    <script>
+        $.switchPc2Sp({
+            mode: "pc",
+            spLinkBlockInPc: "#spLinkBlockInPc",
+            anchorToPcInSp: "#anchorToPcInSp"
+        });
+        $.switchPc2SpFooter({
+            mode: "pc",
+            spLinkBlockInPcFooter: "#spLinkBlockInPcFooter",
+            anchorToPcInSpFooter: "#anchorToPcInSpFooter"
+        });
+    </script>
+}

@@ -1,0 +1,195 @@
+﻿.contentEnquete {
+    height: 100px;
+}
+
+.enqueteBox {
+    /*border: 1px solid orange;*/
+    padding: 5px 10px 5px 10px;
+    text-align: left;
+    /*color: orange;*/
+    /*#004F69*/
+    border: 3px solid #284084;
+    background-color: #f8f8f8;
+    /*margin-left: 15px;*/
+    width:680px;
+    margin: 0 auto 30px;
+    font-weight: bold;
+    font-size:120%;
+}
+
+.enqueteLink {
+    text-align: right;
+    padding-top: 5px;
+}
+
+    .enqueteLink a {
+        color: black;
+        text-decoration: underline;
+    }
+
+.enqueteMiniLink a {
+    color: white;
+    float: right;
+}
+
+.enqueteMiniLink a:hover, .enqueteMiniLink a:active, .enqueteMiniLink a:link, .enqueteMiniLink a:visited{
+    color: white;
+}
+
+
+.enqueteMiniBox {
+    position: absolute;
+    left: 222px;
+    /*width: 392px;*/
+    padding: 2px 6px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    top: 55px;
+    z-index: 100;
+    background-color: #f08f26;
+    border: 2px solid RGBA(182,109,49,1);
+    color: #fff;
+    font-size:12px !important;
+    /*position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: orange;
+    color: white;
+    text-align: center;
+    line-height: 3.5;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px black;
+    margin-bottom: 10px;
+    zoom: 1;
+    border-bottom: solid 1px grey;
+    height: 200px;*/
+    /*background-color: orange;
+    padding: 5px 5px 5px 10px;
+    margin: 0 0 10px;
+    color: white;
+    z-index: 4000;*/
+    /*-webkit-transform: rotate(270deg);  Safari and Chrome */
+    /*-moz-transform: rotate(270deg);  Firefox */
+    /*-ms-transform: rotate(270deg);  IE 9 */
+    /*-o-transform: rotate(270deg);  Opera */
+    /*transform: rotate(270deg);*/
+}
+
+div#HeaderContents h2 {
+    position: absolute;
+    top: 68px;
+    left: 27px;
+    font-size: 16px;
+    color: #004F69;
+}
+
+.questionBox {
+    border: 1px solid #CCCCCC;
+    background-color: #f8f8f8;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.questionList {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+    .questionList input {
+        margin-right: 5px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+
+.txtQuestion {
+    width: 95%;
+    height: 60px;
+}
+
+.txtOther {
+    margin-left: 10px;
+    margin-bottom: 3px;
+    width: 95%;
+    height: 20px;
+    display: none;
+}
+
+.blueButton, .blueDefaultButton {
+    background-color: #004f69;
+    border: none;
+    color: #fff !important;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.blueButton
+{
+        float: right;
+}
+
+.errorMsgClass {
+    display: none;
+    color: red;
+    padding-left: 10px;
+}
+
+.divGroupClass {
+    display: none;
+    color: red;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.ErrorBox {
+    width: 99%;
+    border: 1px solid #D8D8D8;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+    background-color: rgb(255, 249, 242);
+    color: rgb(211, 0, 0);
+    text-align: center;
+    margin-top: 10px;
+}
+
+.SuccessBox {
+    width: 99%;
+    border: 1px solid #D8D8D8;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+    background-color: rgb(236, 255, 216);
+    color: green;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.search-drugcodesearch-wrapper {
+    width: 388px;
+    text-align: right;
+}
+
+.BiggerTitle {
+    font-size: 15px;
+}
+
+.enqueteLink a:link, .enqueteLink a:visited{
+    color: #ff8200;
+    text-decoration: none;
+}
+.enqueteLink a:hover, .enqueteLink a:focus{
+    color: #ff8200;
+    text-decoration: underline;
+}

@@ -1,0 +1,267 @@
+﻿@charset "utf-8";
+
+
+
+
+
+/* D. Footer Area
+========== ========== ========== */
+div#FooterArea {
+    margin: 16px 0 0;
+    padding: 15px 0px 10px;
+    /*border-top: solid 1px #999;*/
+    /*width: 710px;*/
+    width: 100%;
+    background-color: white;
+    color: #969696;
+    /*background-color: #e6e6e6;*/
+}
+
+body.Index div#FooterArea {
+    width: 930px;
+    width: 100%;
+}
+
+
+/* D-1. Footer Navigation
+---------- ---------- */
+div#FooterArea dl#FooterNav {
+    width: 98%;
+    padding: 0 10px;
+}
+
+    div#FooterArea dl#FooterNav dt {
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+    }
+
+    div#FooterArea dl#FooterNav dd {
+        overflow: hidden;
+    }
+
+        div#FooterArea dl#FooterNav dd ul {
+            margin: 0 0 0 -9px;
+            width: 100%;
+        }
+
+            div#FooterArea dl#FooterNav dd ul li {
+                margin: 0;
+                padding: 0 8px 0 9px;
+                border-left: solid 1px #999;
+                float: left;
+                line-height: 1.1;
+                list-style: none;
+            }
+
+                div#FooterArea dl#FooterNav dd ul li a {
+                    color: #333;
+                }
+
+                    div#FooterArea dl#FooterNav dd ul li a:link,
+                    div#FooterArea dl#FooterNav dd ul li a:visited {
+                        text-decoration: none;
+                    }
+
+                    div#FooterArea dl#FooterNav dd ul li a:hover,
+                    div#FooterArea dl#FooterNav dd ul li a:focus,
+                    div#FooterArea dl#FooterNav dd ul li a:active {
+                        color: #999;
+                        text-decoration: underline;
+                    }
+
+div#FooterArea p#Disclaimer {
+    color: #c66;
+    font-size: 10px;
+}
+
+
+/* D-2. Footer Bottom
+---------- ---------- */
+div#FooterArea div#FooterBottom {
+    margin: 10px 0 0;
+    /*padding: 5px 0 0 65px;*/
+    padding: 5px 0 0 10px;
+    min-height: 30px;
+    position: relative;
+}
+
+* html div#FooterArea div#FooterBottom {
+    height: 50px;
+}
+
+
+/* D-2. Other Products
+---------- ---------- */
+div#FooterArea dl.OtherProducts:after {
+    display: block;
+    clear: both;
+    height: 0.1px;
+    line-height: 0;
+    visibility: hidden;
+    content: ".";
+    font-size: 0.1em;
+    overflow: hidden;
+}
+
+div#FooterArea dl.OtherProducts {
+    margin: 0px;
+    width: 100%;
+}
+
+    div#FooterArea dl.OtherProducts dt {
+        float: left;
+        line-height: 1.1;
+        color: #999;
+    }
+
+    div#FooterArea dl.OtherProducts dd {
+        overflow: hidden;
+        zoom: 1; /* for ie6 bugfix */
+    }
+
+        div#FooterArea dl.OtherProducts dd ul {
+            margin: 0 0 0 -1px;
+            width: 100%;
+        }
+
+            div#FooterArea dl.OtherProducts dd ul li {
+                margin: 0 0 5px;
+                padding: 0 9px 0 8px;
+                border-left: solid 1px #999;
+                float: left;
+                line-height: 1.1;
+                list-style: none;
+            }
+
+                div#FooterArea dl.OtherProducts dd ul li a {
+                    color: #333;
+                    white-space: nowrap;
+                }
+
+                    div#FooterArea dl.OtherProducts dd ul li a:link,
+                    div#FooterArea dl.OtherProducts dd ul li a:visited {
+                        text-decoration: none;
+                    }
+
+                    div#FooterArea dl.OtherProducts dd ul li a:hover,
+                    div#FooterArea dl.OtherProducts dd ul li a:focus,
+                    div#FooterArea dl.OtherProducts dd ul li a:active {
+                        color: #999;
+                        text-decoration: underline;
+                    }
+
+
+/* D-3. Logo
+---------- ---------- */
+div#FooterArea p#Logo {
+    position: absolute;
+    /*top: 0;
+	left: 0;*/
+    bottom: 5px;
+    right: 10px;
+}
+
+/* D-3. Copyright
+---------- ---------- */
+div#FooterArea p#Copyright {
+    color: #999;
+}
+
+    div#FooterArea p#Copyright a {
+        color: #333;
+    }
+
+        div#FooterArea p#Copyright a:link,
+        div#FooterArea p#Copyright a:visited {
+            text-decoration: none;
+        }
+
+        div#FooterArea p#Copyright a:hover,
+        div#FooterArea p#Copyright a:focus,
+        div#FooterArea p#Copyright a:active {
+            color: #999;
+            text-decoration: underline;
+        }
+
+/* D-3. Copyright
+---------- ---------- */
+div#FooterArea p#VersionInfo {
+    padding-right: 10px;
+    text-align: right;
+    color: #999;
+}
+
+
+/* New footer styling: refer to  JPOC-319*/
+div#FooterArea ul {
+    display: inline-block;
+    list-style-type: none;
+    margin-bottom:10px;
+}
+
+    div#FooterArea ul li {
+        display: inline-block;
+        line-height: 22px;
+        width: auto;
+    }
+
+        div#FooterArea ul li a {
+            margin-right: 32px;
+        }
+
+div#FooterArea a {
+    color: #969696;
+}
+
+    div#FooterArea a:link {
+        text-decoration: none !important;
+    }
+
+    div#FooterArea a:hover,
+    div#FooterArea a:active {
+        color: #E9711C;
+        border-bottom: 2px solid #E9711C;
+        text-decoration: none !important;
+    }
+
+div#FooterArea .Logo-Link a:hover,
+div#FooterArea .Logo-Link a:active {
+    border-bottom: 0px;
+    text-decoration: none;
+}
+
+.footer-Pane {
+    padding: 10px 10px 0px 10px;
+}
+
+div#FooterArea .footer-ElsLogo {
+    display: inline-block;
+    padding-right: 32px;
+    vertical-align: top;
+}
+
+div#FooterArea .footer-term {
+    display: inline-block;
+    max-width: 82.5%;
+    font-size: 12px !important;
+    margin-top: 6px;
+}
+
+div#FooterArea .footer-relxLogo {
+    float: right;
+    text-align: right;
+    margin-top: 23px;
+}
+
+div#FooterArea .footer-cookies {
+    margin-right: 0 !important;
+}
+
+div#FooterArea .disclaimer {
+    font-size: 70% !important;
+    padding: 10px 0px;
+    margin-top: 15px;
+    clear: both;
+}

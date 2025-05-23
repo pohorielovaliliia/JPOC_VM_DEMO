@@ -1,0 +1,226 @@
+﻿@charset "utf-8";
+
+
+/* parts */
+/* -------------------------------------------------------- */
+
+.b {font-weight:bold !important;}
+.le {text-align:left !important;}
+.ri {text-align:right !important;}
+.cen {text-align:center !important;}
+.ri img,
+.cen img {display:inline; vertical-align:top;}
+.inline img,
+img.inline {display:inline; vertical-align:middle !important;}
+
+.f10 {font-size:84% !important;}
+.f11 {font-size:92% !important;}
+.f12 {font-size:100% !important;}
+.f13 {font-size:109% !important;}
+.f14 {font-size:117% !important;}
+.f15 {font-size:125% !important;}
+.f16 {font-size:134% !important;}
+.f17 {font-size:142% !important;}
+.f18 {font-size:150% !important;}
+.f19 {font-size:159% !important;}
+.f20 {font-size:167% !important;}
+.f21 {font-size:175% !important;}
+.f22 {font-size:184% !important;}
+.f23 {font-size:192% !important;}
+.f24 {font-size:200% !important;}
+
+.m00 {margin-bottom:0 !important;}
+.m05 {margin-bottom:5px !important;}
+.m10 {margin-bottom:10px !important;}
+.m15 {margin-bottom:15px !important;}
+.m20 {margin-bottom:20px !important;}
+.m25 {margin-bottom:25px !important;}
+.m30 {margin-bottom:30px !important;}
+.m35 {margin-bottom:35px !important;}
+.m40 {margin-bottom:40px !important;}
+.m45 {margin-bottom:45px !important;}
+.m50 {margin-bottom:50px !important;}
+.m55 {margin-bottom:55px !important;}
+.m60 {margin-bottom:60px !important;}
+.m65 {margin-bottom:65px !important;}
+
+.auto {width:auto !important;}
+.w10 {width:10%;}
+.w15 {width:15%;}
+.w20 {width:20%;}
+.w25 {width:25%;}
+.w30 {width:30%;}
+.w35 {width:35%;}
+.w40 {width:40%;}
+.w45 {width:45%;}
+.w50 {width:50%;}
+.w55 {width:55%;}
+.w60 {width:60%;}
+.w65 {width:65%;}
+.w70 {width:70%;}
+.w75 {width:75%;}
+.w80 {width:80%;}
+.w85 {width:85%;}
+.w90 {width:90%;}
+.w95 {width:95%;}
+.w100 {width:100%;}
+
+.lBlock {float:left;}
+.rBlock {float:right;}
+
+
+/* link */
+a:link,
+a:visited,
+a:active {color:#017fd6; text-decoration:underline;}
+a:hover {color:#017fd6; text-decoration:none;}
+
+.imgBtn a:hover img {opacity:0.7; filter:progid:DXImageTransform.Microsoft.Alpha(Enabled=1,Style=0,Opacity=70);}
+
+
+/* list */
+ul.discList {list-style-type:disc; margin-left:2em;}
+
+ul.txtList1 {margin-left:1.2em;}
+ul.txtList1 li {width:100%; position:relative;}
+ul.txtList1 li span {position:absolute; top:0; left:-1.2em;}
+
+
+/* table */
+table.fix {table-layout:fixed !important;}
+table .le {text-align:left !important;}
+table .cen {text-align:center !important;}
+table .ri {text-align:right !important;}
+table .top {vertical-align:top !important;}
+table .middle {vertical-align:middle !important;}
+table .bottom {vertical-align:bottom !important;}
+
+.table1 {width:100%; margin:0 0 20px 0; border-collapse:collapse; border-spacing:0; empty-cells:show; border:solid 1px #ccc;}
+.table1 th,
+.table1 td {vertical-align:middle; border-left:solid 1px #ccc;}
+/* modified image directory */
+.table1 th {font-weight:bold; line-height:120%; text-align:center; padding:4px 0 2px 0; background:url(../../images/maintenance/bg_01.gif) repeat-x left center; border:solid 1px #ccc;}
+.table1 td {text-align:left; padding:6px 8px;}
+/* add property 'word-break' for alphanumeric */
+.table1 td {word-break: break-all;}
+.table1 td.cell1 {text-align:right;}
+.table1 td.cell6 {text-align:center; padding:6px 2px;}
+.table1 tr.bg1 td {background-color:#eaeef1;}
+.table1 tr.bg2 td {background-color:#fff;}
+.table1 .center {text-align:center !important;}
+
+.table2 {width:100%; margin:0 0 20px 0; border-collapse:collapse; border-spacing:0; empty-cells:show; border:solid 1px #ccc;}
+.table2 th,
+.table2 td {vertical-align:middle; border-left:solid 1px #ccc;}
+/* modified image directory */
+.table2 th {font-weight:bold; line-height:120%; text-align:center; padding:10px 0 8px 0; background:url(../../images/maintenance/bg_01.gif) repeat-x left center; border:solid 1px #ccc;}
+.table2 td {text-align:left; padding:6px 8px;}
+.table2 td {padding:6px 8px;}
+/* add property 'word-break' for alphanumeric */
+.table2 td {word-break: break-all;}
+.table2 td.cell1 {text-align:right;}
+.table2 td.cell3,
+.table2 td.cell4 {font-weight:bold;}
+.table2 td.cell5,
+.table2 td.cell6,
+.table2 td.cell7,
+.table2 td.cell8 {text-align:center; padding:6px 2px;}
+.table2 tr.bg1 td {background-color:#eaeef1;}
+.table2 tr.bg2 td {background-color:#fff;}
+
+.table3 {width:100%; margin:0 0 20px 0; border-collapse:collapse; border-spacing:0; empty-cells:show; border:solid 1px #ccc;}
+.table3 th,
+.table3 td {vertical-align:middle; border-left:solid 1px #ccc;}
+/* modified image directory */
+.table3 th {font-weight:bold; line-height:120%; text-align:center; padding:10px 0 8px 0; background:url(../../images/maintenance/bg_01.gif) repeat-x left center; border:solid 1px #ccc;}
+.table3 td {text-align:left; padding:6px 8px;}
+/* add property 'word-break' for alphanumeric */
+.table3 td {word-break: break-all;}
+.table3 td.cell1 {text-align:right;}
+.table3 td.cell3,
+.table3 td.cell4 {text-align:center; padding:6px 2px;}
+.table3 tr.bg1 td {background-color:#eaeef1;}
+.table3 tr.bg2 td {background-color:#fff;}
+
+.table4 {width:100%; margin:0 0 20px 0; border-collapse:collapse; border-spacing:0; empty-cells:show; border:solid 1px #ccc;}
+.table4 th,
+.table4 td {vertical-align:middle; border-left:solid 1px #ccc;}
+/* modified image directory */
+.table4 th {font-weight:bold; line-height:120%; text-align:center; padding:10px 0 8px 0; background:url(../../images/maintenance/bg_01.gif) repeat-x left center; border:solid 1px #ccc;}
+.table4 td {text-align:left; padding:6px 8px;}
+/* add property 'word-break' for alphanumeric */
+.table4 td {word-break: break-all;}
+.table4 td.cell1 {text-align:right;}
+.table4 td.cell7,
+.table4 td.cell9,
+.table4 td.cell10,
+.table4 td.cell11,
+.table4 td.cell12 {text-align:center; padding:6px 2px;}
+.table4 tr.bg1 td {background-color:#eaeef1;}
+.table4 tr.bg2 td {background-color:#fff;}
+
+/* form */
+input.box {height:25px; line-height:23px; border:solid 1px #ccc;}
+select {border:solid 1px #ccc; position:relative;}
+textarea {border:solid 1px #ccc;}
+
+/* block */
+/* -------------------------------------------------------- */
+.searchBox1 {margin:0 0 20px 0;}
+.searchBox1 li {padding:0 30px 0 0; float:left;}
+.searchBox1 li.txt {padding:3px 15px 0 0;}
+.searchBox1 select.select2 {width:78%;float:left;
+                    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    color: white;
+    line-height: 28px;
+    display: block;
+    padding-left: 4px;
+    padding-right: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height:28px;
+    font: 13px/1.5 "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック", Helvetica, Arial, sans-serif;
+}
+
+.searchBox2 {width:auto; margin:0 0 10px 0; border-collapse:collapse; border-spacing:0; empty-cells:show;}
+.searchBox2 th,
+.searchBox2 td {text-align:left; vertical-align:middle;}
+.searchBox2 th {padding:0 20px 12px 0;}
+.searchBox2 td {padding:0 40px 12px 0;}
+
+.btnList1 {margin:0 0 30px 0;}
+.btnList1 li {padding:0 10px 0 0; float:left;}
+
+.btnList2 {text-align:center ;margin:0 0 30px 0;}
+.btnList2 li {text-align:center; padding:0 10px; display:inline;}
+
+.pageNav {width:100%; margin:0 0 30px 0; position:relative; overflow:hidden;}
+.pageNav ul {float:left; position:relative; left:50%;}
+.pageNav li {padding:0 2px; float:left; position:relative; left:-50%;}
+.pageNav li span,
+.pageNav li a {padding:1px 6px; display:block;}
+.pageNav li span {font-weight:bold;}
+.pageNav li a {background:#eaeef1;}
+
+.formBlock {width:100%; margin:0px; border-collapse:collapse; border-spacing:0; empty-cells:show;}
+.formBlock th,
+.formBlock td {text-align:left; vertical-align:top; padding:0 0 10px 0;}
+.formBlock th {padding:3px 0 10px 0;}
+.formBlock th sup {font-size:8px; color:#f00;}
+.formBlock td img {vertical-align:middle; display:inline;}
+.formBlock .inner1 {width:700px; margin:0; border-collapse:collapse; border-spacing:0; empty-cells:show;}
+.formBlock .inner1 td {text-align:center; vertical-align:middle; padding:0;}
+.formBlock .inner1 .txt1 {font-weight:bold; text-align:center; margin:0 0 10px 0;}
+.formBlock .inner1 .txt2 {width:290px; height:320px; border:solid 1px #ccc; overflow:auto;}
+.formBlock .inner1 .txt2 ul {text-align:left; margin:0 10px; padding:5px 0;}
+.formBlock .inner1 .txt3 {width:120px;}
+.formBlock .inner1 .txt3 li {text-align:center; padding:10px 0 0 0;}
+
+/* ajax tool kit:ListSearchExtender Prompt */
+.listPrompt 
+{
+    text-align:left;   
+}

@@ -1,0 +1,72 @@
+/**
+ * ClinicalKeySearch?p
+ * wrapper?n?̊g????s??
+ */
+
+.clinical_key {
+    width: 158px;
+    float: right;
+    margin-left: 10px;
+}
+
+.ck_search_box {
+    border: 2px solid #ff8200;
+    word-wrap: break-word;
+}
+
+.ck_search_title {
+    font-size: 1.5em;
+    line-height: 1em;
+    padding: 5px;
+    text-align: center;
+    border-bottom: 1px solid #ff8200;
+    color: #ff8200;
+}
+
+.ck_search_result {
+    margin: 5px;
+    padding: 5px;
+    line-height: 1.2em;
+    border-bottom: 1px solid #cccccc;
+}
+
+.ck_result_title {
+    margin-left: 4px;
+    font-size: 1.1em;
+    line-height: 1.2em;
+    padding: 0px;
+    color: #007398;
+}
+
+    .ck_result_title a {
+        color: #53565a;
+        text-decoration: none;
+    }
+
+        .ck_result_title a:hover {
+            text-decoration: underline;
+        }
+
+.ck_result_title {
+    font-size: 1.1em;
+    line-height: 1.1em;
+}
+
+    .ck_result_title .ck_source_title a:hover {
+        text-decoration: none;
+    }
+
+.ck_source_title {
+    font-size: 0.8em;
+    line-height: 1em;
+    color: #333333;
+    margin: 0.2em 0 0.4em 0;
+    font-weight: bold;
+}
+
+.ck_search_result .sub,
+.ck_search_result .sub {
+    font-weight: bold;
+    color: #53565a;
+    font-size: 0.9em;
+}

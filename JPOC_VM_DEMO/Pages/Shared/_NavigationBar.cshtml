@@ -1,0 +1,212 @@
+﻿@model JPOC_VM_DEMO.Models.NavigationBarViewModel
+
+<div id="HeaderLink">
+    <div class="@(Model.IsAuthenticated ? "" : "d-none")">
+        <div style="text-align: right;">
+            @if (Model.ShowShareLink)
+            {
+                <a id="NavLinkShare">
+                    <img id="ImgNavLinkShare" alt="シェア機能" src="~/common/images/share.png"
+                         style="width: 19px; height:19px; margin-bottom: 4px; margin-right: 7px;" />
+                </a>
+                <div id="popupShare-top" style="display: none">
+                    お知り合いを30日間無料トライアルへご招待できます
+                </div>
+                <div id="NavLinkShare-form" class='jpoc-nav' style="display:none">
+                    <div>
+                        <div class="share-form-title">優待30日間無料トライアルへのご招待</div>
+                    </div>
+                    <div>
+                        下記のemailアドレスにご招待メールを送付します。
+                        <br />
+                        受信者は30日間今日の臨床サポートを無料で利用できます。
+                    </div>
+                    <div>
+                        <input asp-for="ShareEmail" class="NavLinkShare-TextBox"
+                               placeholder="メールアドレス" style="width: 350px" />
+                        <span asp-validation-for="ShareEmail" class="text-danger"></span>
+                    </div>
+                    <div>
+                        メール文面（任意）
+                    </div>
+                    <div>
+                        <textarea asp-for="ShareMessage" class="NavLinkShare-TextBox"
+                                  style="width: 350px; height: 100px"
+                                  placeholder="今日の臨床サポートのおすすめの点などを記載ください"></textarea>
+                    </div>
+                    <div>
+                        <button type="button" class="NavLinkShare-Button"
+                                onclick="sendShareLink()">
+                            送信
+                        </button>
+                    </div>
+                </div>
+            }
+
+            <img id="imgNotification" alt="notification" src="~/common/images/bell.png"
+                 style="width: 19px; margin-bottom: 4px; margin-right: 7px;" />
+            <span id="BadgeNotification" class="notificationBadge">@Model.NotificationCount</span>
+
+            @if (Model.ShowMyPage)
+            {
+                <a href="/MyPage" id="linkMyPage">
+                    <img id="imgMyPage" alt="mypage" src="~/common/images/star-empty.png"
+                         style="width: 19px; margin-bottom: 7px; margin-right: 3px;" />
+                </a>
+            }
+
+            <img id="imgUserAccount" alt="userInformation" src="~/common/images/user.png"
+                 style="width: 27px; margin-bottom: 7px; margin-right: 3px;" />
+            <img id="imgQuestion" alt="question" src="~/common/images/question.png"
+                 style="width: 27px; margin-bottom: 6px; margin-right: 6px;" />
+            <img id="imgAdminMenu" alt="submenu" src="~/common/images/humberger.png"
+                 style="width: 27px; margin-bottom: 4px;" />
+
+            @* <div id="adminMenu-nav" class='jpoc-nav'> *@
+            @*     <partial name="_AdminMenu" model="Model.AdminMenuData" /> *@
+            @* </div> *@
+
+            <div id="userMenu-nav" class='jpoc-nav'>
+                @if (Model.ShowUserMenu)
+                {
+                    <ul>
+                        <li class='jpoc-nav-header'>
+                            <span>ユーザー情報</span>
+                        </li>
+                        <li class="jpoc-nav-userinfo">
+                            <div>@Model.UserName</div>
+                        </li>
+                        @if (Model.ShowSearchHistory)
+                        {
+                            <li>
+                                <div>
+                                    <a href='javascript:openSearchHistory();'>検索履歴</a>
+                                </div>
+                            </li>
+                        }
+                        <li>
+                            <div>
+                                <a href="/SearchDrugCode">薬剤コード検索</a>
+                            </div>
+                        </li>
+
+                        @if (Model.ShowIndividualAccountMenu)
+                        {
+                            <li style='padding:0;'>
+                                <ul class='jpoc-nav-acc-menu'>
+                                    <li>アカウント管理</li>
+                                    @foreach (var item in Model.AccountMenuItems)
+                                    {
+                                        <li>
+                                            <div>
+                                                <a href="@item.Url" class="account-menu-item">
+                                                    @item.Text
+                                                </a>
+                                            </div>
+                                        </li>
+                                    }
+                                </ul>
+                            </li>
+                        }
+
+                        @if (Model.ShowLogout)
+                        {
+                            <li>
+                                <div>
+                                    <form asp-page="/Account/Logout" method="post">
+                                        <button type="submit" class="btn-link">ログアウト</button>
+                                    </form>
+                                </div>
+                            </li>
+                        }
+
+                        @if (Model.ShowAccountRegister)
+                        {
+                            <li>
+                                <div>
+                                    <a asp-page="/Account/Register">リモート用アカウント作成</a>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                }
+            </div>
+
+            @* <div id="AnnouncementMenu-nav" class='jpoc-nav'> *@
+            @*     <partial name="_Announcement" model="Model.AnnouncementData" /> *@
+            @* </div> *@
+
+            <div id="welcome-nav" class="mainMenu jpoc-nav">
+                <ul>
+                    <li>
+                        <div class="MainMenuItem">
+                            <a class="iframe_feedback mainMenuLabel jpoc-guide-feedback"
+                               href="@Model.FeedbackUrl">お問い合わせ・フィードバック</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="MainMenuItem">
+                            <a class="mainMenuLabel jpoc-guide-popup">簡単ガイド</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="MainMenuItem">
+                            <a class="mainMenuLabel" target="_blank"
+                               href="http://clinicalsup.jp/editorialcommittee/index.html">
+                                編集者一覧
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="MainMenuItem">
+                            <a asp-page="/COIDisclaimer" class="mainMenuLabel">COIについて</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="MainMenuItem">
+                            <a class="mainMenuLabel" target="_blank" asp-page="/Guide">
+                                @Model.GuidePageText
+                            </a>
+                        </div>
+                    </li>
+                    @if (Model.ShowContentListDownload)
+                    {
+                        <li>
+                            <div class="MainMenuItem">
+                                <form asp-page-handler="DownloadContentList" method="post">
+                                    <button type="submit" class="mainMenuLabel mainMenuLabel_btn">
+                                        コンテンツ名リスト
+                                    </button>
+                                </form>
+                            </div>
+                        </li>
+                    }
+                    @if (Model.ShowVMPackageDownload)
+                    {
+                        <li>
+                            <div class="MainMenuItem">
+                                <a class="mainMenuLabel" asp-page="/DownloadVMPackage">
+                                    イントラ版更新ファイル
+                                </a>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $('#imgNotification').mouseout(function (e) {
+            e.preventDefault();
+            $(".jpoc-nav").hide();
+            $("#AnnouncementMenu-nav").hide();
+        });
+
+        function sendShareLink() {
+            // Implement share link functionality
+        }
+    </script>
+}

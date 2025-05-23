@@ -1,0 +1,42 @@
+﻿/* wwwroot/css/navigation.css */
+.mainMenuLabel_btn {
+    border: none !important;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #d3d3d3;
+    background: transparent !important;
+}
+
+    .mainMenuLabel_btn:hover {
+        color: #e9711c !important;
+    }
+
+#NavLinkShare-form {
+    position: absolute;
+    display: none;
+    right: -6px;
+    background-color: #D9D9D9;
+    width: 450px;
+    height: 370px;
+    padding-top: 20px;
+    font-size: 15px;
+    text-indent: 0px;
+}
+
+.NavLinkShare-TextBox {
+    color: black;
+    height: 25px;
+    line-height: 23px;
+    border: solid 1px #ccc;
+    padding: 2px;
+}
+
+.NavLinkShare-Button {
+    background-color: #017fd6;
+    color: white;
+    width: 100px;
+    height: 30px;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    margin: 0 125px !important;
+}

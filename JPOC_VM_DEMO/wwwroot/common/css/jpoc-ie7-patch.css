@@ -1,0 +1,13 @@
+﻿
+#adminMenu-nav, #userMenu-nav, #AnnouncementMenu-nav, #welcome-nav {
+    position: relative;
+    display: none;
+    right: -6px;
+}
+
+./*display table and table-cell can't work on IE7, use float under quirks mode*/
+/*https://stackoverflow.com/questions/18317306/how-to-display-table-cell-on-a-single-line-ie6-ie7*/
+/*https://stackoverflow.com/questions/249103/ie7-and-the-css-table-cell-property*/
+.jpoc-navtab-list li {
+    *float:left;
+}

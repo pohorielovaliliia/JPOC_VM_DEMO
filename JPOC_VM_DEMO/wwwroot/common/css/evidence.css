@@ -1,0 +1,166 @@
+
+.evidence 
+{
+    width: 98%;
+}
+
+.evidence .menu {
+	margin: 5px 0 0 0;
+}
+
+.move 
+{
+	float:right;
+	font-size:14px;
+	//font-family: "メイリオ", "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3";
+}
+
+.evidence .pre 
+{
+	letter-spacing: 2px;
+}
+
+.evidence .nex 
+{
+	letter-spacing: 2px;
+}
+
+.evidence .page 
+{
+	margin:0 3px 0 3px;
+}
+
+.evidence .mssg 
+{
+	margin: 5px 0px 10px 0px;
+	padding: 5px 10px 5px 10px;
+	font-size: 14px;
+	line-height: 1.5;
+	//font-family: "メイリオ", "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3";
+	page-break-inside:avoid;
+}
+
+.evidence .title 
+{
+	font-weight:bold;
+	margin: 0 0 5px 0;
+}
+
+.title 
+{
+	font-weight:bold;
+	margin: 0 0 5px 0;
+}
+
+.evidence .rank_wrapper 
+{
+	color: #333333;
+	background-color: #CCCCCC;
+	border: 1px solid #666666;
+	font-size: 13px;
+	width:153px;
+	float:right;
+ 	margin: 0px 0 0 5px;
+}
+
+.evidence .rank_wrapper a
+{
+	color: #333333;
+	text-decoration:none;
+}
+
+.evidence .rank_title 
+{
+	padding: 0 0 0 5px;
+}
+.evidence .rank 
+{
+	font-size: 14px;
+	color: #54B0FC;
+	background-color: #FFFFFF;
+	font-weight:bold;
+}
+
+.evidence .rank a
+{
+	font-size: 14px;
+	color: #54B0FC;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+.evidence .desc 
+{
+	margin: 0 0px 10px 0px;
+	padding: 15px;
+	line-height: 1.6;
+	//font-family: "メイリオ", "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3";
+	font-size: 12px;
+	page-break-inside:avoid ;
+}
+
+.evidence .wrap 
+{
+	width:540px;
+	margin: 0 0px 10px 0px;
+	padding: 15px;
+	line-height: 1.6;
+	//font-family: "メイリオ", "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3";
+	position:relative;
+	font-size: 12px;
+	background-color: #FFFFcc; 
+}
+
+.evidence .arrow 
+{
+   width :40;
+   height:30; 
+   line-height:0; 
+   border-top:20px solid #ffffcc; 
+   border-left:none; 
+   border-right:30px solid white; 
+   position:relative; 
+   right:0px;
+   top:0px;
+   background-color : #FFFFFF;
+ }
+
+.evidence .rel 
+{
+	margin: 0 0px 10px 0px;
+	padding: 15px;
+	line-height: 1.4;
+	//font-family: "メイリオ", "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3";
+	font-size: 12px;
+}
+
+.rel 
+{
+	margin: 0 0px 10px 0px;
+	padding: 15px;
+	line-height: 1.4;
+	//font-family: "メイリオ", "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3";
+	font-size: 12px;
+}
+
+.evidence .line 
+{
+	border-top: solid 1px #ccc;
+	margin: 20px 0 20px 0;
+}
+
+ul .evidence .desc 
+{
+  margin-left: 25px
+
+}
+
+.evidence .desc ul
+{
+  margin-left: 20px
+}
+
+.evidencetag 
+{
+  zoom:1
+}

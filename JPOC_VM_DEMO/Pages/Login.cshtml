@@ -1,0 +1,309 @@
+﻿@* @page *@
+@* @model JPOC_VM_DEMO.Pages.LoginModel *@
+@* @{ *@
+@*     ViewData["Title"] = "メンバーログイン"; *@
+@* } *@
+
+@* <div class="login-container" style="padding-top: 20px"> *@
+@*     <div asp-validation-summary="All" class="text-danger"></div> *@
+    
+@*     @if (Model.ShowVMMessage) *@
+@*     { *@
+@*         <div class="phMsg"> *@
+@*             <span style="font-weight: 800; font-size: 20px; margin-left:-20px"> *@
+@*                 閲覧中にこの画面が表示された場合 *@
+@*             </span> *@
+@*             <div class="phMsgUl"> *@
+@*                 <ul> *@
+@*                     <li>一定時間ご利用が空いたため、接続が切れた可能性があります。一度<b>画面を閉じてサイトを開きなおしてください</b>。</li> *@
+@*                     <li>再度開いても同様の状況の場合には、ご施設の<b>システム管理ご担当者様から弊社サポートセンターへご連絡</b>いただく必要があります。</li> *@
+@*                 </ul> *@
+@*             </div> *@
+@*         </div> *@
+@*     } *@
+
+@*     <form method="post"> *@
+@*         <table class="login-table"> *@
+@*             <tr> *@
+@*                 <td class="label-cell"> *@
+@*                     <label asp-for="LoginID">ユーザー名:</label> *@
+@*                 </td> *@
+@*                 <td class="input-cell"> *@
+@*                     <input asp-for="LoginID" class="short" maxlength="100" tabindex="2" /> *@
+@*                     <br/> *@
+@*                     <span>※大文字小文字を区別します。ご注意ください</span> *@
+@*                     <span asp-validation-for="LoginID" class="text-danger"></span> *@
+@*                 </td> *@
+@*             </tr> *@
+@*             <tr> *@
+@*                 <td class="label-cell"> *@
+@*                     <label asp-for="Password">パスワード:</label> *@
+@*                 </td> *@
+@*                 <td class="input-cell"> *@
+@*                     <input asp-for="Password" type="password" class="short" tabindex="3" /> *@
+@*                     <span asp-validation-for="Password" class="text-danger"></span> *@
+@*                 </td> *@
+@*             </tr> *@
+@*             <tr> *@
+@*                 <td class="label-cell"> *@
+@*                     <label asp-for="Institution">施設コード:</label> *@
+@*                 </td> *@
+@*                 <td class="input-cell"> *@
+@*                     <input asp-for="Institution" class="short" maxlength="50" tabindex="4" /> *@
+@*                     <p>施設契約の方は施設コードを入力してお進みください。</p> *@
+@*                 </td> *@
+@*             </tr> *@
+@*             <tr> *@
+@*                 <td>&nbsp;</td> *@
+@*                 <td class="checkbox-cell"> *@
+@*                     <input asp-for="RememberMe" /> *@
+@*                     <label asp-for="RememberMe">ユーザー名・施設コードを保存する</label> *@
+@*                 </td> *@
+@*             </tr> *@
+@*             <tr> *@
+@*                 <td>&nbsp;</td> *@
+@*                 <td class="button-cell"> *@
+@*                     <button type="submit" class="StandardButton" tabindex="6">ログイン</button> *@
+@*                     <br /><br /> *@
+@*                     <a href="/Account/ForgotPassword">パスワードを忘れてしまった場合はこちら。</a> *@
+@*                 </td> *@
+@*             </tr> *@
+@*         </table> *@
+@*     </form> *@
+@* </div> *@
+
+@* @section Scripts { *@
+@*     <partial name="_ValidationScriptsPartial" /> *@
+@*     <script> *@
+@*         $(document).ready(function () { *@
+@*             const urlParams = new URLSearchParams(window.location.search); *@
+@*             const dlogin = urlParams.get('DLogin'); *@
+@*             if (dlogin === "1") { *@
+@*                 showlogin(); *@
+@*             } *@
+@*         }); *@
+
+@*         function showlogin() { *@
+@*             $("#vmMessage").hide(); *@
+@*             $("#loginForm").show(); *@
+@*         } *@
+@*     </script> *@
+@* } *@
+
+
+@page
+@model JPOC_VM_DEMO.Pages.LoginModel
+@{
+    // Layout = "_SubContentsLayout";
+    ViewData["Title"] = "メンバーログイン";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/common/css/trial_expire-old.css" asp-append-version="true" />
+    <style>
+        div#MainContents table {
+            width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 5px;
+        }
+
+            div#MainContents table th, div#MainContents table td {
+                border: none;
+                height: 30px;
+            }
+
+        .short {
+            width: 150px;
+            height: 23px;
+        }
+
+        div#MainContents h2 {
+            margin: 0 0 5px 0;
+        }
+
+        div#HeaderArea {
+            position: relative;
+        }
+
+        div#HeaderContents h2 {
+            position: absolute;
+            top: 68px;
+            left: 27px;
+            font-size: 16px;
+            color: #004F69;
+        }
+
+        div#site_desc {
+            margin: auto;
+            padding: 15px 0;
+            border: 1px solid black;
+            width: 530px;
+        }
+
+        div#HeaderArea {
+            border-bottom: unset;
+        }
+
+        div#HeaderUtility {
+            display: block;
+            position: static;
+        }
+
+        .textstylebutton {
+            border: none !important;
+            background-color: inherit !important;
+            color: inherit !important;
+            font-size: inherit !important;
+            font-weight: 600 !important;
+        }
+
+            .textstylebutton:hover {
+                text-decoration: underline;
+            }
+
+        .phMsg {
+            padding: 25px 50px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 600px;
+            text-align: left;
+            font-size: 16px;
+            border: 2px solid;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .phMsgUl {
+            margin-top: 15px;
+            font-size: 95%;
+        }
+    </style>
+}
+
+@section HeaderUtility {
+    <div id="HeaderUtility">
+        <div style="position: absolute; top: 60px; width: 100%; height: 31px; border-bottom: 3px solid #004F69; border-top: 3px solid #004F69;">&nbsp;</div>
+        <h2>メンバーログイン</h2>
+    </div>
+}
+
+<div style="padding-top: 20px">
+    <table border="0" cellspacing="5" width="100%">
+        <tr>
+            <td align="center">
+                @if (!string.IsNullOrEmpty(Model.MessageVM))
+                {
+                    <div id="message_VM" style="margin: 0 10px 20px 40px; padding: 10px; border: 1px solid gray; text-align: left; color: #333">
+                        @Model.MessageVM
+                    </div>
+                }
+                @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+                {
+                    <span class="error" style="display: block">@Model.ErrorMessage</span>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                @if (Model.ShowVMMessage)
+                {
+                    <div class="phMsg">
+                        <span style="font-weight: 800; font-size: 20px; margin-left:-20px">
+                            閲覧中にこの画面が表示された場合
+                        </span>
+                        <div class="phMsgUl">
+                            <ul>
+                                <li>一定時間ご利用が空いたため、接続が切れた可能性があります。一度<b>画面を閉じてサイトを開きなおしてください</b>。</li>
+                                <li>再度開いても同様の状況の場合には、ご施設の<b>システム管理ご担当者様から弊社サポートセンターへご連絡</b>いただく必要があります。</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="phMsg">
+                        <span style="font-weight: 800; font-size: 20px; margin-left:-20px">
+                            コンテンツ更新・ご利用レポート参照の場合
+                        </span>
+                        <div class="phMsgUl">
+                            <ul>
+                                <li>コンテンツ更新・レポート閲覧等のための<a asp-page="/Login" asp-route-LoginType="1" asp-route-DLogin="1" class="textstylebutton">管理者ログイン</a>はこちらのリンクをクリックしてください。</li>
+                                <li>なお、リンク先の画面でログインできない場合、ご利用期限設定が正しい状態になっていない可能性があります。ログイン画面に表示されるステータスコードなど、ご状況を<b>サポートセンターまでご連絡</b>いただけますよう、お願いいたします。</li>
+                            </ul>
+                        </div>
+                    </div>
+                }
+                <form method="post">
+                    <table width="100%" cellpadding="0" cellspacing="2" border="0">
+                        <tr>
+                            <td style="width: 40%; padding-right: 10px;" align="right" valign="top">
+                                <label asp-for="Input.LoginID">ユーザー名:</label>
+                            </td>
+                            <td align="left">
+                                <input asp-for="Input.LoginID" class="short" maxlength="100" tabindex="2" />
+                                <br />
+                                <span>※大文字小文字を区別します。ご注意ください</span>
+                                <span asp-validation-for="Input.LoginID" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right: 10px;" align="right" valign="top">
+                                <label asp-for="Input.Password">パスワード:</label>
+                            </td>
+                            <td align="left">
+                                <input asp-for="Input.Password" class="short" type="password" tabindex="3" />
+                                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 40%; padding-right: 10px;" align="right" valign="top">
+                                <label asp-for="Input.Institution">施設コード:</label>
+                            </td>
+                            <td align="left">
+                                <input asp-for="Input.Institution" class="short" maxlength="50" tabindex="4" />
+                                <p>施設契約の方は施設コードを入力してお進みください。</p>
+                            </td>
+                        </tr>
+                        <tr style="padding-top: 11px; padding-bottom: 11px; height: 43px;">
+                            <td>&nbsp;</td>
+                            <td align="left">
+                                <input asp-for="Input.RememberMe" type="checkbox" tabindex="5" checked="checked" />
+                                <label asp-for="Input.RememberMe">ユーザー名・施設コードを保存する</label>
+                            </td>
+                        </tr>
+                        <tr valign="bottom">
+                            <td>&nbsp;</td>
+                            <td style="height: 30px;" align="left">
+                                <button type="submit" class="StandardButton" tabindex="6">ログイン</button>
+                                <br /><br />
+                                <a asp-page="/PwdRevoke">パスワードを忘れてしまった場合はこちら。</a>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                @if (Model.ShowSiteDescription)
+                {
+                    <div id="site_desc">
+                        <p>
+                            本サイトは校正用サイトです。<br />
+                            執筆・校正依頼状に記載されているアカウントでログインしてください。<br />
+                            ご不明の点は「今日の臨床サポート」編集部へお問い合わせください。
+                        </p>
+                    </div>
+                }
+                <br />
+                <div style="margin: 0 auto; text-align: left; width: 950px; margin-bottom: 5px;">
+                    <strong>−注意事項−</strong><br />
+                    『お薬または医療機器を使われている方へ』<br />
+                    このホームページで提供している情報は、専門的な情報が含まれていますので、これらの情報をご覧になって、<br />
+                    使われている医薬品・医療機器について疑問などを持たれた場合には、医師・歯科医師または薬剤師に必ずご相談ください。<br />
+                    医療用医薬品・医療機器は、患者ご自身の判断で用いたり、中止したり、医薬品の用法・用量を変えたりすると危険な場合がありますので、ご注意ください。<br />
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/common/js/trial_expire-old.js"></script>
+}
+

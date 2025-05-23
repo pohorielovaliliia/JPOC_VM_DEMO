@@ -1,0 +1,173 @@
+﻿@* <!DOCTYPE html> *@
+@* <html> *@
+@* <head> *@
+@*     <meta charset="utf-8" /> *@
+@*     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> *@
+@*     <title>@ViewData["Title"] - JPOC</title> *@
+
+@*     <!-- CSS --> *@
+@*     <link rel="stylesheet" href="~/css/search/search_style.min.css?v=1.02.11" /> *@
+@*     <link rel="stylesheet" href="~/common/css/header.min.css?v=1.11.02" /> *@
+@*     <link rel="stylesheet" href="~/common/css/wrapper.css" /> *@
+@*     <link rel="stylesheet" href="~/common/css/main.css?v=1.10.24" /> *@
+@*     <link rel="stylesheet" href="~/common/css/maincontents.css?v=1.10.1" /> *@
+@*     <link rel="stylesheet" href="~/common/css/sub.css?v=1.10.23" /> *@
+@*     <link rel="stylesheet" href="~/common/css/subcontents.css" /> *@
+@*     <link rel="stylesheet" href="~/common/css/evidence.css" /> *@
+@*     <link rel="stylesheet" href="~/common/css/footer.css?v=1.12.27" /> *@
+@*     <link rel="stylesheet" href="~/common/css/colorbox.css" /> *@
+@*     <link rel="stylesheet" href="~/common/css/AdminMenu.css" /> *@
+@*     <link rel="stylesheet" href="~/common/css/jquery.ui/jquery.ui.all.css" /> *@
+
+@*     @* <link rel="stylesheet" href="~/common/css/base.css" />  *@
+
+
+@*     @RenderSection("Styles", required: false) *@
+@* </head> *@
+@* <body> *@
+@*     <div id="wrapper"> *@
+@*         <div id="HeaderArea"> *@
+@*             <div id="HeaderContents"> *@
+@*                 <a asp-page="/Search" class="header-logo"> *@
+@*                     <img src="~/common/images/header_title.png" alt="今日の臨床サポート" width="270" /> *@
+@*                 </a> *@
+
+@*                 @* @if (ViewBag.ShowEnquete ?? false)  *@
+@*                 @* {  *@
+@*                 @*     <div class="enqueteMiniBox">  *@
+@*                 @*         <label>@ViewBag.EnqueteTitle</label>  *@
+@*                 @*         <div class="enqueteMiniLink">  *@
+@*                 @*             <a href="@ViewBag.EnqueteUrl">アンケートに回答する>></a>  *@
+@*                 @*         </div>  *@
+@*                 @*     </div>  *@
+@*                 @* }  *@
+
+@*                 @* <div id="HeaderSearch">  *@
+@*                 @*     <div class="search">  *@
+@*                 @*         <input type="text" id="txtSearchText" placeholder="検索"  *@
+@*                 @*                class="textfield searchfield" style="width: 410px; height: 29px;" />  *@
+@*                 @*         <button id="btnSearch" class="btn">  *@
+@*                 @*             <img src="~/common/images/spectacle_64.png" alt="Search" />  *@
+@*                 @*         </button>  *@
+@*                 @*     </div>  *@
+@*                 @* </div>  *@
+
+@*                 <partial name="_NavigationBar" model="new JPOC_VM_DEMO.Models.NavigationBarViewModel()" /> *@
+@*             </div> *@
+@*         </div> *@
+
+@*         <div id="WrapperArea"> *@
+@*             @RenderSection("ClinicalKey", required: false) *@
+
+@*             <div id="MainArea"> *@
+@*                 @RenderBody() *@
+@*            @*      @await Html.PartialAsync("_Footer", new JPOC_VM_DEMO.Models.FooterViewModel  *@
+@*            @* {  *@
+@*            @*     VersionInfo = ViewBag.VersionInfo,  *@
+@*            @*     ShowSpVersion = ViewBag.ShowSpVersion,  *@
+@*            @*     SpVersionUrl = ViewBag.SpVersionUrl,  *@
+@*            @*     ShowPc2Sp = ViewBag.ShowPc2Sp  *@
+@*            @* })  *@
+@*                 @await Html.PartialAsync("_Footer", new JPOC_VM_DEMO.Models.FooterViewModel()) *@
+@*             </div> *@
+
+@*             <div id="SubArea" style="overflow: auto;"> *@
+@*                 @RenderSection("LeftMenu", required: false) *@
+@*                 @* @if (ViewBag.ShowVMUpdateMsg ?? false)  *@
+@*                 @* {  *@
+@*                 @*     <div class="vm-update-msg">  *@
+@*                 @*         イントラ版は情報更新が約6か月毎です、最新情報はWEB版のclinicalsup.jpでご確認ください。  *@
+@*                 @*     </div>  *@
+@*                 @* }  *@
+@*             </div> *@
+@*         </div> *@
+@*     </div> *@
+
+@*     <!-- Scripts --> *@
+@*     <script src="~/lib/jquery/jquery-1.12.4.min.js"></script> *@
+@*     <script src="~/common/js/jquery-ui.min.js"></script> *@
+@*     <script src="~/common/js/jquery.ui.autocomplete.js"></script> *@
+@*     <script src="~/common/js/colorbox/jquery.colorbox.js"></script> *@
+@*     <script src="~/common/js/jquery.placeholder.min.js"></script> *@
+@*     <script src="~/common/js/contentsCommon.js?v=1.10.24"></script> *@
+@*     <script src="~/common/js/first_description.js"></script> *@
+@*     <script src="~/common/js/header.min.js?v=1.02.21"></script> *@
+
+@*     @RenderSection("Scripts", required: false) *@
+@* </body> *@
+@* </html> *@
+
+@* Pages/Shared/_SubContentsLayout.cshtml *@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    @* <link rel="stylesheet" href="~/css/header.min.css" asp-append-version="true" /> *@
+    @* <link rel="stylesheet" href="~/css/maincontents.css" asp-append-version="true" /> *@
+    @* <link rel="stylesheet" href="~/css/subcontents.css" asp-append-version="true" /> *@
+    @* <link rel="stylesheet" href="~/css/footer.css" asp-append-version="true" /> *@
+    @* <link rel="stylesheet" href="~/css/colorbox.css" asp-append-version="true" /> *@
+    @* <link rel="stylesheet" href="~/css/AdminMenu.css" asp-append-version="true" /> *@
+    <link rel="stylesheet" href="~/css/search/search_style.min.css?v=1.02.11" />
+    <link rel="stylesheet" href="~/common/css/header.min.css?v=1.11.02" />
+    <link rel="stylesheet" href="~/common/css/wrapper.css" />
+    @* <link rel="stylesheet" href="~/common/css/main.css?v=1.10.24" /> *@
+    <link rel="stylesheet" href="~/common/css/maincontents.css?v=1.10.1" />
+    <link rel="stylesheet" href="~/common/css/sub.css?v=1.10.23" />
+    <link rel="stylesheet" href="~/common/css/subcontents.css" />
+    <link rel="stylesheet" href="~/common/css/evidence.css" />
+    <link rel="stylesheet" href="~/common/css/footer.css?v=1.12.27" />
+    <link rel="stylesheet" href="~/common/css/colorbox.css" />
+    <link rel="stylesheet" href="~/common/css/AdminMenu.css" />
+    <link rel="stylesheet" href="~/common/css/jquery.ui/jquery.ui.all.css" />
+    <link rel="stylesheet" href="~/common/css/base.css" />
+
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    <div id="wrapper" class="jpoc-master-subcontents">
+        <div id="Container">
+            @* Smartphone link block, if needed *@
+            @if (ViewBag.ShowSpLink ?? false)
+            {
+                <div id="spLinkBlockInPc">
+                    <a href="@ViewBag.SpLinkUrl">スマートフォン版を表示する</a>
+                </div>
+            }
+            <div id="HeaderArea">
+                <div id="HeaderContents">
+                    <a asp-page="/Search">
+                        <img src="~/common/images/header_title.png" alt="今日の臨床サポート" width="270" style="margin-top: 15px;" />
+                    </a>
+                    @if (ViewBag.ShowEnquete ?? false)
+                    {
+                        <div class="enqueteMiniBox">
+                            <label>@ViewBag.EnqueteTitle</label>
+                            <div class="enqueteMiniLink">
+                                <a href="@ViewBag.EnqueteUrl">アンケートに回答する>></a>
+                            </div>
+                        </div>
+                    }
+                    <partial name="_NavigationBar" model="new JPOC_VM_DEMO.Models.NavigationBarViewModel()" />
+                    @RenderSection("HeaderUtility", required: false)
+                </div>
+            </div>
+            <br />
+            <br />
+            <div id="MainContents" style="margin-top: -20px;">
+                @RenderBody()
+            </div>
+            <br />
+            <partial name="_Footer" model="new JPOC_VM_DEMO.Models.FooterViewModel()" />
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/common/js/jquery-ui.min.js"></script>
+    <script src="~/common/js/first_description.js"></script>
+    <script src="~/common/js/header.min.js"></script>
+    <script src="~/common/js/colorbox/jquery.colorbox.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+

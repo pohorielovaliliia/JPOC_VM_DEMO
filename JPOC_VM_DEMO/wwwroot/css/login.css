@@ -1,0 +1,41 @@
+﻿/* wwwroot/css/login.css */
+.login-container {
+    width: 700px;
+    margin: 0 auto;
+}
+
+.login-table {
+    width: 100%;
+    border-spacing: 5px;
+}
+
+.short {
+    width: 150px;
+    height: 23px;
+}
+
+.label-cell {
+    width: 40%;
+    padding-right: 10px;
+    text-align: right;
+    vertical-align: top;
+}
+
+.input-cell {
+    text-align: left;
+}
+
+.phMsg {
+    padding: 25px 50px;
+    margin: 0 auto 20px;
+    width: 600px;
+    text-align: left;
+    font-size: 16px;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.phMsgUl {
+    margin-top: 15px;
+    font-size: 95%;
+}

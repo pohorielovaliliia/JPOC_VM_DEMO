@@ -1,0 +1,10 @@
+<li>
+    <span>処方例</span>
+    <ul>
+        {{#each Prescription.Listing}}
+            <li>
+                <a title="{{{title}}}" class="iframe_965x600_Without_Button target-anchor-prescription" href="#{{{anchor}}}">{{{title}}}</a>
+            </li>
+        {{/each}}
+    </ul>
+</li>

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://clinicalsup.jp/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://clinicalsup.jp/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://clinicalsup.jp/">
+      <s:element name="Authorize">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pInstitutionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RtnCD" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RtnMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthorizeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AuthorizeResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="RtnCD" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RtnMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDiseaseList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pInstitutionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RtnCD" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RtnMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDiseaseListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDiseaseListResult" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="RtnCD" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RtnMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDiseaseData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pInstitutionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pDiseaseID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pWithoutPopupContents" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="pOnlyRawImage" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="pNeedBase64Encode" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="RtnCD" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RtnMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDiseaseDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDiseaseDataResult" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="RtnCD" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RtnMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDisease">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pInstitutionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pDiseaseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pDiseaseData" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="pNeedBase64Encode" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="RtnCD" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RtnMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDiseaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RtnCD" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RtnMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataToDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pInstitutionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pSql" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RtnCD" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RtnMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataToDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataToDataSetResult" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="RtnCD" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RtnMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AuthorizeSoapIn">
+    <wsdl:part name="parameters" element="tns:Authorize" />
+  </wsdl:message>
+  <wsdl:message name="AuthorizeSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthorizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDiseaseListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDiseaseList" />
+  </wsdl:message>
+  <wsdl:message name="GetDiseaseListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDiseaseListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDiseaseDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDiseaseData" />
+  </wsdl:message>
+  <wsdl:message name="GetDiseaseDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDiseaseDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDiseaseSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDisease" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDiseaseSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDiseaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataToDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataToDataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetDataToDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataToDataSetResponse" />
+  </wsdl:message>
+  <wsdl:portType name="EditorServiceSoap">
+    <wsdl:operation name="Authorize">
+      <wsdl:input message="tns:AuthorizeSoapIn" />
+      <wsdl:output message="tns:AuthorizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDiseaseList">
+      <wsdl:input message="tns:GetDiseaseListSoapIn" />
+      <wsdl:output message="tns:GetDiseaseListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDiseaseData">
+      <wsdl:input message="tns:GetDiseaseDataSoapIn" />
+      <wsdl:output message="tns:GetDiseaseDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDisease">
+      <wsdl:input message="tns:UpdateDiseaseSoapIn" />
+      <wsdl:output message="tns:UpdateDiseaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataToDataSet">
+      <wsdl:input message="tns:GetDataToDataSetSoapIn" />
+      <wsdl:output message="tns:GetDataToDataSetSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EditorServiceSoap" type="tns:EditorServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authorize">
+      <soap:operation soapAction="http://clinicalsup.jp/Authorize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDiseaseList">
+      <soap:operation soapAction="http://clinicalsup.jp/GetDiseaseList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDiseaseData">
+      <soap:operation soapAction="http://clinicalsup.jp/GetDiseaseData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDisease">
+      <soap:operation soapAction="http://clinicalsup.jp/UpdateDisease" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataToDataSet">
+      <soap:operation soapAction="http://clinicalsup.jp/GetDataToDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EditorServiceSoap12" type="tns:EditorServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authorize">
+      <soap12:operation soapAction="http://clinicalsup.jp/Authorize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDiseaseList">
+      <soap12:operation soapAction="http://clinicalsup.jp/GetDiseaseList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDiseaseData">
+      <soap12:operation soapAction="http://clinicalsup.jp/GetDiseaseData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDisease">
+      <soap12:operation soapAction="http://clinicalsup.jp/UpdateDisease" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataToDataSet">
+      <soap12:operation soapAction="http://clinicalsup.jp/GetDataToDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EditorService">
+    <wsdl:port name="EditorServiceSoap" binding="tns:EditorServiceSoap">
+      <soap:address location="http://localhost/jpoc/Services/EditorService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EditorServiceSoap12" binding="tns:EditorServiceSoap12">
+      <soap12:address location="http://localhost/jpoc/Services/EditorService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

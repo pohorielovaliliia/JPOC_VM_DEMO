@@ -1,0 +1,722 @@
+﻿@charset "utf-8";
+
+div .mtem {
+	margin-top: 1em !important;
+}
+
+div .pagetop {
+	margin: 0 0 10px 0;
+	text-align: right;
+}
+
+div .pagetop a {
+	padding: 0 0 0 15px;
+	background: url("../images/marker_list04.png") 0 0 no-repeat;
+}
+
+.CMSLink
+{
+    font-size: 12px;
+    float: right;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+#SituationListLab
+{
+    display:none;
+        
+}
+#SituationListDrug
+{
+    display:none;
+        
+}
+div.OrderItemTitle div /*タイトルにdivが複数あった場合の見せ方*/
+{
+    display:inline;
+    margin-right:10px;
+}    
+
+.SubMenuTable
+{
+    margin-top : 0px;
+    border:1px solid #71A227;
+    height: 30px;
+    width:748px;
+    font-family:ＭＳ Ｐゴシック;
+    font-weight:bold;
+}
+.SubMenuBox
+{
+    background-color:#71A227;
+    border-right:1px dashed White;
+    width:25%;
+    text-align:center;
+}
+.SubMenuBox2
+{
+    background-color:#71A227;
+    border-right:1px dashed White;
+    width:25%;
+    text-align:center;
+    border-top:1px solid white;
+}
+a.SubMenuLinkSelect
+{
+    background-color:White;
+    color:#71A227;
+    margin:3px 3px 3px 3px;
+    text-decoration:none;
+}
+a:link.SubMenuLink {/*未訪問のリンク*/
+    background-color:#71A227;
+    color:White;
+    margin:3px 3px 3px 3px;
+    text-decoration:none;
+}
+a:visited.SubMenuLink {/*訪問後のリンク*/
+    background-color:#71A227;
+    color:White;
+    margin:3px 3px 3px 3px;
+    text-decoration:none;
+}
+a:hover.SubMenuLink {/*マウスをのせたとき*/
+    background-color:White;
+    color:#2DAD2D;
+    margin:3px 3px 3px 3px;
+    text-decoration:none;
+}
+a:active.SubMenuLink {/*クリック中*/
+    background-color:White;
+    color:#2DAD2D;
+    margin:3px 3px 3px 3px;
+    text-decoration:none;
+}
+
+.options label  
+{
+    padding-left: 5px; 
+    position: relative; 
+    top: -2px; 
+    line-height: 1.6em; 
+}
+.span.ItemTitle
+{
+    font-size:14px;       
+} 
+span.ItemTitle div /*タイトルにdivが複数あった場合の見せ方*/
+{
+    display:block;
+    margin-right:10px;
+}      
+ul.Note li#liNoteBody
+{
+    padding-left: 15px;
+    padding-bottom: 10px;
+    list-style: none;
+    background: url("common/images/marker_list_note.png") 0 0.3em no-repeat;
+}
+
+.StandardButton
+{
+    background-color: #BBDB86;
+    color: #000;
+    border: none;
+    font-weight: 700;
+    font-size: 11px;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: inherit;
+}
+
+div#hoverWindow div.Inner {
+	padding: 20px;
+	border: solid 2px #fff;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	width: 600px;
+	-moz-box-shadow: #999 5px 5px 5px;
+	-webkit-box-shadow: #999 5px 5px 5px;
+	box-shadow: #999 5px 5px 5px;
+	background-color: #e9e9e9;
+	font-size: 9px;
+}
+div#hoverWindow div.Inner p ,
+div#hoverWindow div.Inner dl {
+	margin: 0 0 10px;
+}
+div#hoverWindow div.Inner ul ,
+div#hoverWindow div.Inner ol {
+	margin: 0 0 10px 30px;
+}
+
+div#labtestOrderSet tr.GradeB td{
+	background-color: #e1eccb;
+}
+div#labtestOrderSet tr.GradeC td{
+	background-color: #c7df95;
+}
+div#labtestOrderSet tr.GradeD td{
+	background-color: #97c751;
+}
+div#labtestOrderSet tr.GradeE td{
+	background-color: #7eac37;
+}
+
+.gekiyaku 
+{
+    background:url(../images/icon_gekiyaku.jpg) no-repeat; 
+    padding-left:35px; 
+    padding-top:5px; 
+    height: 32px;
+}
+.medical_name 
+{
+    font-size:12px; 
+    color:#004F69; 
+    padding-bottom:5px; 
+    font-weight:bold
+}
+/** 薬剤名称調整 */
+span.mdrugName 
+{
+    color:#004F69; 
+    margin-left:-9px;
+}
+/** 中分類折り返し */
+div.drugsubcategory{
+  text-indent: -16px;
+  margin-left: 16px;
+}
+.komidashi 
+{
+    color:#399;
+}
+.drugTable td
+{
+    
+}
+
+div#orderset > table
+{
+    margin: 0 0 0 15px;
+}
+div > table td
+{
+    border:0px;
+} 
+
+.proviso 
+{
+    border: 1px solid #ccc;
+    background-color: #FCF4E7;
+    margin-left: 15px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+div#orderset div.Display table.DisplayTable{
+    border-top:1px solid #CCCCCC;
+    border-left:1px solid #CCCCCC;
+    border-collapse:collapse;
+    border-spacing:0;
+    empty-cells:show;
+    margin :0 0 15px 0;
+}
+div#orderset div.Display table.DisplayTable th{
+    border-right:1px solid #CCCCCC;
+    border-bottom:1px solid #CCCCCC;
+	padding: 7px;
+	text-align: left;
+	background-color: #E1ECCB;
+	font-weight: normal;
+}
+div#orderset div.Display table.DisplayTable td{
+    border-right:1px solid #CCCCCC;
+    border-bottom:1px solid #CCCCCC;
+	padding: 4px;
+	text-align: left;
+	background-color: #FCF4E7;
+}
+
+/* 20130507 Add (S) P-S-00242 */
+A.KEYWORD {text-decoration:none!important;color:#4d4d4d;border-bottom:1px dashed #017FD6}
+A.KEYWORD:link {text-decoration:none!important;color:#4d4d4d;border-bottom:1px dashed #017FD6}
+A.KEYWORD:visited {text-decoration:none!important;color:#4d4d4d;border-bottom:1px dashed #017FD6}
+A.KEYWORD:hover {text-decoration:none!important;color:#4d4d4d;border-bottom:1px solid #017FD6}
+A.KEYWORD:active {text-decoration:none!important;color:#4d4d4d;border-bottom:1px dashed #017FD6}
+A.KEYWORDLINK {text-decoration:none!important;color:#4d4d4d;border-bottom:1px dashed #017FD6}
+/* 20130507 Add (E) P-S-00242 */
+
+/* 20130328 Add (S) P-S-0194 */
+div.col2L1{display:block;}
+div.tandem{display:inline;}
+div.col2L1.tandem{display:inline;}
+div.col3L1.tandem{display:inline;}
+span.ItemTitle div.col2L1
+{
+    display:block;
+}
+span.ItemTitle div.tandem{display:inline;}
+span.ItemTitle div.col2L1.tandem{display:inline;}
+span.ItemTitle div.col3L1.tandem{display:inline;}
+span.ItemTitle div.col2L1:last-of-type{display:inline;}
+/* 20130328 Add (E) P-S-0194 */
+
+/* 20121108 add */  /* 20121129 差し替え */
+ol li{margin-left:16pt!important;padding-left:0!important;
+*vertical-align:middle; /* for IE7 */
+}
+ol.olClass1{margin:0!important;padding-left:0!important;}
+ol.olClass2{margin:0!important;padding-left:18pt!important;}
+ol.olClass3{margin:0!important;padding-left:18pt!important;padding-top: 3px; padding-bottom: 3px;}
+ol.olClass3 li.listIndentLevel-00{margin-left:0!important;padding-left:0;}
+ol.olClass3 li.listIndentLevel-01{margin-left:22pt!important;padding-left:0;}
+ol.olClass3 li.listIndentLevel-02{margin-left:44pt!important;padding-left:0;}
+ol.olClass3 li.listIndentLevel-03{margin-left:66pt!important;padding-left:0;}
+ol.olClass3 li.listIndentLevel-04{margin-left:88pt!important;padding-left:0;}
+ol.olClass3 li.listIndentLevel-05{margin-left:110pt!important;padding-left:0;}
+ol.olClass3 li.listIndentLevel-06{margin-left:132pt!important;padding-left:0;}
+ol.olClass3 li.listIndentLevel-07{margin-left:154pt!important;padding-left:0;}
+ol.olClass3 li.listIndentLevel-08{margin-left:176pt!important;padding-left:0;}
+ol.olClass3 li.listIndentLevel-09{margin-left:198pt!important;padding-left:0;}
+
+/* added 2018/6/18 */
+ol.olClass3 li.listIndentLevel-01 {    font-size: 85%;}
+ol.olClass3 li.listIndentLevel-02 {    font-size: 85%;}
+ol.olClass3 li.listIndentLevel-03 {    font-size: 85%;}
+ol.olClass3 li.listIndentLevel-04 {    font-size: 85%;}
+ol.olClass3 li.listIndentLevel-05 {    font-size: 85%;}
+ol.olClass3 li.listIndentLevel-06 {    font-size: 85%;}
+ol.olClass3 li.listIndentLevel-07 {    font-size: 85%;}
+ol.olClass3 li.listIndentLevel-08 {    font-size: 85%;}
+ol.olClass3 li.listIndentLevel-09 {    font-size: 85%;}
+
+div.listIndentLevel-00{margin-left:0 !important;padding-left:0;} 
+div.listIndentLevel-01{margin-left:1em!important;padding-left:0;} 
+div.listIndentLevel-02{margin-left:2em!important;padding-left:0;} 
+div.listIndentLevel-03{margin-left:3em!important;padding-left:0;} 
+div.listIndentLevel-04{margin-left:4em!important;padding-left:0;} 
+div.listIndentLevel-05{margin-left:5em!important;padding-left:0;} 
+div.listIndentLevel-06{margin-left:6em!important;padding-left:0;} 
+div.listIndentLevel-07{margin-left:7em!important;padding-left:0;} 
+div.listIndentLevel-08{margin-left:8em!important;padding-left:0;} 
+div.listIndentLevel-09{margin-left:9em!important;padding-left:0;} 
+div.listIndentLevel-10{margin-left:10em!important;padding-left:0;} 
+div.listIndentLevel-11{margin-left:11em!important;padding-left:0;} 
+div.listIndentLevel-12{margin-left:12em!important;padding-left:0;} 
+div.listIndentLevel-13{margin-left:13em!important;padding-left:0;} 
+div.listIndentLevel-14{margin-left:14em!important;padding-left:0;} 
+div.listIndentLevel-15{margin-left:15em!important;padding-left:0;} 
+div.listIndentLevel-16{margin-left:19em!important;padding-left:0;} 
+div.listIndentLevel-17{margin-left:23em!important;padding-left:0;} 
+div.listIndentLevel-18{margin-left:27em!important;padding-left:0;} 
+div.listIndentLevel-19{margin-left:31em!important;padding-left:0;} 
+div.listIndentLevel-20{margin-left:35em!important;padding-left:0;} 
+
+div.listHangingLevelSameasIndent-01{text-indent:-1em!important;}
+div.listHangingLevelSameasIndent-02{text-indent:-2em!important;}
+div.listHangingLevelSameasIndent-03{text-indent:-3em!important;}
+div.listHangingLevelSameasIndent-04{text-indent:-4em!important;}
+div.listHangingLevelSameasIndent-05{text-indent:-5em!important;}
+div.listHangingLevelSameasIndent-06{text-indent:-6em!important;}
+div.listHangingLevelSameasIndent-07{text-indent:-7em!important;}
+div.listHangingLevelSameasIndent-08{text-indent:-8em!important;}
+div.listHangingLevelSameasIndent-09{text-indent:-9em!important;}
+div.listHangingLevelSameasIndent-10{text-indent:-10em!important;}
+div.listHangingLevelSameasIndent-11{text-indent:-11em!important;}
+div.listHangingLevelSameasIndent-12{text-indent:-12em!important;}
+div.listHangingLevelSameasIndent-13{text-indent:-13em!important;}
+div.listHangingLevelSameasIndent-14{text-indent:-14em!important;}
+div.listHangingLevelSameasIndent-15{text-indent:-15em!important;}
+
+div.listHangingLevel-m06{text-indent:-6em!important;} 
+div.listHangingLevel-m05{text-indent:-5em!important;} 
+div.listHangingLevel-m04{text-indent:-4em!important;} 
+div.listHangingLevel-m03{text-indent:-3em!important;} 
+div.listHangingLevel-m02{text-indent:-2em!important;} 
+div.listHangingLevel-m01{text-indent:-1em!important;} 
+div.listHangingLevel-00{text-indent:0!important;} 
+div.listHangingLevel-01{text-indent:1em!important;} 
+div.listHangingLevel-02{text-indent:2em!important;} 
+div.listHangingLevel-03{text-indent:3em!important;} 
+div.listHangingLevel-04{text-indent:4em!important;} 
+div.listHangingLevel-05{text-indent:5em!important;} 
+div.listHangingLevel-06{text-indent:6em!important;} 
+div.listHangingLevel-07{text-indent:7em!important;} 
+div.listHangingLevel-08{text-indent:8em!important;} 
+div.listHangingLevel-09{text-indent:9em!important;} 
+div.listHangingLevel-10{text-indent:10em!important;} 
+
+/** 著者リンク No.355 */
+a.author_introducation, a.author_introducation:visited, a.author_introducation:link 
+{
+    color: white;
+    text-decoration: none;
+}
+a.author_introducation:hover 
+{
+    text-decoration: underline;
+}
+
+/** 画像（複写禁止） */
+.no_print_text
+{
+    padding-left: 15px;
+    margin: 5px 0px 15px 0px;
+    display: block;
+}
+
+/** 追加ボックス（編集コンテンツ） */
+div.divaddtext01 {
+/* border: 1px solid red;*/
+ border: 2px solid #a0a0a0;  /* modified 2018/6/26 */
+ padding: 8px;
+/* font-size: 90%; *//* modified 2018/6/18 */
+}
+
+div.divaddtext02 {
+ border: 1px solid black;
+ padding: 8px;
+ font-size: 90%;
+}
+
+/*added 20190520 for alert*/
+div.divaddtext03{color:red;font-weight:bold}
+
+
+/** 薬剤表示(評価治療例の薬剤及び薬理) */
+div.drugbox{
+    background-color:white;
+    border:1px solid #808080;
+    border-radius:4px;
+    clear:both;
+    font-size:12px;
+    /** 標準状態は非表示 */
+    /** ページ単位で表示非表示を実装する場合は、ページ単位にdisplay:none; を実装させる */
+    display: none;
+}
+
+/** 薬剤表示全行共通 */
+/** 商品一覧行 */
+table.yakuri_table
+{
+    width: 100%;   
+}
+table.yakuri_table > tbody > tr.related_products > th
+{
+    text-align: left;
+    padding-left: 6px;
+    border-bottom:1px solid #808080;
+    vertical-align: top;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    vertical-align:middle;
+}
+table.yakuri_table > tbody > tr.related_products > td
+{
+    border-left:1px solid #808080;
+    border-bottom:1px solid #808080;
+    padding-left:6px;
+}
+
+/** 薬理情報・同効薬一覧の行 */
+table.yakuri_table > tbody > tr.yakuri_data > th
+{
+    vertical-align: top;
+    text-align: left;
+    padding-top: 6px;
+    padding-left: 6px;
+    border-bottom :1px dashed black;
+    vertical-align:middle;
+}
+table.yakuri_table > tbody > tr.yakuri_data > td
+{
+    vertical-align: top;
+    text-align: left;
+    padding-top: 6px;
+    padding-left: 6px;
+    border-left:1px solid #808080;
+    border-bottom :1px dashed black;
+}
+
+/** 要注意情報行 */
+table.yakuri_table > tbody > tr.drug_caution > th
+{
+    text-align: left;
+    padding-left: 6px;
+    border-top: 1px solid #808080;
+    /* vertical-align: top; */
+    padding-top: 6px;
+    padding-bottom: 6px;
+    vertical-align:middle;
+
+}
+table.yakuri_table > tbody > tr.drug_caution > td
+{
+    border-left:1px solid #808080;
+    border-top:1px solid #808080;
+    /* drugIndicator自体がmarginをとっているので、padding不要 */
+    padding-left:0; 
+}
+
+/** 上記ルールのIE6用 */
+/* IE6ではチャイルドセレクタ(「>」)が使えないため、下記で代用。 */
+/* hack「スターハック(star hack)」で検索。IE6以下のみに効く。 */
+
+/** 薬剤表示全行共通 */
+/** 商品一覧行 */
+* html table.yakuri_table tbody tr.related_products th 
+{
+    text-align: left;
+    padding-left: 6px;
+    border-bottom:1px solid #808080;
+    vertical-align: top;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+* html table.yakuri_table tbody tr.related_products td {
+    border-left: 1px solid #808080;
+    border-bottom:1px solid #808080;
+}
+
+/** 薬理情報・同効薬一覧の行 */
+* html table.yakuri_table tbody tr.yakuri_data th
+{
+    vertical-align: top;
+    text-align: left;
+    padding-top: 6px;
+    padding-left: 6px;
+    border-bottom :1px dashed black;
+}
+* html table.yakuri_table tbody tr.yakuri_data td
+{
+    vertical-align: top;
+    text-align: left;
+    padding-top: 6px;
+    padding-left: 6px;
+    border-left: 1px solid #808080;
+    border-bottom :1px dashed black;
+}
+
+/** 要注意情報行 */
+* html table.yakuri_table tbody tr.drug_caution th
+{
+    text-align: left;
+    padding-left: 6px;
+    border-top: 1px solid #808080;
+    vertical-align: top;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+* html table.yakuri_table tbody tr.drug_caution td{
+    border-left: 1px solid #808080;
+    border-top:1px solid #808080;
+    /* drugIndicator自体がmarginをとっているので、padding不要 */
+    padding-left:0; 
+    }
+
+/*薬剤注意情報(table.drugIndicator)のセルには罫線をつけない*/
+/*(IE6以外は子セレクタ(>)を使っているので考慮不要)*/
+* html table.yakuri_table tbody tr.drug_caution td table.drugIndicator td{
+    border:0px;
+}
+
+/** 薬剤情報を見るボタン */
+div.yakuri_button, div.yakuri_button_situation
+{
+    border:1px solid #89a;
+    background-color: #369;
+    color: #def;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    width: 145px;
+    margin-right: 10px;
+    float: right;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 5px;
+    font-size:12px;
+}
+/** 印刷ページ著者記入欄 */
+.author_entry_column
+{
+    margin-top: 20px;
+    text-align: center;
+    width: 90%;
+}.author_entry_column td
+{
+    border: 1px solid #000000;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 1em;
+}
+.author_entry_column td.image_description
+{
+    height: 80px;
+}
+.author_entry_column td.image_check
+{
+    text-align: left;
+    padding: 0.2em;
+}
+.author_entry_column td.image_source
+{
+    height: 120px;
+}
+
+/* リンク変換用文字列装飾 */
+a span.convertedLink 
+{
+    /* display: inline-block(block);にしないと消えない、IEの拡大拡張のせいだと思う */
+    display: inline-block;
+    text-decoration:none;
+    text-indent: 0px; /*divのtext-indentが個別に効いてしまう点の無効化 14/08/10*/
+}
+span.convertedLink > span.convertedLinkTitle
+{
+    
+}
+span.convertedLink > span.convertedLinkTitle:hover 
+{
+    text-decoration: underline;
+}
+span.convertedLink > span.convertedLinkTitle:active 
+{
+    text-decoration: underline;
+}
+
+/* reference box in content */
+div.divRef01 {
+    margin-left: 2em;
+    width: 90%;
+    border: 1px solid orange;
+    background-color: rgba(255, 165, 0, 0.16);
+    padding: 7px;
+    margin-top: 5px;
+}
+
+div.divRef02 {
+    margin-left: 4em;
+/*    width: 90%;   */
+    font-size: 85%;
+    background-color: #f5f5f5;
+    border: 1px solid #a0a0a0;
+    padding: 7px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+div.divRef02 a {
+    font-weight:bold;	
+}
+
+/* added at 2019.11.26*/
+
+div#MainContents05 div.divstatdx h6 {
+    font-weight: bold;
+    padding: 5px;
+    color: white;
+    background-color: #004F69;
+    font-size: 15px;
+}
+
+div#MainContents05 div.divstatdx h6.mtem {
+    margin-top: 0!important;
+}
+
+div.divstatdx div.onepage-embed {
+    margin: 0 auto;
+    max-width: inherit;
+}
+
+div.divstatdx {
+    margin-left: 4em;
+    /* width: 90%; */
+    font-size: 85%;
+    background-color: #f5f5f5;
+    border: 3px solid #a0a0a0;
+    padding: 0;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+
+
+/* adjust for content 2018.11.6 */
+
+.onepage-embed div {font-size:70%}
+/* added at 20191129 */
+.onepage-embed ol {font-size: 70%;}
+
+div.SCCtypeKanbetsu_h {width:60%}
+div.SCCtypeKanbetsu {width:60%}
+
+div.onepage-embed
+{ margin: 0 auto; max-width: 540px; }
+
+div.SCCtypeKanbetsu_h
+{ margin: 0 auto; }
+
+div.SCCtypeKanbetsu
+{ margin: 0 auto; }
+
+div.kanbetsu_m
+{ margin: 0 auto; }
+
+
+/* css for new content layout 2024.4.15 */
+sub {
+    position: relative;
+    top: 3px;
+    margin-right: 2px;
+}
+.midashi01 {
+    font-size: 130%
+}
+
+.midashi_point {
+    color: red
+}
+
+.block_centering_roman {
+    text-align: center;
+    font-family: "Times new roman", serif;
+}
+
+.block_centering {
+    text-align: center;
+}
+
+.block_border_centering_2nd_roman {
+    text-align: center;
+    border: 1px solid #999
+}
+
+    .block_border_centering_2nd_roman div:nth-child(n+2) {
+        font-family: "Times new roman", serif;
+    }
+
+.block_align_left_roman {
+    font-family: "Times new roman", serif;
+}
+
+.block_bold_roman b {
+    font-family: "Times new roman", serif;
+}
+
+/* added */
+.block_border_centering_24_roman {
+    text-align: center;
+    border: 1px solid #999
+}
+
+.block_border_centering_24_roman div:nth-child(n+2) {font-family: "Times new roman", serif;}
+.block_border_centering_24_roman div:nth-child(4) {font-family: inherit;}
+#sectionResult01 div.srcontent div.onepage-embed .image_description {display: none;}
+.bg-list .notopdisp {display: none;}
+span.convertedLink > span.convertedLinkTitle > div {display:inline-block;}
+
+/* css for new content layout 2024.4.15 - end */

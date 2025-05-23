@@ -1,0 +1,577 @@
+﻿@charset "UTF-8";
+
+.clearfix:after,
+.box_point li:after {
+	height: 0;
+	visibility: hidden;
+	content: ".";
+	display: block;
+	clear: both;
+}
+.clearfix,
+.box_point li {
+	_height: 1px;
+	min-height: 1px;
+	/*\*//*/
+	height: auto;
+	overflow: hidden;
+	/**/
+}
+
+div#ShinryouContents p
+{
+    margin: 10px 0 10px 0;
+}
+
+div#ShinryouContents div.ucomment p
+{
+    margin: 0px 0 10px 0;
+}
+
+div#ShinryouContents div.adviceArea p
+{
+    margin: 0px 0 10px 0;
+}
+
+div#ShinryouContents hr {
+  display: block;
+}
+
+body{
+	line-height: 1.5;
+	text-align:left;
+	color: #333333;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	word-break: break-all;
+	font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック", Helvetica, Arial, sans-serif;
+	font-size: 12px;
+
+}
+
+.h1 { font-size: 12px; font-weight:normal;}
+.blue {color:#0000FF;}
+.white {color: #FFFFFF; font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック", Helvetica, Arial, sans-serif; font-size: 10px;}
+.white_2 {color: #FFFFFF; font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック", Helvetica, Arial, sans-serif; font-size: 12px;}
+.green {font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック", Helvetica, Arial, sans-serif;font-size: 12px; color: #006600;}
+.green_2 {font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック", Helvetica, Arial, sans-serif;font-size: 10px; color: #006600;}
+.menu{font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック", Helvetica, Arial, sans-serif; font-size: 10px;}
+.black {font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック", Helvetica, Arial, sans-serif;font-size: 12px; color: #000000;}
+.black_2 {font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック", Helvetica, Arial, sans-serif;font-size: 10px; color: #000000;}
+.red {	font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック", Helvetica, Arial, sans-serif;font-size: 12px; color: #CC3300;}
+.red_2 {	font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック", Helvetica, Arial, sans-serif;font-size: 14px; color: #CC3300;}
+.txtbox {font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック", Helvetica, Arial, sans-serif;font-size: 12px; border:solid 1px; line-height:1.2}
+.menutop{ height: 26px; font-size: 12px; font-weight: bold; cursor: pointer; padding-bottom: 3px;}
+.submenutop{ cursor: pointer; padding-bottom: 5px;}
+
+
+
+/*a:link {color:#000099; text-decoration: underline;}*/
+/*a:visited {text-decoration: underline; color:#000099;}*/
+a:hover {text-decoration: underline; color:#CC3300;}
+a:active {text-decoration: underline;}
+
+.white a:link {text-decoration: none; color:#FFFFFF; }
+.white a:visited {text-decoration: none; color:#FFFFFF;}
+.white a:hover {text-decoration: underline; color:#FFFFFF;}
+.white a:active {text-decoration: none; }
+
+.green_2 a:link {text-decoration: none; color:#006600;}
+.green_2 a:visited {text-decoration: none; color:#006600;}
+.green_2 a:hover {text-decoration: underline; color:#006600;}
+.green_2 a:active {text-decoration: none; }
+
+.bg_button a:link {color:#FFFFFF; text-decoration: none;}
+.bg_button a:visited {text-decoration: none; color:#FFFFFF;}
+
+.bg_button1 a:link {color:#FFFFFF; text-decoration: none;}
+.bg_button1 a:visited {text-decoration: none; color:#FFFFFF;}
+
+.bg_button a:link {color:#FFFFFF; text-decoration: none;}
+.bg_button a:visited {text-decoration: none; color:#FFFFFF;}
+
+.title a:link {color:#FF0000; text-decoration: none;}
+.title a:visited {text-decoration: none; color:#FF0000;}
+.title a:hover {text-decoration: underline; color:#FF0000;}
+.title a:active {text-decoration: none; }
+
+.menu a:link {text-decoration: none;}
+.menu a:visited {text-decoration: none;}
+.menu a:hover {text-decoration: none;}
+.menu a:active {text-decoration: none; }
+
+
+#container {
+	width: 600px;
+	/*width: 750px; back to 600px 13.04.17 */
+	margin: auto;
+}
+
+.content_title {
+	margin: 3px 0 8px;
+	padding: 0 0 1px 10px;
+	background: url(../img/bg_title.gif) no-repeat left bottom;
+	-moz-background-size:cover;
+	background-size:cover;
+}
+.content_title .category {
+	margin-bottom: 3px;
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: bold;
+	color: #009900;
+}
+.content_title h1 {
+	margin: 0 0 3px;
+	font-size: 24px;
+	line-height: 29px;
+	font-weight: bold;
+	color: #3fb23f;
+}
+
+ul.breadcrumbs {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-size:12px;
+}
+ul.breadcrumbs li {
+	float: left;
+	margin: 0 5px 0 0;
+	padding: 0;
+}
+
+.content_body {
+	margin: 0 15px;
+	font-size: 12px;
+}
+.content_body .topicpath {
+	font-size: 12px;
+	line-height: 16px;
+}
+.content_body .section_list {
+	margin: 0;
+	padding: 0 5px;
+	font-size: 14px;
+	line-height: 21px;
+}
+.content_body .section_list dl {
+	margin: 0 0 5px;
+}
+.content_body .section_list dl.root {
+	margin: 20px 0 40px;
+}
+.content_body .section_list dt {
+	margin: 7px 0 2px;
+	padding: 0 0 0 1.5em;
+	font-size: 16px;
+	text-indent: -1.5em;
+}
+.content_body .section_list dd {
+	margin: 0 0 0 20px;
+	padding: 0;
+}
+.content_body .section_list ol {
+	padding: 0;
+	list-style: none;
+}
+.content_body .section_list li {
+	padding: 0;
+}
+.content_body .section_list .ka:before {
+	content: "－ ";
+}
+.content_body .section_list .sho:before {
+	content: "－ ";
+}
+.content_body .section_list .bu:before {
+	content: "－ ";
+}
+.content_body .section_list .setsu:before {
+	content: "－ ";
+}
+.content_body .section_list .kan:before {
+	content: "－ ";
+}
+.content_body .section_list .tsusoku:before {
+	content: "－ ";
+}
+.content_body .section_list .kubun:before {
+	content: "－ ";
+}
+.content_body .section_list .ka,
+.content_body .section_list .sho,
+.content_body .section_list .bu,
+.content_body .section_list .setsu,
+.content_body .section_list .kan,
+.content_body .section_list .tsusoku,
+.content_body .section_list .kubun {
+	padding: 0 0 0 1.5em;
+	text-indent: -1.5em;
+}
+.content_body .section_list dt.kubun {
+	margin-top: 3px;
+	font-size: 14px;
+}
+.content_body .section_list .tsusoku {
+	margin: 2px 0 1px -19px;
+}
+.content_body > h2 {
+	margin-top: 25px;
+	font-size: 18px;
+	line-height: 28px;
+	font-weight: bold;
+	color: #666666;
+	background: url(../img/bg_tit2.gif) repeat-x left bottom;
+}
+
+.box_point {
+	/*padding: 10px; modified by kawakami 2012.08.17*/
+	padding:10px 0 10px 0px;
+	/*background: #eeffe1; modified by kawakami 2012.08.15*/
+	/*background: lavender;*/
+	width:100%;
+}
+
+.box_point h2 {
+  background-color: #004F69;
+  padding: 2px 0 7px 5px;
+	margin: 0;
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: bold;
+	color: white;
+}
+.box_point ol {
+	width:94%;
+	/*margin: 12px 0 6px; modified by kawakami 2012.08.17*/
+	/*padding: 0 30px 0 40px; modified by kawakami 2012.08.17*/
+	margin:12px 0px 6px 30px;
+	padding:0;
+	list-style: none;
+	background: lavender; /*added by kawakami 12.08.17 */
+}
+/*.box_point li {  modified by kawakami 12.08.10*/
+.box_point ol li {
+	margin-bottom: 10px;
+	margin-left: 0px!important;
+	padding:0 0 3px 0;
+	position: relative;
+	font-size: 14px;
+	line-height: 18px;
+	border-top:dotted 1px lightgray;/*added by kawakami 12.07.09*/
+        margin-left: 0px!important;
+}
+div.irohaIndent{/*added by kawakami 12.08.17*/
+	margin:0 0 0 15px;
+	width: 495px;
+}
+div.katsukosujiIndent{/*added by kawakami 13.04.17*/
+	margin:0 0 0 30px;
+	width: 480px;
+}
+div.ucomment.underAdvice{/*added by kawakami 13.04.08*/
+	clear:both;
+	margin:0 40px 0 40px;
+	padding:0 10px 0 10px;
+	background:peachpuff;
+	color:black;
+	font-size:13px;
+}
+div.adviceShow.underAdvice{/*added by kawakami 13.04.08*/
+	clear:both;
+	margin:0 40px 0 40px;
+	padding:0 10px 0 10px;
+	background:lemonchiffon;
+	color:black;
+	font-size:13px;
+	
+}
+.adviceNoShow{/*added by kawakami 12.08.10*/
+	display:none;
+}
+.adviceShow{/*added by kawakami 12.08.10*/
+	display:block;
+}
+.adviceShow p{/*added by kawakami 13.04.08*/
+	margin:0;padding:0;
+}
+.box_point ul li {/*added by kawakami 12.08.10*/
+	border:none;
+	margin:0px;
+	font-size:83%;
+  text-indent: -3em;
+  padding-left: 3em!important; 
+}
+.box_point .caption {
+	text-indent:-1.5em;
+	padding-left:1.5em;
+	width: 510px;/*400->350 modified by kawakami 12.07.09*/
+	float: left;
+	color: #333333;
+	font-weight:bold;/*added by kawakami 12.08.17*/
+}
+.box_point .points {
+	width: 90px; /*80->60 modified by kawakami 12.07.09*/
+	text-align: right;
+/*
+border-left:dotted 1px lightgray;
+border-right:dotted 1px lightgray;
+*/
+	/*position: absolute;*/ /*deleted by kawakami 12.07.09*/
+float:left;
+	right: 0px;
+	bottom: 0px;
+	color: #ff0000;
+}
+.box_point div.captionLink{/*added by kawakami 12.07.09*/
+	width: 30px;
+	float:right;
+	font-size:50%;
+	color: #333333;
+}
+div.captionLink a{margin-right:3px;}/*added by kawakami 12.07.09*/
+button.adviceButton{/*added by kawakami 12.08.13*/
+ margin:0px 0 1px 40px;
+ padding:0px 1px 0px 1px;
+ border:1px dotted lightblue;
+ /*background-color:khaki;color:coral;font-weight:bold;*/
+ background-color:yellow;color:red;font-weight:bold;
+  font-size:11px;line-height:0px;cursor:pointer;overflow:visible;
+ height:14px;width:98px;
+  -webkit-border-radius: 7px;-moz-border-radius: 7px;border-radius: 7px;
+  /*-webkit-box-shadow: 0 2px 4px rgba(0,0,0,.2);-moz-box-shadow: 0 2px 4px rgba(0,0,0,.2);
+ box-shadow: 0   2px 4px rgba(0,0,0,.2);*/
+}
+
+.box_point div.ucomment{/*added by kawakami 12.08.15*/
+ font-weight:normal;
+ clear:both;
+ margin:0 40px 0 40px;
+ padding: 0 10px 0 10px;
+ font-size:90%;
+ background:white;
+ text-indent:0;
+ /*padding-left:0;*/
+}
+
+.box_point div.ucomment div {
+ text-indent: -20px;
+ margin-left: 20px;
+}
+
+
+div.importantcomment{/*added by kawakami 13.04.05*/
+ font-weight:normal;
+ clear:both;
+ margin:0 40px 0 40px;
+ font-size:90%;
+ background:peachpuff;
+ text-indent:0;
+ padding-left:0;
+}
+div.importantcomment p,div.ucomment p{
+margin:0;
+text-indent:0em;
+padding-left:0em;
+}
+div.adviceArea{ /*added by kawakami 13.04.11*/
+	clear:both;
+	margin:0 40px 0 40px;
+	padding:0 10px 0 10px;
+	background:white;
+	color:black;
+}
+div.qanda{/*added by kawakami 13.04.11*/
+ background:#ccff99;
+}
+.box_point div.keyinfo
+,.box_point div.advice
+{/*added by kawakami 13.04.08*/
+	/*border-top:dotted 1px gray;*/
+	background:white;
+}
+.box_point ul.advice{/*added by kawakami 12.08.10*/
+/*
+	clear:both;
+	margin:0 40px 0 40px;
+	padding:0 10px 0 10px;
+*/
+	background:white;
+	color:black;
+	list-style:none;
+}
+.box_point ul.advice li{/*added by kawakami 13.04.08*/
+	margin:0;padding:0;
+	top:0;
+}
+div.topDottedBorder{border-top:dotted 1px gray;}
+div.dmcComment img{/*added by kawakami 13.04.05*/
+ width:100%;
+}
+.toBbs {
+	margin: 20px 10px 0 0;
+	text-align: right;
+}
+
+.toTop {
+	margin: 35px 15px 10px 0;
+	text-align: right;
+}
+
+/* table in contents */
+table.inner_table {
+	border: 1px #333333 solid;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+table.content_center td {
+	text-align: center;
+}
+table.inner_table th {
+	padding: 5px;
+	border: #333333 solid;
+	border-width: 0 0 1px 1px;
+	background: #F5F5F5;
+	font-weight: bold;
+	line-height: 120%;
+	text-align: center;
+}
+table.inner_table td {
+	padding: 5px;
+	border: 1px #333333 solid;
+	border-width: 0 0 1px 1px;
+}
+table.inner_table td.none {
+	text-align: center;
+}
+table.inner_table ul {
+	margin: 0;
+	padding: 0;
+}
+table.inner_table ul li {
+	padding: 8px 0 2px 0;
+	border-bottom: 1px #333333 dashed;
+	list-style-type: none;
+}
+table.inner_table ul li.end {
+	border-bottom: 0;
+}
+
+
+div.summary ul{margin:0;padding:0 0 0 16pt;}
+div.summary ol{margin:0;padding:0 0 0 16pt;}
+
+div.summary ol li{margin-left:16pt;padding-left:0;}
+div.summary ol.olClass1{margin:0;padding-left:0;}
+div.summary ol.olClass2{margin:0;padding-left:16pt;}
+div.summary ol.olClass3{margin:0;padding-left:16pt;}
+div.summary ol.olClass3 li.listIndentLevel-00{margin-left:0;padding-left:0;}
+div.summary ol.olClass3 li.listIndentLevel-01{margin-left:16pt;padding-left:0;}
+div.summary ol.olClass3 li.listIndentLevel-02{margin-left:32pt;padding-left:0;}
+div.summary ol.olClass3 li.listIndentLevel-03{margin-left:48pt;padding-left:0;}
+div.summary ol.olClass3 li.listIndentLevel-04{margin-left:64pt;padding-left:0;}
+div.summary ol.olClass3 li.listIndentLevel-05{margin-left:80pt;padding-left:0;}
+div.summary ol.olClass3 li.listIndentLevel-06{margin-left:96pt;padding-left:0;}
+div.summary ol.olClass3 li.listIndentLevel-07{margin-left:112pt;padding-left:0;}
+div.summary ol.olClass3 li.listIndentLevel-08{margin-left:128pt;padding-left:0;}
+div.summary ol.olClass3 li.listIndentLevel-09{margin-left:144pt;padding-left:0;}
+
+div.summary div.listIndentLevel-00{margin-left:0;padding-left:0;} 
+div.summary div.listIndentLevel-01{margin-left:1em;padding-left:0;} 
+div.summary div.listIndentLevel-02{margin-left:2em;padding-left:0;} 
+div.summary div.listIndentLevel-03{margin-left:3em;padding-left:0;} 
+div.summary div.listIndentLevel-04{margin-left:4em;padding-left:0;} 
+div.summary div.listIndentLevel-05{margin-left:5em;padding-left:0;} 
+div.summary div.listIndentLevel-06{margin-left:6em;padding-left:0;} 
+div.summary div.listIndentLevel-07{margin-left:7em;padding-left:0;} 
+div.summary div.listIndentLevel-08{margin-left:8em;padding-left:0;} 
+div.summary div.listIndentLevel-09{margin-left:9em;padding-left:0;} 
+div.summary div.listIndentLevel-10{margin-left:10em;padding-left:0;} 
+div.summary div.listIndentLevel-11{margin-left:11em;padding-left:0;} 
+div.summary div.listIndentLevel-12{margin-left:12em;padding-left:0;} 
+div.summary div.listIndentLevel-13{margin-left:13em;padding-left:0;} 
+div.summary div.listIndentLevel-14{margin-left:14em;padding-left:0;} 
+div.summary div.listIndentLevel-15{margin-left:15em;padding-left:0;} 
+div.summary div.listIndentLevel-16{margin-left:20em;padding-left:0;} 
+div.summary div.listIndentLevel-17{margin-left:25em;padding-left:0;} 
+div.summary div.listIndentLevel-18{margin-left:30em;padding-left:0;} 
+div.summary div.listIndentLevel-19{margin-left:35em;padding-left:0;} 
+
+div.summary div.listHangingLevelSameasIndent-01{text-indent:-1em;}
+div.summary div.listHangingLevelSameasIndent-02{text-indent:-2em;}
+div.summary div.listHangingLevelSameasIndent-03{text-indent:-3em;}
+div.summary div.listHangingLevelSameasIndent-04{text-indent:-4em;}
+div.summary div.listHangingLevelSameasIndent-05{text-indent:-5em;}
+div.summary div.listHangingLevelSameasIndent-06{text-indent:-6em;}
+div.summary div.listHangingLevelSameasIndent-07{text-indent:-7em;}
+div.summary div.listHangingLevelSameasIndent-08{text-indent:-8em;}
+div.summary div.listHangingLevelSameasIndent-09{text-indent:-9em;}
+div.summary div.listHangingLevelSameasIndent-10{text-indent:-10em;}
+div.summary div.listHangingLevelSameasIndent-11{text-indent:-11em;}
+div.summary div.listHangingLevelSameasIndent-12{text-indent:-12em;}
+div.summary div.listHangingLevelSameasIndent-13{text-indent:-13em;}
+div.summary div.listHangingLevelSameasIndent-14{text-indent:-14em;}
+div.summary div.listHangingLevelSameasIndent-15{text-indent:-15em;}
+
+div.summary div.listHangingLevel-m06{text-indent:-6em;} 
+div.summary div.listHangingLevel-m05{text-indent:-5em;} 
+div.summary div.listHangingLevel-m04{text-indent:-4em;} 
+div.summary div.listHangingLevel-m03{text-indent:-3em;} 
+div.summary div.listHangingLevel-m02{text-indent:-2em;} 
+div.summary div.listHangingLevel-m01{text-indent:-1em;} 
+div.summary div.listHangingLevel-00{text-indent:0;} 
+div.summary div.listHangingLevel-01{text-indent:1em;} 
+div.summary div.listHangingLevel-02{text-indent:2em;} 
+div.summary div.listHangingLevel-03{text-indent:3em;} 
+div.summary div.listHangingLevel-04{text-indent:4em;} 
+div.summary div.listHangingLevel-05{text-indent:5em;} 
+div.summary div.listHangingLevel-06{text-indent:6em;} 
+div.summary div.listHangingLevel-07{text-indent:7em;} 
+div.summary div.listHangingLevel-08{text-indent:8em;} 
+div.summary div.listHangingLevel-09{text-indent:9em;} 
+div.summary div.listHangingLevel-10{text-indent:10em;} 
+
+div.summary h2 {
+ margin-top: 25px;
+ font-size: 18px;
+ line-height: 28px;
+ font-weight: bold;
+ color: #666666;
+}
+
+div.summary h5 {
+ margin: 0 0 10px 0;
+ font-size: 14px;
+ font-weight: bold;
+ background-color: #E6E6E6;
+ padding: 2px 5px;
+}
+
+table.kensa {
+    border-top:1px solid #663300;
+    border-left:1px solid #663300;
+    border-collapse:collapse;
+    border-spacing:0;
+    background-color:#ffffff;
+    empty-cells:show;
+}
+
+table.kensa td {
+    border-right:1px solid #663300;
+    border-bottom:1px solid #663300;
+    padding:0.3em 1em;
+}
+
+table.kensa2 {
+    empty-cells:show;
+}
+
+table.kensa2 td {
+    padding:0.15em 0.5em;
+}
+
+div.editorLayout-inner td {vertical-align:top}
+

@@ -1,0 +1,219 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Jpoc.Dac</RootNamespace>
+    <MyType>Windows</MyType>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Configurations>Debug;MSTEST_DEBUG;MSTEST_RELEASE;NUNIT_DEBUG;NUNIT_RELEASE;Release</Configurations>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DocumentationFile>JpocDac.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41998,41999,42004,42016,42017,42018,42019,42020,42021,42022,42024,42025,42026,42029,42030,42031,42032,42036,42099,42104,42105,42106,42107,42108,42109,42353,42354,42355</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DefineDebug>false</DefineDebug>
+    <DocumentationFile>JpocDac.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41998,41999,42004,42016,42017,42018,42019,42020,42021,42022,42024,42025,42026,42029,42030,42031,42032,42036,42099,42104,42105,42106,42107,42108,42109,42353,42354,42355</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>Off</OptionInfer>
+    <AssemblyTitle>JpocDiseaseDataset</AssemblyTitle>
+    <Company>Reed Elsevier</Company>
+    <Product>JpocDiseaseDataset</Product>
+    <Copyright>Copyright © Reed Elsevier 2013</Copyright>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <ImportedNamespaces>Jpoc.Common=False,System.Data=False,System.Web=False,System.Xml=False,Microsoft.VisualBasic=True,System=True,System.Collections=True,System.Collections.Generic=True,System.Diagnostics=True,System.Linq=True,System.Xml.Linq=True,System.Threading.Tasks=True,JpocDacCore=True</ImportedNamespaces>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferencedLib\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Jpoc.Common" />
+    <Import Include="System.Data" />
+    <Import Include="System.Web" />
+    <Import Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Dac\DataSet\DS_DISEASE.vb">
+      <DependentUpon>DS_DISEASE.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Dac\DataSet\DS_DISEASE1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DISEASE.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Dac\DataSet\DS_DRUG.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DRUG.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Dac\DataSet\DS_IMAGE_LIST1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_IMAGE_LIST.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Dac\DataSet\DS_LAB_TEST.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_LAB_TEST.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Dac\DataSet\DS_SYSTEM.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_SYSTEM.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Dac\DataSet\DS_USER.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_USER.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Dac\DataSet\DS_VIEW.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_VIEW.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Dac\DataSet\DS_VIEW.vb">
+      <DependentUpon>DS_VIEW.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Dac\DataSet\DS_DISEASE.xsc">
+      <DependentUpon>DS_DISEASE.xsd</DependentUpon>
+    </None>
+    <None Update="Dac\DataSet\DS_DISEASE.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DISEASE1.Designer.vb</LastGenOutput>
+    </None>
+    <None Update="Dac\DataSet\DS_DISEASE.xss">
+      <DependentUpon>DS_DISEASE.xsd</DependentUpon>
+    </None>
+    <None Update="Dac\DataSet\DS_DRUG.xsc">
+      <DependentUpon>DS_DRUG.xsd</DependentUpon>
+    </None>
+    <None Update="Dac\DataSet\DS_DRUG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DRUG.Designer.vb</LastGenOutput>
+    </None>
+    <None Update="Dac\DataSet\DS_DRUG.xss">
+      <DependentUpon>DS_DRUG.xsd</DependentUpon>
+    </None>
+    <None Update="Dac\DataSet\DS_IMAGE_LIST.xsc">
+      <DependentUpon>DS_IMAGE_LIST.xsd</DependentUpon>
+    </None>
+    <None Update="Dac\DataSet\DS_IMAGE_LIST.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_IMAGE_LIST1.Designer.vb</LastGenOutput>
+    </None>
+    <None Update="Dac\DataSet\DS_IMAGE_LIST.xss">
+      <DependentUpon>DS_IMAGE_LIST.xsd</DependentUpon>
+    </None>
+    <None Update="Dac\DataSet\DS_LAB_TEST.xsc">
+      <DependentUpon>DS_LAB_TEST.xsd</DependentUpon>
+    </None>
+    <None Update="Dac\DataSet\DS_LAB_TEST.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_LAB_TEST.Designer.vb</LastGenOutput>
+    </None>
+    <None Update="Dac\DataSet\DS_LAB_TEST.xss">
+      <DependentUpon>DS_LAB_TEST.xsd</DependentUpon>
+    </None>
+    <None Update="Dac\DataSet\DS_SYSTEM.xsc">
+      <DependentUpon>DS_SYSTEM.xsd</DependentUpon>
+    </None>
+    <None Update="Dac\DataSet\DS_SYSTEM.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_SYSTEM.Designer.vb</LastGenOutput>
+    </None>
+    <None Update="Dac\DataSet\DS_SYSTEM.xss">
+      <DependentUpon>DS_SYSTEM.xsd</DependentUpon>
+    </None>
+    <None Update="Dac\DataSet\DS_USER.xsc">
+      <DependentUpon>DS_USER.xsd</DependentUpon>
+    </None>
+    <None Update="Dac\DataSet\DS_USER.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_USER.Designer.vb</LastGenOutput>
+    </None>
+    <None Update="Dac\DataSet\DS_USER.xss">
+      <DependentUpon>DS_USER.xsd</DependentUpon>
+    </None>
+    <None Update="Dac\DataSet\DS_VIEW.xsc">
+      <DependentUpon>DS_VIEW.xsd</DependentUpon>
+    </None>
+    <None Update="Dac\DataSet\DS_VIEW.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_VIEW.Designer.vb</LastGenOutput>
+    </None>
+    <None Update="Dac\DataSet\DS_VIEW.xss">
+      <DependentUpon>DS_VIEW.xsd</DependentUpon>
+    </None>
+    <None Update="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Update="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JpocCommonCore\JpocCommonCore.vbproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+  </ItemGroup>
+	<PropertyGroup>
+		<MyType>Empty</MyType>
+	</PropertyGroup>
+</Project>

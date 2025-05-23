@@ -1,0 +1,1053 @@
+﻿@page
+@model JPOC_VM_DEMO.Pages.SearchModel
+@{
+    Layout = "_BasePageLayout";
+    ViewData["Title"] = "検索";
+}
+
+<!-- Stylesheets and scripts (inline, as in original) -->
+<link rel="stylesheet" type="text/css" href="~/common/css/header.min.css?v=1.11.13" />
+<link rel="stylesheet" type="text/css" href="~/common/css/maincontents.css?v=1.10.1" />
+<link rel="stylesheet" type="text/css" href="~/common/css/subcontents.css" />
+<link rel="stylesheet" type="text/css" href="~/common/css/footer.css?v=1.12.27" />
+<link rel="stylesheet" type="text/css" href="~/common/css/colorbox.css" />
+<link rel="stylesheet" type="text/css" href="~/common/css/jquery.ui/jquery.ui.all.css" />
+<link rel="stylesheet" type="text/css" href="~/css/search/search_style.min.css?v=1.02.11" />
+<link rel="stylesheet" href="~/common/css/bootstrap.v3.3.7.min.css" />
+
+<script src="~/common/js/jquery-1.12.4.min.js"></script>
+<script src="~/common/js/bootstrap.v3.3.7.min.js"></script>
+<script src="~/common/js/jquery-ui.min.js"></script>
+<script src="~/common/js/jquery.ui.autocomplete.js"></script>
+<script src="~/common/js/colorbox/jquery.colorbox.js"></script>
+<script src="~/common/js/contentsCommon.js"></script>
+<script src="~/common/js/header.min.js?v=1.02.21"></script>
+<script src="~/common/js/jquery.lazyload.js"></script>
+<script src="~/common/js/contentsCommonAppend.js"></script>
+
+<!-- TODO: REMOVE MESSAGES FOR NOW -->
+@* <script src="~/common/js/first_description.js"></script> *@
+@* <script src="~/common/js/first_description_start.js"></script> *@
+
+<!-- Add conditional scripts/styles for trial alert and solr as needed -->
+
+<!--[if lte IE 6]>
+<link type="text/css" href="~/common/css/jpoc-ie6-patch.css" rel="stylesheet">
+<![endif]-->
+<!--[if lt IE 8]>
+<link type="text/css" href="~/common/css/jpoc-ie7-patch.css" rel="stylesheet">
+<![endif]-->
+<!--[if lt IE 9]>
+<link type="text/css" href="~/common/css/jpoc-ie8-patch.css" rel="stylesheet">
+<![endif]-->
+@section Scripts {
+<script type="text/javascript">
+    // Ajax activity indicator bound to ajax start/stop document events
+    $(document).ajaxStart(function () {
+        $('.ajaxBusy').show();
+    }).ajaxStop(function () {
+        $('.ajaxBusy').hide();
+    });
+
+    function toggle(name) {
+        $("#" + name).toggle();
+    }
+
+    function colorBoxManualOpen(url, sid, shownotice) {
+        var serviceUrl = 'ajax/Service.aspx';
+
+        var title;
+        if (shownotice == 0) {
+            title = "<a href='javascript: void();' onclick='JavaScript:return closeColorbox();'><img src='common/images/modal_close.gif' alt='閉じる' width='132' height='32' /></a>"
+        } else {
+            title = "<a href='javascript: void();' onclick='JavaScript:return closeColorbox();'><img src='common/images/modal_close.gif' alt='閉じる' width='132' height='32' /></a>"
+            //title = "<div style='width :100%; margin:0 0px 0px 0px; vertical-align:bottom;'><span style='text-align :center;'><a href='javascript: void();' onclick='JavaScript:return closeColorbox();' ><img src='common/images/modal_close.gif' alt='閉じる' width='132' height='32' style='margin-bottom:-10px;' /></a></span><div style='text-align :right; margin-top: -30px;padding-right:30px;'><span style='font-size:xx-small;vertical-align:top;'>コンテンツ名の左に表示されている<br />▲マークがグレーのものは他カテゴリーの<br />コンテンツの再掲となります。</span></div></div>"
+        }
+
+        $.support.cors = true;
+        $.ajax({
+            async: true,
+            cache: false,
+            type: 'POST',
+            dataType: 'json',
+            url: serviceUrl,
+            data: { action: 'LoginCheck', param: sid },
+            error: function (data) {
+                alert('Ajax Access Error\nStatus:' + data.status + '\nMessage:' + data.statusText);
+            },
+            success: function (data) {
+                var result = data.result;
+                var status = data.status;
+                var message = data.message;
+                if (result === 'success') {
+                    if (status) {
+                        $.colorbox({
+                            href: url,
+                            iframe: true,
+                            // innerWidth: "770px",
+                            // Must not set innerWidth, because ie6 is used.
+                            width: "840px",
+                            height: "90%",
+                            // fixed: true,
+                            returnFocus: true,
+                            overlayClose: false,
+                            title: title,
+                            onOpen: function () { openedColorbox = $.colorbox; },
+                            onClosed: function () { openedColorbox = null; }
+                        });
+                    } else {
+                        location.href = 'login.aspx';
+                    }
+                } else {
+                    alert(result + '\n' + message);
+                }
+            }
+        });
+    }
+
+    var openedColorbox = null;
+
+    function closeColorbox() {
+        if (openedColorbox != null) {
+            openedColorbox.close();
+        }
+        openedColorbox = null;
+        return false;
+    }
+
+    function getIframe() {
+        if (!openedColorbox) {
+            return null;
+        }
+        var iframeName = openedColorbox.getIframeName();
+        var iframeID = openedColorbox.getIframeId();
+
+        // var iframe = document.frames ? document.frames[iframeID] : document.getElementById(iframeID);
+        var iframe = null;
+        // IE6(7も？) では document.frames[iframeID]がうまく取得できない模様
+        if (document.frames && document.frames[iframeID]) {
+            iframe = document.frames[iframeID];
+        } else {
+            iframe = document.getElementById(iframeID);
+        }
+
+        if (!iframe) {
+            if (document.frames) {
+                for (var i = 0; i < document.frames.length; i++) {
+                    var item = document.frames[i];
+                    if (item) {
+                        if (item.name == iframeName) {
+                            iframe = item;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        if (iframe) {
+            var ifWin = iframe.contentWindow || iframe;
+            if (ifWin) {
+                return ifWin;
+            }
+        }
+        return null;
+    }
+
+    function sendFeedback() {
+        var ifWin = getIframe();
+        if (ifWin != null) {
+            ifWin.focus();
+            ifWin.sendFeedback();
+        }
+        delete ifWin;
+        return false;
+    }
+
+
+    $(document).ready(function () {
+
+        $('#btnSearch').click(function(){
+            if($('#txtSearchText').val() ===''){
+                alert('検索キーワードを入れてください');
+                return false;
+            }
+        });
+
+        $(".iframe").colorbox({
+            iframe: true,
+            // innerWidth: "770px",
+            // Must not set innerWidth, because ie6 is used.
+            width: "840px",
+            height: "90%",
+            // fixed: true,
+            returnFocus: true,
+            overlayClose: false,
+            title: "<a href='javascript: void();' onclick='JavaScript:return closeColorbox();'><img src='common/images/modal_close.gif' alt='閉じる' width='132' height='32' /></a>",
+            onOpen: function () { openedColorbox = $(".iframe").colorbox; },
+            onClosed: function () { openedColorbox = null; }
+        });
+
+        // SearchTermの押下時の設定
+        $('ul#SearchTerm > li').each(function () {
+            if ($(this).attr('name') === 'search_history') {
+                return false;
+            }
+            $(this).click(function () {
+                $('#hdnSearchTerm').val($(this).find('a').text());
+                if (!$(this).hasClass('Current')) {
+                    $(this).siblings('li').each(function () {
+                        $(this).removeClass('Current');
+                    });
+                    $(this).addClass('Current');
+                }
+            });
+        });
+
+        // JPOC-156 SearchTerm changed to dropdown list
+        $('#ddlSearchTerm').change(function (event) {
+            $('#hdnSearchTerm').val($(this).val());
+        });
+
+
+        //JPOC-156 : decrease padding-right to 5px for the longeest disease category for the time being
+        $('.col-sm-3:contains(膠原病・リウマチ・アレルギー疾患)').css({ 'padding-right': '5px' });
+
+    });
+
+    function initPage() {
+        // パラメータ初期値設定
+        if ($('#hdnSearchTerm') && !$('#hdnSearchTerm').val()) {
+            $('#hdnSearchTerm').val('すべて') //$('#hdnSearchTerm').val('症状・疾患')
+        }
+
+        // reopen .row for every hoken category under #tab5
+        $('.hoken-category-title').each(function () {
+            $(this).closest('.hoken-entry')
+                .removeClass('col-sm-3')
+                .addClass('col-sm-12')
+                .before('</div><div class="row">');
+        });
+    }
+
+    // addOnload(function () {
+    //     initPage();
+    // });
+
+    // addOnPageShow(function () {
+    //     initPage();
+    // });
+
+     $(document).ready(function() {
+            initPage();
+        });
+
+     $(window).on('pageshow', function() {
+            initPage();
+        })
+
+    function openSearchHistory() {
+        var title = "<a href='javascript: void();' onclick='JavaScript:return closeColorbox();'><img src='common/images/modal_close.gif' alt='閉じる' width='132' height='32' /></a>"
+        var url = 'searchHistory.aspx';
+        $.colorbox({
+            href: url,
+            iframe: true,
+            // Must not set innerWidth, because ie6 is used.
+            width: "840px",
+            height: "400px",
+            // fixed: true,
+            returnFocus: true,
+            overlayClose: false,
+            title: title,
+
+            onOpen: function () { openedColorbox = $.colorbox; },
+            onClosed: function () { openedColorbox = null; }
+        });
+    }
+
+    function openTab(evt, TabName, LinkName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.querySelectorAll(".tab-pane");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+            tabcontent[i].className = tabcontent[i].className.replace(" active", "");
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.querySelectorAll(".tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the link that opened the tab
+        document.getElementById(TabName).style.display = "block";
+        document.getElementById(LinkName).className += " active";
+        //evt.currentTarget.className += " active";
+    }
+</script>
+}
+@section Styles {
+<style type="text/css">
+    div#MainContents {
+        margin: 0;
+        padding: 0 0 0 0;
+        border-left: none;
+        float: none;
+        width: 100%;
+        min-height: 450px;
+        text-align: center;
+    }
+
+    * html div#MainContents {
+        height: 450px;
+    }
+</style>
+<style type="text/css">
+    div#index01 {
+        margin: 0 auto;
+        /* border: 2px solid #ccc; */
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        width: 550px;
+        /* background: #f6fae7; */
+        text-align: left;
+    }
+
+    div#index02 {
+        padding: 20px 0;
+    }
+
+        div#index02 p {
+            /*margin: 0 0 10px 0;*/
+            margin: 0;
+            padding: 0px 0px;
+            /* border: solid 2px #fff; */
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            /* -webkit-box-shadow: #999 0px 0px 5px; */
+            -moz-box-shadow: #999 0px 0px 5px;
+            /* box-shadow: #999 0px 0px 5px; */
+            /* background: #89b843; */
+        }
+
+            div#index02 p input#txtSearchText {
+                margin: 1px 0 6px 5px;
+                border: solid 1px #ccc;
+                width: 410px;
+                min-height: 28px;
+                line-height: 28px;
+                vertical-align: middle;
+                color: #333;
+                padding-left: 3px;
+            }
+
+            * html div#index02 p input#txtSearchText {
+                height: 28px;
+            }
+
+    dl#CategoryNav dt {
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+    }
+
+    dl#CategoryNav dd ul {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        /* P-S-IT046 (S) */
+        margin-bottom: 3px;
+        /* P-S-IT046 (E) */
+    }
+
+        dl#CategoryNav dd ul:after {
+            display: block;
+            clear: both;
+            height: 0.1px;
+            line-height: 0;
+            visibility: hidden;
+            content: ".";
+            font-size: 0.1em;
+            overflow: hidden;
+        }
+
+        dl#CategoryNav dd ul li {
+            margin: 0;
+            padding: 0 8px 0 0;
+            float: left;
+            line-height: 1.1;
+            list-style: none;
+        }
+
+            dl#CategoryNav dd ul li a {
+                padding: 2px 5px;
+            }
+
+                dl#CategoryNav dd ul li a:hover,
+                dl#CategoryNav dd ul li a:focus,
+                dl#CategoryNav dd ul li a:active {
+                    background-color: #e2efd3;
+                    text-decoration: underline;
+                }
+
+            dl#CategoryNav dd ul li a {
+                /*text-decoration: underline;*/
+                text-decoration: none;
+            }
+
+            dl#CategoryNav dd ul li.Current a {
+                text-decoration: none;
+                color: #333;
+                font-weight: bold;
+            }
+
+    div#MainContents {
+        margin: 0;
+        padding: 0 0 0 0;
+        border-left: none;
+        float: none;
+        width: 100%;
+        min-height: 400px;
+        text-align: center;
+    }
+
+    * html div#MainContents {
+        height: 400px;
+    }
+
+    .SearchHeader {
+        color: Black;
+        height: 30px;
+    }
+
+        .SearchHeader a {
+            color: Black;
+        }
+
+    a.logoutmenu {
+        color: #004F69;
+    }
+
+    .adminmenu {
+        z-index: 10;
+    }
+
+        .adminmenu ul {
+            list-style: none;
+        }
+
+            .adminmenu ul li {
+                position: relative;
+                float: left;
+                margin: 0;
+                padding: 5px;
+                width: 120px;
+                height: 20px;
+                font-weight: bold;
+                background: #D2DDE1;
+                z-index: 1;
+            }
+
+                .adminmenu ul li:hover {
+                    color: #fff;
+                    background: #D2DDE1;
+                }
+
+                .adminmenu ul li ul {
+                    display: none;
+                    position: absolute;
+                    top: 20px;
+                    left: -1px;
+                    padding: 5px;
+                    width: 120px;
+                    background: #98ACB3;
+                    margin-left: 10px;
+                }
+
+                    .adminmenu ul li ul li {
+                        margin: 0;
+                        padding: 0;
+                        width: 140px;
+                        border: none;
+                        left: 10px;
+                        text-align: left;
+                    }
+
+                        .adminmenu ul li ul li a {
+                            display: inline-block;
+                            width: 140px;
+                            height: 20px;
+                        }
+
+                            .adminmenu ul li ul li a:hover {
+                                background: #98ACB3;
+                                color: White;
+                            }
+
+                        .adminmenu ul li ul li ul {
+                            display: none;
+                            position: absolute;
+                            top: 0px;
+                            left: 100px;
+                            padding: 5px;
+                            width: 280px;
+                            background: #98ACB3;
+                            margin-left: 10px;
+                            z-index: 2;
+                        }
+
+                            .adminmenu ul li ul li ul li {
+                                margin: 0;
+                                padding: 0;
+                                width: 280px;
+                                border: none;
+                                left: 30px;
+                                text-align: left;
+                            }
+
+                                .adminmenu ul li ul li ul li a {
+                                    width: 280px;
+                                }
+
+    table#infomain th {
+        vertical-align: top;
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    table#infomain td {
+        vertical-align: top;
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    div#infoouter {
+        width: 550px;
+        margin-left: 15px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        padding: 10px 0px;
+        border: 1px solid rgb(148, 155, 146);
+    }
+
+    div#infoinner {
+        margin-left: 12px;
+        margin-right: 15px;
+    }
+
+    p.BanMessageArea {
+        margin: 10px auto;
+        position: relative;
+        background-color: #FFA6C8;
+        border: solid 2px red;
+        width: 500px;
+        /*height: 40px;*/
+        text-align: center;
+        padding: 10px auto;
+    }
+
+    table.category_tree {
+        width: 96%;
+        margin: 20px auto 0 auto;
+    }
+
+        table.category_tree tr td {
+            text-align: left;
+            width: 24%;
+            vertical-align: top;
+        }
+
+            table.category_tree tr td p.category_title {
+                font-weight: bold;
+                margin: 20px 3px 3px 3px;
+                padding: 0 0 2px 3px;
+                border-bottom: 2px solid #007398;
+            }
+
+            table.category_tree tr td div.category_tree {
+                padding: 5px;
+                margin-left: 3px;
+            }
+
+                table.category_tree tr td div.category_tree li {
+                    text-indent: -1em;
+                    margin-left: 1em;
+                }
+</style>
+<style type="text/css">
+    #spLinkBlockInPc {
+        width: 100%;
+        height: 70px;
+        background-color: Black;
+        color: White;
+        font-size: 50px;
+        display: none;
+        text-align: center;
+    }
+
+    #anchorToSpInPc {
+        color: white;
+        text-decoration: none;
+    }
+
+    div.top_image img {
+        /*width:389px!important;*/
+        height: inherit !important;
+    }
+
+    a.helpmenu {
+        text-decoration: none;
+        cursor: pointer;
+        margin-right: 30px;
+        color: #004F69;
+    }
+
+        a.helpmenu:hover {
+            text-decoration: underline;
+        }
+
+
+    .mainlogo {
+        margin-left: 10px;
+        margin-bottom: 3px;
+    }
+
+    /*
+                    styles for JPOC-156 medical calculator relocate, from medical calculator.aspx
+                    */
+
+    h1 {
+        border-bottom: 2px solid #004F69;
+        line-height: 37px;
+    }
+
+    .tvMenu1 {
+        vertical-align: top;
+        width: 249px;
+        max-width: 249px;
+        min-width: 249px;
+    }
+
+    .menu_link_table {
+    }
+
+    .menu_link_row {
+        line-height: 20px;
+    }
+
+    .suffix_mark {
+        text-decoration: none;
+    }
+
+    .prefix_mark_cell {
+        width: 10px;
+        vertical-align: top;
+    }
+
+    .title_cell {
+        vertical-align: top;
+    }
+
+    .prefix_icon_main {
+        margin-top: 7px;
+    }
+
+    .prefix_icon_sub {
+        margin-top: 7px;
+    }
+
+    .manu_link {
+    }
+
+    .suffix_mark {
+    }
+
+    /*div#ctl00_BodyPlaceHolder_tvMenu1 > div > table td {
+                text-indent: -16px;
+                padding-left: 10px;
+            }
+
+            div#ctl00_BodyPlaceHolder_tvMenu2 > div > table td {
+                text-indent: -16px;
+                padding-left: 10px;
+            }
+
+            div#ctl00_BodyPlaceHolder_tvMenu3 > div > table td {
+                text-indent: -16px;
+                padding-left: 10px;
+            }*/
+
+    /*
+                    styles for JPOC-156 search page layout update
+                    */
+    /*.nav > li.active > a, .nav > li.active > a:focus, .nav > li.active > a:hover {
+                border-top: 4px solid #ff8200;
+            }*/
+
+    .ddlSearchTerm {
+        padding: 5px 0;
+        height: 30px;
+        width: 125px;
+        background: url('/common/images/dropdown.png') no-repeat right 8px #fff;
+        -webkit-appearance: textfield;
+        padding-left: 3px;
+        background-position: right 5px center;
+        border: 1px solid #ddd;
+        border-radius: 0;
+    }
+
+    .hoken-entry {
+        text-align: left;
+    }
+
+    .hoken-category-title {
+        padding-top: 10px;
+    }
+
+    .nav > li > a {
+        border-radius: 0;
+        /*width:150px;*/
+    }
+
+    .jpoc-navtab-container {
+        display: block;
+        width: 100%;
+    }
+
+        .jpoc-navtab-container .nav > li > a {
+            padding: 4px 15px;
+            font-weight: bold;
+        }
+
+    .jpoc-navtab-list {
+        display: table;
+        width: 100%;
+    }
+
+        .jpoc-navtab-list li {
+            display: table-cell;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+            *float: left;
+        }
+
+            .jpoc-navtab-list li.active {
+                /*border: 1px solid #ddd;
+                        border-bottom: none;
+                        border-bottom-color: transparent;
+                        border-top: 4px solid #ff8200;*/
+                border-bottom: none;
+            }
+
+                .jpoc-navtab-list li.active div.active-top {
+                    border-top: 4px solid #ff8200;
+                }
+
+                .jpoc-navtab-list li.active div.active-content {
+                    border-right: 1px solid #ddd;
+                    border-left: 1px solid #ddd;
+                    height: 26px;
+                    /*border:outset ;*/
+                }
+
+
+    .panel-default {
+        border-top: none;
+    }
+
+    .jpoc-navtab-list a {
+        display: block;
+        /*margin: 0 5px;*/
+    }
+
+    .panel-iframe-calculator {
+        display: table;
+        width: 100%;
+        height: 450px;
+    }
+
+    .tbl-calculator {
+        width: 100%;
+        text-align: left;
+    }
+
+    .tab-content .panel {
+        border-radius: 0;
+    }
+
+    .jpoc-page-search #HeaderLink {
+        position: relative;
+        top: -50%;
+        float: right;
+    }
+
+    ::-ms-clear {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    .tablinks :hover, .tablinks a {
+        text-decoration: none;
+    }
+
+       
+        (-webkit-appearance:none) and (stroke-color:transparent)
+
+    {
+        .tab-content
+
+    {
+        padding-left: 1px;
+        padding-right: 2px;
+    }
+    }
+</style>
+}
+
+<div id="wrapper" class="jpoc-page-search">
+    <!-- Banner (replace with your logic if needed) -->
+    @* @Html.Raw(Model.Banner) *@
+
+    <div id="Container">
+        <div id="spLinkBlockInPc" style="display:none;">
+            <a id="anchorToSpInPc" href="#">スマートフォン版を表示する</a>
+        </div>
+        <div id="HeaderArea1">
+            <div id="HeaderContents" style='background-color: #D2DDE1; width: 980px; height: 40px; border-top: 4px solid #ff8200; padding-top: 5px;text-align:center'>
+                <span id="pnSubsExpiredSoon" style="color:red;display:none;">現在ご利用いただいているイントラネット版データのご利用期限が近づいています</span>
+                <partial name="_NavigationBar" model="new JPOC_VM_DEMO.Models.NavigationBarViewModel()" />
+            </div>
+        </div>
+        <div id="MainContents" style="margin-top: 0px;">
+            <div style="padding-top: 0px; min-height: 170px">
+                <!-- Search Engine Tag Placeholder -->
+                @* Add search engine tag partial or logic here if needed *@
+
+                <table width="100%">
+                    <tr>
+                        <td width="20%" style="border: none;" valign="top">
+                            <div style="margin-top: 75px; text-align: left;"></div>
+                        </td>
+                        <td style="border: none; padding-right: 5px; vertical-align: top;">
+                            <p id="BanMessage" class="BanMessageArea" style="display:none;"></p>
+                            <div id="div1" style="margin: 44px 0 0 0; position: relative;">
+                                <div class="top_image">
+                                    <img src="~/common/images/header_title.png" alt="今日の臨床サポート" />
+                                </div>
+                                <div id="index01">
+                                    <div id="index02">
+                                        <dl id="CategoryNav"></dl>
+                                        @* <form method="post"> *@
+                                            <p>
+                                                <select id="ddlSearchTerm" name="SearchTerm" class="ddlSearchTerm">
+                                                    <option value='すべて'>すべて</option>
+                                                    <option value='症状・疾患'>症状・疾患</option>
+                                                    <option value='薬剤'>薬剤</option>
+                                                    <option value='検査'>検査</option>
+                                                    <option value='画像'>画像</option>
+                                                    <option value='診療報酬点数表'>診療報酬点数表</option>
+                                                </select>
+                                                <input type="hidden" id="hdnSearchTerm" name="hdnSearchTerm" />
+                                                <input type="hidden" name="searchType" value="query" />
+                                                <input id="txtSearchText" name="SearchText" class="searchfield" type="text" />
+                                                <input type="image"
+                                                       id="btnSearch"
+                                                       name="btnSearch"
+                                                       src="~/common/images/spectacle_64.png"
+                                                       style="margin-left: -44px; margin-bottom: 7px; width: 15px;" />
+                                                <input type='text' name='dummy' style='display: none' />
+                                                <label id="resultTable"></label>
+                                            </p>
+                                        @* </form> *@
+                                    </div>
+                                </div>
+                                <!-- Enquete and Relative Products Link -->
+                                <div class="enqueteBox" style="display:none;">
+                                    <span id="lblEnqueteTitle"></span>
+                                    <div class="enqueteLink">
+                                        <a id="hlEnquete" href="#">こちらからアンケートに回答する＞</a>
+                                    </div>
+                                </div>
+                                <div style="width: 100%; text-align: right; margin-top: 10px;">
+                                    <span style="position: relative; right: 85px;">
+                                        <a href="https://clinicalsup.jp/jpoc/trialentry.aspx" target="_blank">
+                                            <img src="~/common/images/PoC_banner_trial_1.png" alt="" />
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                            @* TopInfomation placeholder *@
+                        </td>
+                        <td style="border: none; padding-right: 5px; text-align: right; vertical-align: top;">
+                            <div id="divVMUpdateMsg" style="color: #444444; margin-top:36px;margin-right: 10px; font-size:85%; padding: 5px;">
+                                臨床レビュー最終更新日<br/>@Model.VMUpdateDate<br/>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- Category Tabs -->
+                <div class='category-view-tab'>
+                    <div style='margin-top:15px;'>
+                        <div class="jpoc-navtab-container ">
+                            <ul class="nav jpoc-navtab-list">
+                                <li class="tablinks active" id="tablink1" style='width: 180px;' onmouseover ="openTab(event, 'tab1', 'tablink1')">
+                                    <div class ="active-top"></div>
+                                    <div class ="active-content">
+                                        <a href="#tab1" data-toggle="tab">症状・疾患</a>
+                                    </div>
+                                </li>
+                                <li class="tablinks" id="tablink2" style='width: 180px;' onmouseover ="openTab(event, 'tab3','tablink2')">
+                                    <div class ="active-top"></div>
+                                    <div class ="active-content">
+                                        <a href="#tab3" data-toggle="tab">薬剤</a>
+                                    </div>
+                                </li>
+                                <li class="tablinks" id="tablink3" style='min-width: 180px;' onmouseover ="openTab(event, 'tab4','tablink3')">
+                                    <div class ="active-top"></div>
+                                    <div class ="active-content">
+                                        <a href="#tab4" data-toggle="tab">検体検査</a>
+                                    </div>
+                                </li>
+                                <li class="tablinks" id="tablink4" style='min-width: 180px;' onmouseover ="openTab(event, 'tab5','tablink4')">
+                                    <div class ="active-top"></div>
+                                    <div class ="active-content">
+                                        <a href="#tab5" data-toggle="tab">診療報酬点数</a>
+                                    </div>
+                                </li>
+                                <li class="tablinks" id="tablink5" style='min-width: 180px;' onmouseover ="openTab(event, 'tab2','tablink5')">
+                                    <div class ="active-top"></div>
+                                    <div class ="active-content">
+                                        <a href="#tab2" data-toggle="tab">医療計算機</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab1">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class='row'>
+                                            <ul style='text-align: left; padding-left:0px'>
+                                                @* Render disease categories here *@
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab2">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <table class='tbl-calculator'>
+                                            <tr>
+                                                <td class="tvMenu1">@* Render calculator menu 1 *@</td>
+                                                <td class="tvMenu1" style="border-left-style: outset; border-left-width: 1px; border-left-color: rgba(221, 221, 221, 0.3);">@* Render calculator menu 2 *@</td>
+                                                <td class="tvMenu1" style="border-left-style: outset; border-left-width: 1px; border-left-color: rgba(221, 221, 221, 0.3);">@* Render calculator menu 3 *@</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab3">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class='row'>
+                                            <ul style='text-align: left; padding-left'>
+                                                @* Render drug categories here *@
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab4">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class='row'>
+                                            <ul style='text-align: left; padding-left'>
+                                                @* Render lab categories here *@
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab5">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        @* Render hoken categories and links here *@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category Tree (if needed) -->
+                <div class='category-view-tree' style="display:none;">
+                    <table class="category_tree">
+                        <tr>
+                            <td>
+                                <p class="category_title">症状・疾患</p>
+                                <div class="category_tree">
+                                    <ul style='text-align: left; padding-left'>
+                                        @* Render disease tree here *@
+                                    </ul>
+                                </div>
+                                <p class="category_title">医療計算機</p>
+                                <div class="category_tree">
+                                    <ul style='text-align: left; padding-left'>
+                                        <li style='list-style-type: none;'><a class='iframe' href='medicalCalculatorMenu.aspx'>一覧</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="category_title">薬剤</p>
+                                <div class="category_tree">
+                                    <ul style='text-align: left; padding-left'>
+                                        @* Render drug tree here *@
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="category_title">検体検査</p>
+                                <div class="category_tree">
+                                    <ul style='text-align: left; padding-left'>
+                                        @* Render lab tree here *@
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="category_title">診療報酬点数（平成28年度版）</p>
+                                <div class="category_tree">
+                                    <ul style="text-align: left; padding-left; margin-bottom: 10px;">
+                                        <li style="list-style-type: none; margin-bottom: 10px"><b>まとめ</b>：</li>
+                                        <li style="list-style-type: none"><a href="/jpoc/shinryou.aspx?File=summary%2findex.html&SearchTerm=...">平成28年度診療報酬改定のポイント</a></li>
+                                    </ul>
+                                    <ul style="text-align: left; padding-left; margin-bottom: 10px;">
+                                        <li style="list-style-type: none; margin-bottom: 10px"><b>施設基準：</b></li>
+                                        <li style="list-style-type: none"><a href="/jpoc/shinryou.aspx?File=shisetsu%2findex.html&SearchTerm=...">基本診療科の施設基準等</a></li>
+                                        <li style="list-style-type: none"><a href="/jpoc/shinryou.aspx?File=shisetsu%2findex.html&SearchTerm=...#toku">特掲診療科の施設基準等</a></li>
+                                    </ul>
+                                    <ul style="text-align: left; padding-left; margin-bottom: 10px;">
+                                        <li style="list-style-type: none"><b>告示本文：</b></li>
+                                    </ul>
+                                    <ul style='text-align: left; padding-left'>
+                                        @* Render hoken tree here *@
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br />
+        <partial name="_Footer" model="new JPOC_VM_DEMO.Models.FooterViewModel()" />
+    </div>
+    <input type="hidden" id="hdnTrialExpireLimit" value="0" />
+</div>
+

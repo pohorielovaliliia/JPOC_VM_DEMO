@@ -1,0 +1,110 @@
+@charset "utf-8";
+
+#wrapper * {
+	margin: 0;
+	padding: 0;
+}
+
+#wrapper 
+{
+	width: 700px;
+	background-color: #EEEEEE;
+}
+
+#wrapper h1 {
+	border-bottom: 2px solid #004F69;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 37px;
+	color: #004F69;
+	text-indent: 10px;
+	background-color: #FFFFFF;
+}
+
+#wrapper .contents {
+	padding: 5px 0;
+	text-align: center;
+	background-color: #FFFFFF;
+	border-bottom: 2px solid #004F69;
+}
+#wrapper #table {
+	width: 640px;
+	margin: 20px 30px;
+	border-top: 1px dotted #666666;
+}
+#wrapper dl {
+	width: 640px;
+	border-bottom: 1px dotted #666666;
+}
+#wrapper dl dt {
+	clear: left;
+	float: left;
+	width: 110px;
+	padding: 11px 0;
+	font-size: 12px;
+	line-height: 150%;
+	color: #7EAC37;
+	font-weight: bold;
+	text-indent: 10px;
+}
+
+#wrapper dl dd {
+	_height: 1%; /* Hack for Win IE6 */
+	margin: 0 0 0 110px;
+	width: 530px;
+	padding: 10px 0;
+	font-size: 12px;
+	line-height: 150%;
+}
+
+#wrapper #footer {
+	position: relative;
+	background-color: #FFFFFF;
+	height: 51px;
+}
+
+#wrapper #footer ul {
+	position: absolute;
+	top: 5px;
+	left: 12px; 
+}
+
+#wrapper #footer ul li {
+	list-style: none;
+	float: left;
+	width: 43px;
+}
+
+#wrapper #footer div {
+	position: absolute;
+	top: 11px;
+	left: 275px; 
+}
+
+.line {
+	border-top: 1px dashed #aaa !important;
+	margin : 10px 0 !important;
+}
+
+.feedback_table
+{
+    border: 1px solid rgb(83,111,50);
+    width : 100%;
+}        
+.feedback_table th 
+{
+    border: 1px solid rgb(83,111,50);
+    width:100px;
+    vertical-align :top;
+    background-color: rgb(118,159,60);
+    text-align : left;
+    color :White ;
+}
+.feedback_table td
+{
+    border: 1px solid rgb(83,111,50);
+}
+.disease_category_list
+{
+    min-width : 250px;
+}

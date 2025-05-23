@@ -1,0 +1,66 @@
+﻿.adminmenu { z-index :10; }
+.adminmenu ul { list-style: none;}
+    
+.adminmenu ul li {
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 5px;
+    width: 140px;
+    height: 20px;
+    font-weight: bold;
+}
+.adminmenu ul li:hover {
+    color: #fff;
+    background: #fff;
+}
+.adminmenu ul li ul {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: -1px;
+    padding: 5px;
+    width: 160px;
+    background: #fff;
+    margin-left:10px;
+}
+.adminmenu ul li ul li {
+    margin: 0;
+    padding: 0;
+    width: 160px;
+    border: none;
+    left:0px;
+    left:20px;
+    text-align:left;
+}
+.adminmenu ul li ul li a {
+    display: inline-block;
+    width: 160px;
+    height: 20px;
+    white-space:nowrap;
+}
+.adminmenu ul li ul li a:hover {
+    background: #999;
+    color: #fff;
+}
+.adminmenu ul li ul li ul {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 120px;
+    padding: 15px 2px;
+    width: 300px;
+    background: #fff;
+    margin-left:10px;
+}
+.adminmenu ul li ul li ul li {
+    margin: 0;
+    padding: 0;
+    width: 260px;
+    border: none;
+    left:10px;
+    text-align:left;
+}
+.adminmenu ul li ul li ul li a {
+    width: 260px;
+}

@@ -1,0 +1,990 @@
+﻿@charset "utf-8";
+
+/*####################################
+
+base
+
+####################################*/
+
+html {
+    font-family: "メイリオ",Osaka,Arial,Helvetica;
+}
+
+body {
+    font-family: "メイリオ",Meiryo, "ＭＳ Ｐゴシック", "MS UI Gothic",Osaka, "ヒラギノ角ゴ Pro W3",Arial,Helvetica;
+    color: black;
+    font-size: 12px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding: 0;
+    line-height: 1.5;
+    color: #333;
+}
+
+
+/*####################################
+
+structure
+
+####################################*/
+
+div#wrapper {
+    width: 980px;
+    margin: 0;
+    padding: 0;
+}
+
+div#main {
+    width: 960px;
+}
+
+/*####################################
+
+header
+
+####################################*/
+
+div#head {
+    width: 100%;
+    width: 960px;
+    margin: 0;
+    padding: 0 0 10px 0;
+    background-color: #7eac37;
+}
+
+div#g_head {
+    width: 100%;
+    background-color: #97c751;
+}
+
+ul#g_head_cat {
+    padding: 10px;
+    float: left;
+}
+
+    ul#g_head_cat li {
+        margin: 0;
+        padding: 0 8px 0 9px;
+        border-left: solid 1px #557517;
+        float: left;
+        line-height: 1.1;
+        list-style: none;
+        color: #557517;
+    }
+
+        ul#g_head_cat li.Current {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        ul#g_head_cat li:first-child {
+            border: none;
+        }
+
+ul#g_head_navi {
+    padding: 10px;
+    float: right;
+}
+
+    ul#g_head_navi li {
+        float: left;
+        list-style: none;
+        padding-left: 22px;
+        padding-right: 10px;
+    }
+
+        ul#g_head_navi li.Help {
+            background: url("../images/header_marker_unav_help.png") 6px 0 no-repeat;
+            border-right: solid 1px #557517;
+        }
+
+        ul#g_head_navi li.Login {
+            background: url("../images/header_marker_unav_login.png") 6px 0 no-repeat;
+        }
+
+div#g_head a {
+    color: #557517;
+}
+
+    div#g_head a:link, div#g_head a:visited {
+        text-decoration: none;
+    }
+
+    div#g_head a:hover, div#g_head a:focus, div#g_head a:active {
+        text-decoration: underline;
+    }
+
+div#search_set {
+    float: right;
+    padding: 10px 20px 5px 20px;
+}
+
+    div#search_set input.Text {
+        width: 250px;
+        height: 25px;
+        border: solid 1px #ccc;
+        margin-right: 5px;
+        vertical-align: middle;
+        margin: 0;
+    }
+
+    div#search_set input.btn {
+        line-height: 29px;
+        vertical-align: middle;
+    }
+
+p.option a {
+    color: #fff;
+    font-size: 10px;
+}
+
+div#head_main {
+    width: 98%;
+    margin: 0 auto;
+    border: solid 1px #ccc;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: url("../images/bg_headingwrap.png") 0 0 repeat;
+    zoom: 1;
+    clear: both;
+}
+
+    div#head_main h2 {
+        color: #7eac37;
+        font-size: 123%;
+        padding: 15px 10px 0 10px;
+        margin: 0;
+        float: left;
+    }
+
+        div#head_main h2 a {
+            color: #7eac37;
+        }
+
+
+ul.Checkbox {
+    float: left;
+    padding: 10px;
+    margin-left: 130px;
+    _margin-left: 65px;
+}
+
+    ul.Checkbox li {
+        float: left;
+        list-style: none;
+        margin: 5px 15px 0 0;
+    }
+
+    ul.Checkbox input {
+        float: left;
+        margin-top: 5px;
+        margin-right: 5px;
+    }
+
+ul.tool {
+    float: right;
+    padding: 15px 30px 0 0;
+}
+
+    ul.tool li {
+        float: left;
+        margin: 0 10px 0 0;
+        list-style: none;
+    }
+
+ul.fontsize {
+    float: right;
+    padding: 15px 0 0 0;
+}
+
+    ul.fontsize li {
+        float: left;
+        margin: 0 10px 0 0;
+        list-style: none;
+    }
+
+
+
+/*####################################
+
+clearfix
+
+####################################*/
+
+.clearfix:after {
+    height: 0;
+    visibility: hidden;
+    content: ".";
+    display: block;
+    clear: both;
+    font-size: 0;
+    line-height: 0;
+}
+/* start hides from macIE \*/
+* html .clearfix {
+    height: 1%;
+}
+
+.clearfix {
+    display: block;
+    min-height: 1%;
+}
+/* end hides from macIE */
+
+/* A. Base Style
+========== ========== ========== */
+/* A-1. reset Default Style
+---------- ---------- */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+
+li {
+    /*	list-style-type:none; */
+}
+
+q:before, q:after {
+    content: '';
+}
+
+img, abbr, acronym, fieldset {
+    border: 0;
+}
+
+textarea {
+    font-size: 100%;
+}
+
+
+
+
+
+/* A-2. set Base Style
+---------- ---------- ---------- */
+body {
+    color: #333;
+    background: #fff;
+    font: 13px/1.5 "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック", Helvetica, Arial, sans-serif;
+    /* for IE7 */
+    *font: 13px/1.5 "ＭＳ Ｐゴシック", Helvetica, Arial, sans-serif;
+    *font-family: "ＭＳ Ｐゴシック",Arial,Helvetica;
+}
+
+#wrapper {
+    width: 980px;
+    margin: 0 auto !important;
+}
+
+/*a:link {
+	color: #004F69;
+	text-decoration: underline;
+}
+a:visited {
+	color: #004F69;
+	text-decoration: underline;
+}
+a:hover ,
+a:focus {
+	color: #004F69;
+	text-decoration: none;
+}
+a:active {
+	color: #004F69;
+	text-decoration: none;
+}*/
+
+a:link {
+    color: #004F69;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #004F69;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: #004F69;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #004F69;
+    text-decoration: underline;
+}
+
+hr {
+    display: none;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/* 1.2 Message CSS */
+.error, .info {
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.error {
+    color: #ee0000;
+    border-color: #ee0000;
+    background-color: #ffe2e2;
+}
+
+.info {
+    color: #00bb00;
+    border-color: #00bb00;
+    background-color: #e2ffe6;
+}
+
+.ButtonOrder1 {
+    margin: -20px 0 0 0;
+    padding: 0px 0px 0px 81%;
+}
+
+.ButtonOrder2 {
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #DDDDDD;
+    background-color: #e1eccb;
+}
+
+/* Imported Befor CSS1112 */
+div.entry {
+    margin: 0;
+    padding: 0px;
+}
+
+    div.entry .title {
+        max-width: 500px;
+        cursor: pointer;
+        margin: 0 0 5px 10px;
+        float: left;
+    }
+
+    div.entry div.expandIcon {
+        width: 14px;
+        height: 14px;
+        float: left;
+        background: url("../images/marker_check01.png") 0 0 no-repeat;
+        display: block;
+        cursor: pointer;
+    }
+
+    div.entry div.toDoIcon {
+        margin: 0 0 0 5px;
+        float: left;
+    }
+
+    div.entry div.binIcon {
+        width: 13px;
+        height: 14px;
+        margin: 0 0 0 5px;
+        float: left;
+        background: url("../images/tbox.png") 0 0 no-repeat;
+        display: block;
+        cursor: pointer;
+    }
+
+div#MainContents .drugCust .tab {
+    font-size: 11px;
+    list-style-type: none;
+    margin: 5px 0 0 30px;
+}
+
+    div#MainContents .drugCust .tab li {
+        width: 54px;
+        cursor: pointer;
+        float: left;
+        margin: 0 10px 0 0;
+        padding: 2px 12px;
+        background-color: #FCF4E7;
+        border: 1px solid #EBDBC0;
+        display: block;
+    }
+
+        div#MainContents .drugCust .tab li.active {
+            color: #fff;
+            background-color: #000;
+        }
+
+        div#MainContents .drugCust .tab li.inactive {
+            cursor: default;
+        }
+
+div#MainContents .drugCust .select {
+    width: auto;
+    margin: 10px 0 15px 30px;
+}
+
+    div#MainContents .drugCust .select table {
+        width: auto;
+    }
+
+div#orderset .drugCust .select td {
+    padding: 0 10px 0 0;
+    border-bottom: 1px dashed lightgray;
+}
+
+.drugCust .select input {
+    width: 15px;
+    height: 15px;
+    margin: 0 5px 0 0;
+}
+
+div#orderset .drugCust .select .btn {
+    width: 100%;
+    height: 25px;
+    padding: 0;
+}
+
+div#orderset .drugCust .select div.replace {
+    width: 75px;
+    height: 18px;
+    margin: 0 5px 0 0;
+    float: right;
+    background: url("../images/btn_replace_off.png") 0 0 no-repeat;
+    display: block;
+    cursor: pointer;
+}
+
+div#orderset .drugCust .select div.add {
+    width: 75px;
+    height: 18px;
+    float: right;
+    background: url("../images/btn_add_off.png") 0 0 no-repeat;
+    display: block;
+    cursor: pointer;
+}
+
+#dcDialog {
+    font-size: 14px;
+}
+
+    #dcDialog div {
+        float: right;
+    }
+
+    #dcDialog input {
+        width: 320px;
+        font-size: 14px;
+        margin: 0 0 5px 5px;
+        border-radius: 5px;
+        border: 1px solid #aaa;
+        float: right;
+    }
+
+div#orderset table.drugIndicator {
+    /* margin: 20px 0 3px 0px;  */
+    margin: 10px;
+    display: table;
+}
+
+div#orderset .drugCust table.drugIndicator {
+    margin: 20px 0 0 30px;
+}
+
+.drugIndicator td {
+    width: 70px;
+    padding-right: 5px;
+}
+
+.drugIndicator span {
+    width: 100%;
+    font-size: 11px;
+    color: #bbb;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    background-color: #eee;
+    text-indent: 0;
+    text-align: center;
+    margin: 3px 0 3px 0;
+    display: block;
+}
+
+    .drugIndicator span.indicate {
+        background-color: blue;
+        border: 1px solid gray;
+        color: white;
+    }
+
+        .drugIndicator span.indicate a {
+            color: white;
+        }
+
+            .drugIndicator span.indicate a:hover {
+                color: white;
+            }
+
+    .drugIndicator span.alert {
+        background-color: yellow;
+        border: 1px solid gray;
+        color: black;
+    }
+
+        .drugIndicator span.alert a {
+            color: black;
+        }
+
+            .drugIndicator span.alert a:hover {
+                color: black;
+            }
+
+    .drugIndicator span.contraindicate {
+        background-color: red;
+        border: 1px solid gray;
+        color: white;
+    }
+
+        .drugIndicator span.contraindicate a {
+            color: white;
+        }
+
+            .drugIndicator span.contraindicate a:hover {
+                color: white;
+            }
+
+/* TT: for Drug Customization */
+.clear {
+    clear: both;
+}
+
+.hide {
+    display: none;
+}
+
+.drugCust {
+    margin: 0 0 0 15px;
+}
+
+    .drugCust .entry {
+        /* 20130508 P-S-00242 Change */
+        margin: 0;
+        padding: 0px;
+        float: right;
+        /* margin: 0; padding: 0px; */
+    }
+
+        .drugCust .entry .title {
+            max-width: 500px;
+            cursor: pointer;
+            margin: 0 0 5px 10px;
+            float: left;
+        }
+
+    .drugCust a {
+        color: #004F69;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+        .drugCust a:hover {
+            text-decoration: underline;
+        }
+
+    .drugCust .entry div.expandIcon {
+        width: 14px;
+        height: 14px;
+        float: left;
+        background: url("../images/marker_check01.png") 0 0 no-repeat;
+        display: block;
+        cursor: pointer;
+    }
+
+    .drugCust .entry div.toDoIcon {
+        margin: 0 0 0 5px;
+        float: left;
+    }
+
+    .drugCust .entry div.binIcon {
+        width: 13px;
+        height: 14px;
+        margin: 0 0 0 5px;
+        float: left;
+        background: url("../images/tbox.png") 0 0 no-repeat;
+        display: block;
+        cursor: pointer;
+    }
+    /* 禁忌 */
+    .drugCust .entry div.medicinalContraindBtn {
+        display: inline;
+        font-size: 10px;
+        margin: 0 5px 0 5px;
+        padding: 0 2px 0 2px;
+        font-weight: normal;
+        cursor: pointer;
+        border: 1px solid #669933;
+        background-color: #DC143C;
+        color: white;
+        -webkit-border-radius: 9px;
+        -moz-border-radius: 9px;
+        border-radius: 9px;
+    }
+
+    .drugCust .entry div.ciBox {
+        margin: 20px 0 0 -30px;
+        background: url('../images/arrow_top.gif') top center no-repeat;
+        width: 230px;
+        float: left;
+        position: absolute;
+        font-size: 12px;
+    }
+
+        .drugCust .entry div.ciBox .title {
+            margin: 11px 0 0 0;
+            padding: 3px 5px;
+            background-color: #ccc;
+            width: 216px;
+            position: static;
+            display: block;
+            border: 2px solid #ccc;
+            font-size: 11px;
+        }
+
+        .drugCust .entry div.ciBox .txt {
+            margin: 0;
+            padding: 8px 5px;
+            background-color: #fff;
+            width: 216px;
+            position: relative;
+            display: block;
+            border: 2px solid #ccc;
+            border-top: 0;
+            clear: both;
+            min-height: 10px;
+        }
+    /* 用法 */
+    .drugCust .entry div.drBtn {
+        height: 14px;
+        display: inline;
+        font-size: 11px;
+        margin: 0 0 0 0px;
+        padding: 0px 7px 0px 6px;
+        font-weight: bold;
+        cursor: pointer;
+        border: 1px solid #89a;
+        background-color: #369;
+        color: #def;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        z-index: 0;
+    }
+    /* 用法(非活性) */
+    .drugCust .entry div.drDisBtn {
+        height: 14px;
+        display: inline;
+        font-size: 11px;
+        margin: 0 0 0 0px;
+        padding: 0px 7px 0px 6px;
+        font-weight: bold;
+        cursor: default;
+        border: 1px solid gray;
+        background-color: #808080;
+        color: white;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        z-index: 0;
+    }
+
+    .drugCust .entry div.drBox {
+        /*
+    margin: 20px 0 0 15px; 
+    background: url('../images/arrow_top.gif') top center no-repeat; 
+    */
+        margin: 20px 0 0 0px;
+        background: url('../images/arrow_top.gif') no-repeat 150px 0px;
+        width: 230px;
+        float: left;
+        position: absolute;
+        font-size: 12px;
+    }
+
+        .drugCust .entry div.drBox .title {
+            margin: 11px 0 0 0;
+            padding: 3px 5px;
+            background-color: #ccc;
+            width: 216px;
+            position: static;
+            display: block;
+            border: 2px solid #ccc;
+            font-size: 11px;
+            height: auto;
+        }
+
+        .drugCust .entry div.drBox .txt {
+            margin: 0;
+            padding: 8px 5px;
+            background-color: #fff;
+            width: 216px;
+            position: relative;
+            display: block;
+            border: 2px solid #ccc;
+            border-top: 0;
+            clear: both;
+            min-height: 10px;
+        }
+
+    /* 同効薬 */
+    .drugCust .entry div.altBtn {
+        display: inline;
+        font-size: 11px;
+        margin: 0 0 0 0px;
+        padding: 0px 7px 0px 6px;
+        height: 14px;
+        z-index: 0;
+        font-weight: bold;
+        cursor: pointer;
+        border: 1px solid #89a;
+        background-color: #369;
+        color: #def;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+    }
+    /* 同効薬(非活性) */
+    .drugCust .entry div.altDisBtn {
+        display: inline;
+        font-size: 11px;
+        margin: 0 0 0 0px;
+        padding: 0px 7px 0px 6px;
+        height: 14px;
+        z-index: 0;
+        font-weight: bold;
+        cursor: default;
+        border: 1px solid gray;
+        background-color: #808080;
+        color: white;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+    }
+
+    .drugCust .entry div.altBox {
+        margin: 20px 0 0 0px;
+        background: url('../images/arrow_top.gif') no-repeat 185px 0px;
+        width: 230px;
+        float: left;
+        position: absolute;
+        font-size: 12px;
+    }
+
+        .drugCust .entry div.altBox .title {
+            margin: 11px 0 0 0;
+            padding: 3px 5px;
+            background-color: #ccc;
+            width: 216px;
+            position: static;
+            display: block;
+            border: 2px solid #ccc;
+            font-size: 11px;
+            height: auto;
+        }
+
+        .drugCust .entry div.altBox .txt {
+            margin: 0;
+            padding: 8px 5px;
+            background-color: #fff;
+            width: 216px;
+            position: relative;
+            display: block;
+            border: 2px solid #ccc;
+            clear: both;
+            min-height: 10px;
+        }
+/* 保険 */
+span.ItemTitle div.maruhoBtn, div.OrderItemTitle div.maruhoBtn {
+    display: none;
+    padding: 0 2px 0 2px;
+    font-size: 10px;
+    margin: 0 5px 0 5px;
+    font-weight: normal;
+    cursor: pointer;
+    border: 1px solid #00cc00;
+    background-color: #00cc00;
+    color: white;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+    width: 6px;
+    height: 6px;
+}
+
+div#tooltip_maruho {
+    position: absolute;
+    z-index: 2;
+    width: 230px;
+    display: block;
+    margin: 0px;
+}
+
+div.entry div.maruhoArrow {
+    width: 230px;
+    background: url('../images/arrow_top.gif') no-repeat 10px 0px;
+    display: block;
+    height: 12px;
+    margin: 0px 0px -1px 0px;
+}
+
+div.entry div.maruhoBox {
+    font-size: 12px;
+    display: block;
+    margin: 0px 0 0 0px;
+}
+
+    div.entry div.maruhoBox .title {
+        padding: 3px 5px;
+        background-color: #ccc;
+        width: 220px;
+        height: 18px;
+        font-size: 11px;
+        font-weight: normal;
+        color: black;
+        display: block;
+        margin: 0px 0 0 0px;
+    }
+
+    div.entry div.maruhoBox .txt {
+        width: 216px;
+        border: 2px solid #ccc;
+        border-top: 0;
+        padding: 8px 5px;
+        clear: both;
+        background-color: #fff;
+        min-height: 10px;
+        font-size: 11px;
+        font-weight: normal;
+        color: black;
+        display: block;
+        margin: 0px 0 0 0px;
+    }
+
+/* tour_button */
+div#tour_button {
+    position: fixed;
+    right: 0px;
+    width: 26px;
+    bottom: 120px;
+    repeat-y: none;
+    z-index: 1500;
+}
+
+    div#tour_button:hover {
+        width: 30px;
+    }
+
+/*VTT*/
+.DrugUseDiv {
+    background-color: #004f69; /* #008CBA; Blue */
+    border: none;
+    color: white !important;
+    padding: 1px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 11px;
+    border-radius: 5px;
+    margin-left: -5px;
+    /*cursor: pointer;*/
+}
+
+.DrugUsePointer {
+    cursor: pointer;
+}
+
+.DrugUseSituation {
+    display: inline !important;
+    width: 45px;
+}
+
+.popbox {
+    display: none;
+    position: absolute;
+    z-index: 99999;
+    width: 300px;
+    padding: 10px;
+    background: #004f69;
+    color: #fff;
+    border: 1px solid #4D4F53;
+    margin: 0px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(164, 164, 164, 1);
+    box-shadow: 0px 0px 5px 0px rgba(164, 164, 164, 1);
+    border-radius: 5px;
+    font-size: 11px;
+    /*left: 5%;*/
+}
+
+.notetable td {
+    padding: 10px;
+}
+
+#note {
+    position: absolute; /*fixed;*/
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #FFFFD1;
+    text-align: center;
+    line-height: 3.5;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px black;
+    margin-bottom: 10px;
+    zoom: 1;
+    display: none;
+    border-bottom: solid 1px grey;
+}
+
+    #note #close {
+        cursor: pointer;
+    }
+
+.regbutton {
+    background-color: #004f69;
+    border: none;
+    color: white !important;
+    padding: 4px;
+}
+
+    .regbutton:hover {
+        text-decoration: none !important;
+    }
+
+.notediv {
+    word-break: break-word;
+    max-width: 750px;
+}

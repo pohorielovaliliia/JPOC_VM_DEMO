@@ -1,0 +1,64 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- TODO:REPLACE HEAD TO REAL HEAD FROM BasePage.master -->
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    @* <link rel="stylesheet" href="~/css/header.min.css" asp-append-version="true" /> *@
+    @* <link rel="stylesheet" href="~/css/maincontents.css" asp-append-version="true" /> *@
+    @* <link rel="stylesheet" href="~/css/subcontents.css" asp-append-version="true" /> *@
+    @* <link rel="stylesheet" href="~/css/footer.css" asp-append-version="true" /> *@
+    @* <link rel="stylesheet" href="~/css/colorbox.css" asp-append-version="true" /> *@
+    @* <link rel="stylesheet" href="~/css/AdminMenu.css" asp-append-version="true" /> *@
+    <link rel="stylesheet" href="~/css/search/search_style.min.css?v=1.02.11" />
+    <link rel="stylesheet" href="~/common/css/header.min.css?v=1.11.13" />
+    @* <link rel="stylesheet" href="~/common/css/main.css?v=1.10.24" /> *@
+    <link rel="stylesheet" href="~/common/css/subcontents.css" />
+    <link rel="stylesheet" href="~/common/css/footer.css?v=1.12.27" />
+    <link rel="stylesheet" href="~/common/css/colorbox.css" />
+    <link rel="stylesheet" href="~/common/css/jquery.ui/jquery.ui.all.css" />
+    <link rel="stylesheet" href="~/common/css/base.css" />
+
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    <!--[if LTE IE 7]>
+    <div id="note"></div>
+    <![endif]-->
+
+    <!-- TODO: Activate Loading Buttons During Search Process -->
+
+    @* <div class="ajaxBusy"> *@
+    @*     <div> *@
+    @*         <div> *@
+    @*             &nbsp;<img src="common/images/loading2.gif" alt="Now processing ..." />&nbsp; *@
+    @*         </div> *@
+    @*     </div> *@
+    @* </div> *@
+
+    @* <div class="searchBusy"> *@
+    @*     <div> *@
+    @*         <div> *@
+    @*             &nbsp;<img src="common/images/loading2.gif" alt="Now searching ..." />&nbsp; *@
+    @*         </div> *@
+    @*     </div> *@
+    @* </div> *@
+
+    @* <div class="loadBusy"> *@
+    @*     <div> *@
+    @*         <div> *@
+    @*             &nbsp;<img src="common/images/loading2.gif" alt="Now loading ..." />&nbsp; *@
+    @*         </div> *@
+    @*     </div> *@
+    @* </div> *@
+
+    @* <input type="hidden" id="hdnMessageArea" value="@TempData["MessageArea"]" /> *@
+    @* <input type="hidden" id="hdnDupClickControl" value="" /> *@
+
+    @RenderBody()
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

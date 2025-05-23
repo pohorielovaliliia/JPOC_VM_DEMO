@@ -1,0 +1,40 @@
+<div class="drugbox bs-popover-yakuri-content" style="display: block;">
+    <table class="yakuri_table">
+        <colgroup>
+            <col style="width: 120px;">
+            <col style="width: auto;">
+        </colgroup>
+        <tbody>
+            <tr class="related_products">
+                <th>商品名一覧</th>
+                <td>
+                    {{{YakuriTable.relatedProducts}}}
+                </td>
+            </tr>
+
+            {{#each YakuriTable.yakuriListing}}
+            <tr class="yakuri_data">
+                <th>薬理情報</th>
+                <td>
+                    {{{yakuri_link2}}}
+                </td>
+            </tr>
+            <tr class="yakuri_data">
+                <th>同効薬一覧</th>
+                <td>
+                    {{{categories}}}
+                </td>
+            </tr>
+            {{/each}}
+
+            <tr class="drug_caution">
+                <th>要注意情報</th>
+                <td>
+                    {{{YakuriTable.drugInd}}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="clear"></div>
+
