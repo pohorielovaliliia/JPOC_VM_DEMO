@@ -1,0 +1,960 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Settings>
+  <!-- ローカル開発環境 (S) -->
+  <ENV_LOCAL>
+    <!-- DB接続文字列 -->
+    <NAME>ConnectionStrings</NAME>
+    <VALUE>Server=.;Database=JPOC_PROD; User Id=sa; Password=password</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- 管理者メールアドレス -->
+    <NAME>AdminEmailAddress</NAME>
+    <VALUE></VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- メール送信者アドレス -->
+    <NAME>EmailSendFrom</NAME>
+    <VALUE>ibs-elsj@ib-systems.co.jp</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- フィードバック送信先メールアドレス -->
+    <NAME>FeedbackTo</NAME>
+    <VALUE>frank@vintedge.com</VALUE>
+  </ENV_LOCAL>
+  <!--JPOC-704-->
+  <ENV_LOCAL>
+    <!-- フィードバック送信先メールアドレス -->
+    <NAME>FeedbackToContent</NAME>
+    <VALUE>frank@vintedge.com</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- IP Account Creation Timeout -->
+    <NAME>VerifyTimeout</NAME>
+    <VALUE>7</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- IP Account Creation Timeout -->
+    <NAME>CreationTimeout</NAME>
+    <VALUE>2</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- IP Account Creation Support Email -->
+    <NAME>CreationEmailSupport</NAME>
+    <VALUE>weilip@vintedge.com</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- SilverPop -->
+    <NAME>SilverPop_DatabaseID</NAME>
+    <VALUE>9125775</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- SilverPop -->
+    <NAME>SilverPop_SourceUrl</NAME>
+    <VALUE>http://uattest.clinicalsup.jp/jpoc/</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- SilverPop -->
+    <NAME>SilverPop_SourceName</NAME>
+    <VALUE>JPoC</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- SilverPop -->
+    <NAME>SilverPop_Source</NAME>
+    <VALUE>Trial</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- SilverPop -->
+    <NAME>SilverPop_APIURL</NAME>
+    <VALUE>http://api4.silverpop.com/XMLAPI</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- SMTPサーバーアドレス -->
+    <NAME>SmtpServer</NAME>
+    <VALUE>10.10.10.10</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- SMTPサーバーポート番号 -->
+    <NAME>SmtpPort</NAME>
+    <VALUE>25</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- SMTPサーバーユーザーID -->
+    <NAME>SmtpUserId</NAME>
+    <VALUE>devuser01</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- SMTPサーバーユーザーパスワード -->
+    <NAME>SmtpPassword</NAME>
+    <VALUE>devuser01</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- SMTPサーバー接続へのSSL使用有無 -->
+    <NAME>SmtpUseSsl</NAME>
+    <VALUE>False</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- DBアクセス時間ログ出力有無 -->
+    <NAME>LogDbErapsTime</NAME>
+    <VALUE>false</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- DEMO環境とみなしてDEMO用の表示制御をするか否か 
+         none=DEMO以外
+         DEMO=P-S-0XXXX変更依頼前のDEMO
+    -->
+    <NAME>IsDemo</NAME>
+    <VALUE>none</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!--Payment SOAP暗号化キー-->
+    <NAME>TripleDesKey</NAME>
+    <VALUE>inGA5fLzM3DVPhZx</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!--Payment SOAP暗号化 IV-->
+    <NAME>TripleDesIv</NAME>
+    <VALUE>fQt0wNFG</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!--Payment ユーザ名-->
+    <NAME>PaymentUserName</NAME>
+    <VALUE>Payment01</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!--Payment パスワード-->
+    <NAME>PaymentUserPassWord</NAME>
+    <VALUE>Payment01</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <NAME>RegisterURL</NAME>
+    <VALUE>http://jpoc.localhost/JPOC/Register/SingleSignOn.aspx</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- 画像ファイルが存在しない場合の挙動
+         0:アイコンも表示しリンクも設定
+         1:アイコンは表示するがリンクは張らない
+         2:アイコン非表示
+    -->
+    <!-- 
+      MEMO: 環境によって動作変更無し　
+      また、実際の値として画像なしの挙動が確定している為
+      削除を行った方が混乱は少なくなると思われる
+    -->
+    <NAME>NoImageLinkBehavior</NAME>
+    <VALUE>2</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- 画像ファイルが非表示に指定されている場合の挙動
+         0:アイコンも表示しリンクも設定
+         1:アイコンは表示するがリンクは張らない
+         2:アイコン非表示
+    -->
+    <!-- 
+      MEMO: 環境によって動作変更無し　
+      また、実際の値として画像のステータスは画像一覧でしか使用していない為
+      削除を行った方が混乱は少なくなると思われる
+    -->
+    <NAME>HideImageLinkBehavior</NAME>
+    <VALUE>0</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- CMS機能を有効にするか否か true:有効にする false:無効にする -->
+    <NAME>EnableCms</NAME>
+    <VALUE>true</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- 箱売り(VM)でのメニュー非表示及びSessionIDチェック禁止 -->
+    <NAME>VM</NAME>
+    <VALUE>False</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- 外部リンクの無効化 -->
+    <NAME>DisableExternalLink</NAME>
+    <VALUE>false</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- リンクリゾルバURL -->
+    <!-- DisableExternalLinkがfalseの場合のみ有効 -->
+    <NAME>LinkResolverUrl</NAME>
+    <!-- 外部リンクページ内有効 中間ページで外部リンク警告の上リンク有効 -->
+    <!-- <VALUE>resolver.aspx?TargetUrl={0}&amp;Text={1}</VALUE> -->
+    <!-- 中間ページで外部リンク無効表示 -->
+    <!-- <VALUE>resolver.aspx</VALUE> -->
+    <!-- 外部リンクページ内有効 -->
+    <VALUE></VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- トライアルページの有効化 -->
+    <NAME>EnableTrialPage</NAME>
+    <VALUE>true</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- SorlサーバーURL ブランクはSolrを使用しない設定 -->
+    <NAME>SolrUrl</NAME>
+	  <VALUE>http://localhost:8983/solr/jpoc</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- Sorlへの疎通確認用のリクエスト待ち時間(ms) -->
+    <NAME>SolrRequestWaitTime</NAME>
+    <VALUE>300</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- TOPページでの適応・コメントの初期状態(true=収納、false=展開) -->
+    <NAME>CollapsePatientProfileOnSearchDetailPage</NAME>
+    <VALUE>true</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- 検査・処方例ページでの適応・コメントの初期状態(true=収納、false=展開) -->
+    <NAME>CollapsePatientProfileOnSituationPage</NAME>
+    <VALUE>false</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- TOPページでの推奨度アイコンの表示制御（true=表示/false=非表示） -->
+    <NAME>ShowGradeIconOnSearchDetailPage</NAME>
+    <VALUE>false</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- 検査・処方例ページでの推奨度アイコンの表示制御（true=表示/false=非表示） -->
+    <NAME>ShowGradeIconOnSituationPage</NAME>
+    <VALUE>false</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- 管理者WebServiceの有効化（true=有効/false=無効） -->
+    <NAME>EnableAdminWebService</NAME>
+    <VALUE>true</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- 管理者(GWの場合もあり)IPアドレス -->
+    <NAME>AdminIpV4Addr</NAME>
+    <VALUE>127.0.0.1</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- 編集者WebServiceの有効化（true=有効/false=無効） -->
+    <NAME>EnableEditorWebService</NAME>
+    <VALUE>true</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- 編集者(GWの場合もあり)IPアドレス -->
+    <NAME>EditorIpV4Addr</NAME>
+    <VALUE>127.0.0.1</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- 連続アクセス対策（true=有効/false=無効） -->
+    <NAME>EnableAccountBan</NAME>
+    <VALUE>false</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- 連続アクセスチェック単位時間（単位：時間） -->
+    <!-- 0の場合、チェック不能になる -->
+    <NAME>AccountBanCheckTime</NAME>
+    <VALUE>1</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- 連続アクセスリミット件数（単位:数値） -->
+    <!-- 0の場合、チェックしない -->
+    <NAME>AccountBanLimitCount</NAME>
+    <VALUE>55</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- BANを行われたアカウントの復旧時間 -->
+    <!-- 0の場合、すぐ復旧できる -->
+    <NAME>AccountRemoveBanTime</NAME>
+    <VALUE>1</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- トライアルーの期限注意アラート-->
+    <!-- N > 0: ログイン回数が既定値の場合アラート表示をする -->
+    <!-- N = 0: 機能自体を無効 -->
+    <!-- N < 0: 無制限に表示 -->
+    <NAME>TrialLimitAlert</NAME>
+    <VALUE>1</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- 著者校正/監修レビュー配置箇所 -->
+    <!-- above: 上を表示 -->
+    <!-- below: 下を表示 -->
+    <!-- both: 両方を表示 -->
+    <!-- none もしくは無し: 表示しない -->
+    <NAME>LastUpdateVertical</NAME>
+    <VALUE>below</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- DEMO設定で管理者ログインが可能なIP -->
+    <NAME>DemoAdminIP</NAME>
+    <VALUE>127.0.0.1</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- トライアルの再設定期間 -->
+    <!-- 
+      トライアルユーザかつlogin_expire が 9999/12/31 の場合、
+      ログイン日＋[TrialResetExpiryDate]を[login_expire]として再設定する
+      [login_expire]の当日はログイン不可の為
+      ログイン日から、（ログイン日を除き）60日間有効にするには61を設定する
+      e.g. ログイン日 2014/06/01 がログイン日＋61日設定→2014/07/31までログイン可能([login_expire : 2014/08/01])
+    -->
+    <NAME>TrialResetExpiryDate</NAME>
+    <VALUE>31</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- トライアル設定期間 -->
+    <!-- 
+      トライアル登録時の設定期限
+      登録日＋[TrialDefaultExpiryDate]を[login_expire]として設定する
+      [login_expire]の当日はログイン不可の為
+      ログイン日から、（ログイン日を除き）15日間有効にするには16を設定する
+      e.g. ログイン日 2014/06/01 がログイン日＋16日設定→2014/06/16までログイン可能([login_expire : 2014/06/17])
+    -->
+    <NAME>TrialDefaultExpiryDate</NAME>
+    <VALUE>16</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- トライアルメール添付ファイル名 -->
+    <!-- 
+       AppData/Templates/****** のファイル名を指定する
+       空文字、もしくは指定ファイルが存在しない場合は添付を行わない
+    -->
+    <NAME>TrialAttachFileName</NAME>
+    <VALUE>sample_content.pdf</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- ClinikalKeyAPIへのリクエスト（Base）Url -->
+    <!-- 環境で利用しない場合は空白 -->
+    <NAME>ClinikalKeyApiUrl</NAME>
+    <VALUE>https://ck2-cert.clinicalkey.jp/service/thirdparty/sea</VALUE>
+    <!-- <VALUE>http://192.168.10.35:8080/CkTest/CkTest022</VALUE> -->
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- ClinikalKeyAPIへのリクエストタイムアウト（ミリ秒） -->
+    <NAME>ClinikalKeyApiTimeout</NAME>
+    <VALUE>15000</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- ClinikalKeyAPIへの検索フィールド -->
+    <!-- カンマ区切りの文字列を設定する -->
+    <NAME>ClinikalKeyField</NAME>
+    <VALUE>eid,cid,itemtitle,sourcetitle,contenttype&amp;rows=10</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- ClinikalKeyAPIへの検索フィールド -->
+    <!-- カンマ区切りの文字列を設定する -->
+    <NAME>ClinikalKeyFieldFullText</NAME>
+    <VALUE>eid,cid,itemtitle,sourcetitle,contenttype&amp;rows=10</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- ClinikalKeyAPIへの検索ContentType -->
+    <!-- カンマ区切りの文字列を設定？空白可能 BOOK,CLINICAL_TRIAL,
+     DRUG_MONOGRAPH,MEDICAL_TOPIC,JOURNAL,IMAGE,
+     PRACTICE_GUIDE_SUMMARY,MEDLINE,PATIENT_HANDOUT,MEDICAL_PROCEDURE,VIDEO-->
+    <NAME>ClinikalKeyContentType</NAME>
+    <VALUE>BOOK,CLINICAL_TRIAL,DRUG_MONOGRAPH,MEDICAL_TOPIC,JOURNAL,PRACTICE_GUIDE_SUMMARY,MEDLINE,PATIENT_HANDOUT,MEDICAL_PROCEDURE,VIDEO</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- ClinikalKeyAPIへの再検索日数 -->
+    <!-- N < 0: 取得結果がある場合再検索はしない（どんなに古い検索結果でも利用） -->
+    <!-- N = 0: （実質）必ず再検索 -->
+    <!-- N > 0: この指定日数より過去の検索結果の場合、再検索を行う -->
+    <NAME>ClinikalKeyResetExpiryDate</NAME>
+    <VALUE>30</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- IP allowed for Admin Roles -->
+    <NAME>IP_Restriction</NAME>
+    <VALUE>198.176.124.1-6|198.176.124.16-23|198.176.125.1-6|198.176.125.16-23|198.176.81.33-34|198.176.82.33-34|198.176.85.33-34|198.176.84.33-34</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- Based on Code Property: 
+    ElsevierAdmin = 1 |InstitutionAdmin = 3 |InstitutionIP = 4 |InstitutionUser = 5 |
+    Individual = 6 |Trial = 7 |ElsevierEditor = 8 |ElsevierManager = 9 |ElsevierUser = 10 |VMAdmin = 11 |
+    VMUser = 12 |ElsevierSales = 13 |TechnicalSupport = 14 |DvdUser = 15 |Agency = 16 |
+    VMContents = 17 |InstitutionSelfUser = 19 |-->
+    <NAME>IP_Restriction_Roles</NAME>
+    <VALUE>ElsevierAdmin</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- IP allowed for Admin Roles -->
+    <NAME>SourceName</NAME>
+    <VALUE>JPOC_LOCAL</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <NAME>Rijndael128BitKey</NAME>
+    <VALUE>1A06EAFBF85C31434A58967A4FB0FC08</VALUE>
+  </ENV_LOCAL>
+  <!--EVO PDF Settings-->
+  <ENV_LOCAL>
+    <NAME>EvoPdf_Key</NAME>
+    <VALUE>nbavva6uva6rrL2vs629rqyzrK+zpKSkpA==</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <NAME>EvoPdf_IISApplicationName</NAME>
+    <VALUE>/jpoc</VALUE>
+  </ENV_LOCAL>
+   <ENV_LOCAL>
+    <NAME>AdobeDestLocation</NAME>
+    <VALUE>C:\My Program Files\VS Workspace\JPOC\Misc\Adobe XML generated</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <NAME>LockoutTries</NAME>
+    <VALUE>5</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <NAME>TimeLockout</NAME>
+    <VALUE>3</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <NAME>EnableUACompatibility</NAME>
+    <VALUE>false</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <NAME>VMBulkUploadExePath</NAME>
+    <VALUE>C:\JPOCVM\VMBulkUploadConsoleApp\VMBulkUploadConsoleApp.exe</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- Sample Toggle FieldName1: Show-Mandatory | Show-Optional | FieldName2: Hide-Optional -->
+    <!-- Fields are fixed, can't add new fields dynamically -->
+    <NAME>TrialEntry-FieldControl</NAME>
+    <VALUE>MailAddress: Show-Mandatory | Name: Hide-Optional | Profession: Show-Mandatory | InstitutionName: Hide-Optional | PhoneNumber: Hide-Optional | Specialty: Hide-Optional</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <NAME>SchedulerToken</NAME>
+    <VALUE>7406c2a2-55ee-11e9-8647-d663bd873d93</VALUE>
+  </ENV_LOCAL>
+<!--JPOC-430-->
+  <ENV_LOCAL>
+    <NAME>IsPickupNewContent</NAME>
+    <VALUE>True</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <NAME>PickupNewContentRangeInMonth</NAME>
+    <VALUE>60</VALUE>
+  </ENV_LOCAL>
+  <!--JPOC-313-->
+  <ENV_LOCAL>
+    <NAME>VMDiskLabel</NAME>
+    <VALUE>C:\</VALUE>
+  </ENV_LOCAL>
+  <!--JPOC-514-->
+  <ENV_LOCAL>
+    <NAME>ContentList_FilePath</NAME>
+    <VALUE>~/doc/contentlist</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <NAME>ContentList_FileName</NAME>
+    <VALUE>PoCコンテンツ名リスト（診療科ごと）.xlsx</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- Quotation email sending -->
+    <NAME>Quotation_ContactForm_EmailDestination</NAME>
+    <VALUE>frank@vintedge.com</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <!-- PDF quotation email sending -->
+    <NAME>Quotation_PDFQuotation_EmailDestination</NAME>
+    <VALUE>frank@vintedge.com</VALUE>
+  </ENV_LOCAL>
+  <!--JPOC-471-->
+  <ENV_LOCAL>
+    <NAME>SolrReindexExePath</NAME>
+    <VALUE>C:\Frank\JPOC1\SolrReindexConsoleApp\SolrReindexConsoleApp.exe</VALUE>
+  </ENV_LOCAL>
+  <!--JPOC-639-->
+  <ENV_LOCAL>
+    <NAME>PubmedUrl</NAME>
+    <VALUE>https://pubmed.ncbi.nlm.nih.gov/</VALUE>
+  </ENV_LOCAL>
+  <!--JPOC-785-->
+  <ENV_LOCAL>
+    <NAME>XFrameOptionAllowFor</NAME>
+    <VALUE>https://info-v3.uat-hs.com/</VALUE>
+  </ENV_LOCAL>
+  <!--JPOC-815-->
+  <ENV_LOCAL>
+    <NAME>DailyContentShareLimit</NAME>
+    <VALUE>500</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <NAME>ContentShareValidity</NAME>
+    <VALUE>7</VALUE>
+  </ENV_LOCAL>
+  <ENV_LOCAL>
+    <NAME>ShareDefaultExpiryDate</NAME>
+    <VALUE>15</VALUE>
+  </ENV_LOCAL>
+  <!--<ENV_LOCAL>
+    <NAME>EvoPdf_ApplicationUrl</NAME>
+    <VALUE>http://jpoc.localhost/jpoc/</VALUE>
+  </ENV_LOCAL>-->
+  <!--End of EVO PDF Settings-->
+  <!-- ローカル開発環境 (E) -->
+  <!-- VM環境 (S) -->
+  <ENV_VM>
+    <!-- DB接続文字列 -->
+    <NAME>ConnectionStrings</NAME>
+	  <!--<VALUE>Data Source=sqlserver-jpoc;Initial Catalog=JPOC_VM;User Id=sa;Password=PaSSw0rd</VALUE>-->
+	  <VALUE>Data Source=localhost,1433;Initial Catalog=JPOC_IT;User Id=JPOC_USER;Password=JPOC_USER;TrustServerCertificate=True;</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- 管理者メールアドレス -->
+    <NAME>AdminEmailAddress</NAME>
+    <VALUE></VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- メール送信者アドレス -->
+    <NAME>EmailSendFrom</NAME>
+    <VALUE>support@clinicalsup.jp</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- フィードバック送信先メールアドレス -->
+    <NAME>FeedbackTo</NAME>
+    <VALUE></VALUE>
+  </ENV_VM>
+  <!--JPOC-704-->
+  <ENV_VM>
+    <!-- フィードバック送信先メールアドレス -->
+    <NAME>FeedbackToContent</NAME>
+    <VALUE>frank@vintedge.com</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- IP Account Creation Timeout -->
+    <NAME>VerifyTimeout</NAME>
+    <VALUE>1</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- IP Account Creation Timeout -->
+    <NAME>CreationTimeout</NAME>
+    <VALUE>180</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- IP Account Creation Support Email -->
+    <NAME>CreationEmailSupport</NAME>
+    <VALUE>support@clinicalsup.jp</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- SilverPop -->
+    <NAME>SilverPop_DatabaseID</NAME>
+    <VALUE>9125775</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- SilverPop -->
+    <NAME>SilverPop_SourceUrl</NAME>
+    <VALUE>http://uattest.clinicalsup.jp/jpoc/</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- SilverPop -->
+    <NAME>SilverPop_SourceName</NAME>
+    <VALUE>JPoC</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- SilverPop -->
+    <NAME>SilverPop_Source</NAME>
+    <VALUE>Trial</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- SilverPop -->
+    <NAME>SilverPop_APIURL</NAME>
+    <VALUE>http://api4.silverpop.com/XMLAPI</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- SMTPサーバーアドレス -->
+    <NAME>SmtpServer</NAME>
+    <VALUE></VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- SMTPサーバーポート番号 -->
+    <NAME>SmtpPort</NAME>
+    <VALUE>25</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- SMTPサーバーユーザーID -->
+    <NAME>SmtpUserId</NAME>
+    <VALUE></VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- SMTPサーバーユーザーパスワード -->
+    <NAME>SmtpPassword</NAME>
+    <VALUE></VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- SMTPサーバー接続へのSSL使用有無 -->
+    <NAME>SmtpUseSsl</NAME>
+    <VALUE>false</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- DBアクセス時間ログ出力有無 -->
+    <NAME>LogDbErapsTime</NAME>
+    <VALUE>false</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- DEMO環境とみなしてDEMO用の表示制御をするか否か 
+         none=DEMO以外、DEMO=P-S-0XXXX変更依頼前のDEMO
+    -->
+    <NAME>IsDemo</NAME>
+    <VALUE>none</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!--Payment SOAP暗号化キー-->
+    <NAME>TripleDesKey</NAME>
+    <VALUE>inGA5fLzM3DVPhZx</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!--Payment SOAP暗号化 IV-->
+    <NAME>TripleDesIv</NAME>
+    <VALUE>fQt0wNFG</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!--Payment ユーザ名-->
+    <NAME>PaymentUserName</NAME>
+    <VALUE></VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!--Payment パスワード-->
+    <NAME>PaymentUserPassWord</NAME>
+    <VALUE></VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!--インフォネット カード情報登録Web-->
+    <NAME>RegisterURL</NAME>
+    <VALUE></VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- 画像ファイルが存在しない場合の挙動
+         0:アイコンも表示しリンクも設定
+         1:アイコンは表示するがリンクは張らない
+         2:アイコン非表示
+    -->
+    <NAME>NoImageLinkBehavior</NAME>
+    <VALUE>2</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- 画像ファイルが非表示に指定されている場合の挙動
+         0:アイコンも表示しリンクも設定
+         1:アイコンは表示するがリンクは張らない
+         2:アイコン非表示
+    -->
+    <NAME>HideImageLinkBehavior</NAME>
+    <VALUE>0</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- CMS機能を有効にするか否か true:有効にする false:無効にする -->
+    <NAME>EnableCms</NAME>
+    <VALUE>false</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- 箱売り(VM)でのメニュー非表示及びSessionIDチェック禁止 -->
+    <NAME>VM</NAME>
+    <VALUE>true</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- 外部リンクの無効化 -->
+    <NAME>DisableExternalLink</NAME>
+    <VALUE>True</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- リンクリゾルバURL -->
+    <!-- DisableExternalLinkがfalseの場合のみ有効 -->
+    <NAME>LinkResolverUrl</NAME>
+    <!-- 外部リンクページ内有効 中間ページで外部リンク警告の上リンク有効 -->
+    <!-- <VALUE>resolver.aspx?TargetUrl={0}&amp;Text={1}</VALUE> -->
+    <!-- 中間ページで外部リンク無効表示 -->
+    <VALUE>resolver.aspx</VALUE>
+    <!-- 外部リンクページ内有効 -->
+    <!--<VALUE></VALUE>-->
+  </ENV_VM>
+  <ENV_VM>
+    <!-- トライアルページの有効化 -->
+    <NAME>EnableTrialPage</NAME>
+    <VALUE>false</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- SorlサーバーURL ブランクはSolrを使用しない設定 -->
+    <NAME>SolrUrl</NAME>
+    <VALUE>http://solr-jpoc:8983/solr/jpoc_vm</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- Sorlへの疎通確認用のリクエスト待ち時間(ms) -->
+    <NAME>SolrRequestWaitTime</NAME>
+    <VALUE>6000</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- TOPページでの適応・コメントの初期状態(true=収納、false=展開) -->
+    <NAME>CollapsePatientProfileOnSearchDetailPage</NAME>
+    <VALUE>true</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- 検査・処方例ページでの適応・コメントの初期状態(true=収納、false=展開) -->
+    <NAME>CollapsePatientProfileOnSituationPage</NAME>
+    <VALUE>false</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- TOPページでの推奨度アイコンの表示制御（true=表示/false=非表示） -->
+    <NAME>ShowGradeIconOnSearchDetailPage</NAME>
+    <VALUE>false</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- 検査・処方例ページでの推奨度アイコンの表示制御（true=表示/false=非表示） -->
+    <NAME>ShowGradeIconOnSituationPage</NAME>
+    <VALUE>false</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- 管理者WebServiceの有効化（true=有効/false=無効） -->
+    <NAME>EnableAdminWebService</NAME>
+    <VALUE>false</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- 管理者(GWの場合もあり)IPアドレス -->
+    <NAME>AdminIpV4Addr</NAME>
+    <VALUE>127.0.0.1</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- 編集者WebServiceの有効化（true=有効/false=無効） -->
+    <NAME>EnableEditorWebService</NAME>
+    <VALUE>false</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- 編集者(GWの場合もあり)IPアドレス -->
+    <NAME>EditorIpV4Addr</NAME>
+    <VALUE>127.0.0.1</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- 連続アクセス対策（true=有効/false=無効） -->
+    <NAME>EnableAccountBan</NAME>
+    <VALUE>false</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- 連続アクセスチェック単位時間（単位：時間） -->
+    <!-- 0の場合、チェック不能になる -->
+    <NAME>AccountBanCheckTime</NAME>
+    <VALUE>1</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- 連続アクセスリミット件数（単位:数値） -->
+    <!-- 0の場合、チェックしない -->
+    <NAME>AccountBanLimitCount</NAME>
+    <VALUE>60</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- BANを行われたアカウントの復旧時間 -->
+    <!-- 0の場合、すぐ復旧できる -->
+    <NAME>AccountRemoveBanTime</NAME>
+    <VALUE>24</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- トライアルの期限注意アラート-->
+    <!-- N > 0: ログイン回数が既定値の場合アラート表示をする -->
+    <!-- N = 0: 機能自体を無効 -->
+    <!-- N < 0: 無制限に表示 -->
+    <NAME>TrialLimitAlert</NAME>
+    <VALUE>0</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- 著者校正/監修レビュー配置箇所 -->
+    <!-- above: 上を表示 -->
+    <!-- below: 下を表示 -->
+    <!-- both: 両方を表示 -->
+    <!-- none もしくは無し: 表示しない -->
+    <NAME>LastUpdateVertical</NAME>
+    <VALUE>below</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- DEMO設定で管理者ログインが可能なIP -->
+    <NAME>DemoAdminIP</NAME>
+    <VALUE>127.0.0.1</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- トライアルの再設定期間 -->
+    <!-- 
+      トライアルユーザかつlogin_expire が 9999/12/31 の場合、
+      ログイン日＋[TrialResetExpiryDate]を[login_expire]として再設定する
+      [login_expire]の当日はログイン不可の為
+      ログイン日から、（ログイン日を除き）60日間有効にするには61を設定する
+      e.g. ログイン日 2014/06/01 がログイン日＋61日設定→2014/07/31までログイン可能([login_expire : 2014/08/01])
+    -->
+    <NAME>TrialResetExpiryDate</NAME>
+    <VALUE>31</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- トライアル設定期間 -->
+    <!-- 
+      トライアル登録時の設定期限
+      登録日＋[TrialDefaultExpiryDate]を[login_expire]として設定する
+      [login_expire]の当日はログイン不可の為
+      ログイン日から、（ログイン日を除き）15日間有効にするには16を設定する
+      e.g. ログイン日 2014/06/01 がログイン日＋16日設定→2014/06/16までログイン可能([login_expire : 2014/06/17])
+    -->
+    <NAME>TrialDefaultExpiryDate</NAME>
+    <VALUE>16</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- トライアルメール添付ファイル名 -->
+    <!-- 
+       AppData/Templates/****** のファイル名を指定する
+       空文字、もしくは指定ファイルが存在しない場合は添付を行わない
+    -->
+    <NAME>TrialAttachFileName</NAME>
+    <VALUE></VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- ClinikalKeyAPIへのリクエスト（Base）Url -->
+    <!-- 環境で利用しない場合は空白 -->
+    <NAME>ClinikalKeyApiUrl</NAME>
+    <VALUE></VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- ClinikalKeyAPIへのリクエストタイムアウト（ミリ秒） -->
+    <NAME>ClinikalKeyApiTimeout</NAME>
+    <VALUE>300</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- ClinikalKeyAPIへの検索フィールド -->
+    <!-- カンマ区切りの文字列を設定する -->
+    <NAME>ClinikalKeyField</NAME>
+    <VALUE></VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- ClinikalKeyAPIへの検索フィールド -->
+    <!-- カンマ区切りの文字列を設定する -->
+    <NAME>ClinikalKeyFieldFullText</NAME>
+    <VALUE></VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- ClinikalKeyAPIへの検索ContentType -->
+    <!-- カンマ区切りの文字列を設定？空白可能 -->
+    <NAME>ClinikalKeyContentType</NAME>
+    <VALUE></VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- ClinikalKeyAPIへの再検索日数 -->
+    <!-- N < 0: 取得結果がある場合再検索はしない（どんなに古い検索結果でも利用） -->
+    <!-- N = 0: （実質）必ず再検索 -->
+    <!-- N > 0: この指定日数より過去の検索結果の場合、再検索を行う -->
+    <NAME>ClinikalKeyResetExpiryDate</NAME>
+    <VALUE>30</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- IP allowed for Admin Roles -->
+    <NAME>IP_Restriction</NAME>
+    <VALUE>198.176.124.1-6|198.176.124.16-23|198.176.125.1-6|198.176.125.16-23|198.176.81.33-34|198.176.82.33-34|198.176.85.33-34|198.176.84.33-34|192.168.1.1</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- Based on Code Property: 
+    ElsevierAdmin = 1 |InstitutionAdmin = 3 |InstitutionIP = 4 |InstitutionUser = 5 |
+    Individual = 6 |Trial = 7 |ElsevierEditor = 8 |ElsevierManager = 9 |ElsevierUser = 10 |VMAdmin = 11 |
+    VMUser = 12 |ElsevierSales = 13 |TechnicalSupport = 14 |DvdUser = 15 |Agency = 16 |
+    VMContents = 17 |InstitutionSelfUser = 19 |-->
+    <NAME>IP_Restriction_Roles</NAME>
+    <VALUE>ElsevierAdmin</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- IP allowed for Admin Roles -->
+    <NAME>SourceName</NAME>
+    <VALUE>JPOC_VM</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <NAME>Rijndael128BitKey</NAME>
+    <VALUE>1A06EAFBF85C31434A58967A4FB0FC04</VALUE>
+  </ENV_VM>
+  <!--EVO PDF Settings-->
+  <ENV_VM>
+    <NAME>EvoPdf_Key</NAME>
+    <VALUE>ORIJGQoKGQkZCxcJGQoIFwgLFwAAAAA=</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <NAME>EvoPdf_IISApplicationName</NAME>
+    <VALUE>/jpoc</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <NAME>AdobeDestLocation</NAME>
+    <VALUE>C:\</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <NAME>LockoutTries</NAME>
+    <VALUE>5</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <NAME>TimeLockout</NAME>
+    <VALUE>30</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <NAME>EnableUACompatibility</NAME>
+    <VALUE>true</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <NAME>VMBulkUploadExePath</NAME>
+    <VALUE>C:\Frank\JPOC\VMBulkUploadConsoleApp\VMBulkUploadConsoleApp.exe</VALUE>
+    <!-- <VALUE>E:\ConsoleApp\VMUpdate\VMBulkUploadConsoleApp.exe</VALUE> -->
+  </ENV_VM>
+  <ENV_VM>
+    <!-- Sample Toggle FieldName1: Show-Mandatory | Show-Optional | FieldName2: Hide-Optional -->
+    <!-- Fields are fixed, can't add new fields dynamically -->
+    <NAME>TrialEntry-FieldControl</NAME>
+    <VALUE>MailAddress: Show-Mandatory | Name: Show-Optional | Profession: Hide-Optional | InstitutionName: Show-Mandatory | PhoneNumber: Show-Mandatory | Specialty: Show-Mandatory</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <NAME>SchedulerToken</NAME>
+    <VALUE>7406c2a2-55ee-11e9-8647-d663bd873d93</VALUE>
+  </ENV_VM>
+  <!--JPOC-430-->
+  <ENV_VM>
+    <NAME>IsPickupNewContent</NAME>
+    <VALUE>True</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <NAME>PickupNewContentRangeInMonth</NAME>
+    <VALUE>12</VALUE>
+  </ENV_VM>
+  <!--JPOC-313-->
+  <ENV_VM>
+    <NAME>VMDiskLabel</NAME>
+    <VALUE>C:\</VALUE>
+  </ENV_VM>
+  <!--JPOC-514-->
+  <ENV_VM>
+    <NAME>ContentList_FilePath</NAME>
+    <VALUE>~/doc/contentlist</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <NAME>ContentList_FileName</NAME>
+    <VALUE>contentlist.xlsx</VALUE>
+  </ENV_VM>
+  <!--JPOC-471-->
+  <ENV_VM>
+    <NAME>SolrReindexExePath</NAME>
+    <VALUE>C:\Frank\JPOC1\SolrReindexConsoleApp\SolrReindexConsoleApp.exe</VALUE>
+  </ENV_VM>
+  <!--JPOC-639-->
+  <ENV_VM>
+    <NAME>PubmedUrl</NAME>
+    <VALUE>https://pubmed.ncbi.nlm.nih.gov/</VALUE>
+  </ENV_VM>
+  <!--JPOC-785-->
+  <ENV_VM>
+    <NAME>XFrameOptionAllowFor</NAME>
+    <VALUE>https://info-v3.uat-hs.com/</VALUE>
+  </ENV_VM>
+  <!--JPOC-815-->
+  <ENV_VM>
+    <NAME>DailyContentShareLimit</NAME>
+    <VALUE>500</VALUE>
+  </ENV_VM>
+    <ENV_VM>
+    <NAME>ContentShareValidity</NAME>
+    <VALUE>7</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <NAME>ShareDefaultExpiryDate</NAME>
+    <VALUE>15</VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <!-- IP allowed for VM-->
+    <NAME>IP_Restriction_VM</NAME>
+    <VALUE></VALUE>
+  </ENV_VM>
+  <ENV_VM>
+    <NAME>DiskSpaceThreshold</NAME>
+    <VALUE>100000000</VALUE>
+  </ENV_VM>
+	<ENV_VM>
+		<NAME>ProcessAccessLogExePath</NAME>
+		<VALUE>C:\Projects\JPOC_VM\JpocConsoleApp\JpocProcessAccessLog\bin\Debug\JpocProcessAccessLog.exe</VALUE>
+	</ENV_VM>
+  <!-- VM環境 (E) -->
+</Settings>

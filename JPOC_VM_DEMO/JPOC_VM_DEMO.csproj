@@ -13,4 +13,14 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\JpocCommonCore\JpocCommonCore.vbproj" />
+    <ProjectReference Include="..\JpocDacCore\JpocDacCore.vbproj" />
+    <ProjectReference Include="..\JpocToolsCoreCore\JpocToolsCoreCore.vbproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="App_Data\Settings\" />
+  </ItemGroup>
+
 </Project>

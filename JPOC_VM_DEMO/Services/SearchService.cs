@@ -1,8 +1,13 @@
-﻿using JPOC_VM_DEMO.Common;
+﻿using Jpoc.Tools.Core;
+using JPOC_VM_DEMO.Common;
 using JPOC_VM_DEMO.Models;
 using JPOC_VM_DEMO.Pages;
+using JPOC_VM_DEMO.Services.JpocData.T_JP_Disease.Logic;
+using JPOC_VM_DEMO.Services.JpocData.Utilities;
 using System.Data;
-using static JPOC_VM_DEMO.Common.PublicEnum;
+using PublicEnum = JPOC_VM_DEMO.Common.PublicEnum;
+using GlobalVariables = JPOC_VM_DEMO.Common.GlobalVariables;
+using JPOC_VM_DEMO.App_Code.CTRL;
 
 namespace JPOC_VM_DEMO.Services
 {
@@ -12,16 +17,24 @@ namespace JPOC_VM_DEMO.Services
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IConfiguration _configuration;
         private readonly IDatabaseService _db;
+        private readonly IDatabaseFactory _databaseFactory;
+        private readonly IDiseaseBusinessManager _diseaseBusinessManager;
+        private readonly CtrlSearch _ctrlSearch;
         //private readonly IDiseaseRepository _diseaseRepository;
         //private readonly ISystemRepository _systemRepository;
         //private readonly IEnqueteRepository _enqueteRepository;
         //private readonly IUtilities _utilities;
 
+        private CtrlSearch Ctrl => _ctrlSearch;
+
         public SearchService(
             ILogger<SearchService> logger,
             IHttpContextAccessor httpContextAccessor,
             IConfiguration configuration,
-            IDatabaseService db)
+            IDatabaseService db,
+            IDatabaseFactory databaseFactory,
+            IDiseaseBusinessManager diseaseBusinessManager,
+            CtrlSearch ctrlSearch)
             //IDiseaseRepository diseaseRepository,
             //ISystemRepository systemRepository,
             //IEnqueteRepository enqueteRepository,
@@ -31,6 +44,9 @@ namespace JPOC_VM_DEMO.Services
             _httpContextAccessor = httpContextAccessor;
             _configuration = configuration;
             _db = db;
+            _databaseFactory = databaseFactory;
+            _diseaseBusinessManager = diseaseBusinessManager;
+            _ctrlSearch = ctrlSearch;
             //_diseaseRepository = diseaseRepository;
             //_systemRepository = systemRepository;
             //_enqueteRepository = enqueteRepository;
@@ -180,8 +196,8 @@ namespace JPOC_VM_DEMO.Services
                 return false;
             }
 
-            return user.RoleId == (int)PublicEnum.Role.InstitutionIP ||
-                   user.RoleId == (int)PublicEnum.Role.VMUser;
+            return user.RoleId == (int)PublicEnum.eRole.InstitutionIP ||
+                   user.RoleId == (int)PublicEnum.eRole.VMUser;
         }
 
         private async Task<bool> CheckBanStatusAsync(UserModel user)
@@ -190,7 +206,7 @@ namespace JPOC_VM_DEMO.Services
             return false; // Placeholder
         }
 
-        //TODO: REWRITE TO 2025年4月9日 format
+        //TODO: REMOVE, THIS WAS JUST AN EXAMPLE OF CALLING STORED PROCEDURES DIRECTLY
         public async Task<string> GetVMUpdateDateAsync()
         {
             try
@@ -210,6 +226,46 @@ namespace JPOC_VM_DEMO.Services
             }
 
         }
+        public string GetVMUpdateDate()
+        {
+            try
+            {
+                //var dt = _diseaseBusinessManager.View.GetLatestEditingDate(); //TODO: ADD VIEW
+
+                // Await the task to get the DataTable result
+
+
+                //var dtTask = _diseaseBusinessManager.GetLatestEditingDateAsync();
+                //dtTask.Wait(); // Ensure the task is completed
+                //var dt = dtTask.Result;
+
+                var dt = _diseaseBusinessManager.GetLatestEditingDate();
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    string lDate = dt.Rows[0]["latest_editting_date"].ToString();
+                    if (DateTime.TryParse(lDate, out DateTime dLastEditDate))
+                    {
+                        return $"{dLastEditDate.Year}年{dLastEditDate.Month}月{dLastEditDate.Day}日";
+                    }
+                }
+                return GlobalVariables.VMUpdateDate;
+            }
+            catch (Exception)
+            {
+                return GlobalVariables.VMUpdateDate;
+            }
+        }
+
+        public DataView GetDiseaseCategories()
+        {
+
+            if (Ctrl.Dto.DiseaseDataSet.T_JP_DiseaseCategory == null || Ctrl.Dto.DiseaseDataSet.T_JP_DiseaseCategory.Count == 0)
+            {
+                return new DataView();
+            }
+            return new DataView(Ctrl.Dto.DiseaseDataSet.T_JP_DiseaseCategory, string.Empty, "sequence", DataViewRowState.CurrentRows);
+        }
+
 
         //private async Task<bool> GetIMESettingAsync()
         //{
@@ -224,7 +280,8 @@ namespace JPOC_VM_DEMO.Services
     {
         Task<SearchViewModel> InitializeSearchPageAsync(UserModel currentUser);
         Task<string> GetVMUpdateDateAsync();
-        //Task<DataView> GetDiseaseCategoriesAsync();
+        string GetVMUpdateDate();
+        DataView GetDiseaseCategories();
         //Task<DataView> GetTreeCategoriesAsync(string categoryType);
         //Task<DataView> GetMedicalCalculatorViewAsync(string category = "");
         //Task<bool> ProcessSearchAsync(string searchText, string searchTerm, string userIdentity);

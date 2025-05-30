@@ -1,13 +1,19 @@
-﻿using JPOC_VM_DEMO.Services;
+﻿using Jpoc.Dac;
+using JPOC_VM_DEMO.App_Code.BaseClass;
+using JPOC_VM_DEMO.App_Code.CTRL;
+using JPOC_VM_DEMO.App_Code.Util;
+using JPOC_VM_DEMO.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Data;
 
 namespace JPOC_VM_DEMO.Pages
 {
-    public class SearchModel : PageModel
+    // search.aspx.vb -> MainContentsPageBase -> PageBaseModel -> PageBase
+    public class SearchModel : MainContentsPageBase //PageModel
     {
         private readonly ISearchService _searchService;
         private readonly IConfiguration _configuration;
+        private readonly CtrlSearch _ctrlSearch;
 
         [BindProperty]
         public string SearchText { get; set; }
@@ -19,20 +25,53 @@ namespace JPOC_VM_DEMO.Pages
         public bool ShowSpVersion { get; set; }
         public string VMUpdateDate { get; set; }
         public bool ShowTrialExpire { get; set; }
-        public string Tab1Text { get; set; } = "症状・疾患";
+
+        // Keep the same functionality as the original DiseaseCategoryView
+        private DataView DiseaseCategoryView
+        {
+            get
+            {
+                return new DataView();
+            }
+            //get
+            //{
+            //    if (_searchService.DiseaseDataSet?.T_JP_DiseaseCategory == null ||
+            //        _searchService.DiseaseDataSet.T_JP_DiseaseCategory.Count == 0)
+            //    {
+            //        return new DataView();
+            //    }
+
+            //    return new DataView(
+            //        _searchService.DiseaseDataSet.T_JP_DiseaseCategory,
+            //        string.Empty,  // No filter
+            //        "sequence",    // Sort by sequence
+            //        DataViewRowState.CurrentRows
+            //    );
+            //}
+        }
         public List<CategoryItem> DiseaseCategories { get; set; }
         public List<CategoryItem> DrugCategories { get; set; }
         public List<CategoryItem> LabCategories { get; set; }
         public List<CategoryItem> HokenCategories { get; set; }
         public TreeViewModel CalculatorMenu { get; set; }
 
-        public SearchModel(ISearchService searchService, IConfiguration configuration)
+        private CtrlSearch Ctrl => _ctrlSearch;
+
+        public SearchModel(
+            ISearchService searchService,
+            IConfiguration configuration,
+            IHttpContextAccessor httpContextAccessor,
+            ILogger<PageBase> logger,
+            JPoCUtility jpocUtility,
+            CtrlSearch ctrlSearch
+        ) : base(httpContextAccessor, logger, jpocUtility)
         {
             _searchService = searchService;
             _configuration = configuration;
+            _ctrlSearch = ctrlSearch;
         }
 
-        public async Task OnGetAsync()
+        public void OnGet()
         {
             // Initialize all the data
             //DiseaseCategories = await _searchService.GetDiseaseCategoriesAsync();
@@ -41,10 +80,49 @@ namespace JPOC_VM_DEMO.Pages
             //HokenCategories = await _searchService.GetHokenCategoriesAsync();
             //CalculatorMenu = await _searchService.GetCalculatorMenuAsync();
 
-            VMUpdateDate = await _searchService.GetVMUpdateDateAsync();
+            //VMUpdateDate = await _searchService.GetVMUpdateDateAsync();
+
+            var currentUserInfo = UserInfo;
+
+            //Ctrl.GetData(currentUserInfo.InstitutionId);
+            Ctrl.GetData("997");
+
+            VMUpdateDate = _searchService.GetVMUpdateDate();
             ShowVMMessage = _configuration.GetValue<bool>("ShowVMMessage");
             ShowSpVersion = _configuration.GetValue<bool>("ShowSpVersion");
+            DiseaseCategories = getDiseaseCategory(_searchService.GetDiseaseCategories());
         }
+        public string GetTab1Text()
+        {
+            if (GlobalVariables.isFoundation)
+                return "掲載コンテンツ一覧";
+            else
+                return "症状・疾患";
+        }
+        public List<CategoryItem> getDiseaseCategory(DataView dataView)
+        {
+            const string url = "menuDetails.aspx?category={0}&currentpage={1}";
+
+            List<CategoryItem> diseaseCategories = new List<CategoryItem>();
+            foreach (DataRowView drv in dataView)
+            {
+                if (drv != null)
+                {
+                    // Cast the DataRow to the strongly-typed row if possible
+                    var dr = drv.Row as Jpoc.Dac.DS_DISEASE.T_JP_DiseaseCategoryRow;
+                    if (dr != null)
+                    {
+                        CategoryItem item = new CategoryItem();
+                        item.Title = Utilities.HtmlEncodeHtmlTag(dr.category);
+                        item.Url = Utilities.HtmlEncodeHtmlTag(
+                            string.Format(url, dr.id, "PageName"));
+                        diseaseCategories.Add(item);
+                    }
+                }
+            }
+            return diseaseCategories;
+        }
+
 
         public async Task<IActionResult> OnPostAsync()
         {

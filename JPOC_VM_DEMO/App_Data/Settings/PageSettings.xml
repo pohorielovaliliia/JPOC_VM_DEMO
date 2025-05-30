@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+<!--画面別の設定項目-->
+<!--記入例
+    <画面名>
+        <NAME>キー</NAME>
+        <VALUE>値</VALUE>
+  </画面名>
+  ※HTMLタグはエスケープしてください。
+-->
+    <!--LeftTreeMenu(左メニュー) Start-->
+  <LeftTreeMenu>
+    <NAME>DiseaseTitle</NAME>
+    <VALUE>概要・推奨</VALUE>
+    <!-- <VALUE>&lt;b&gt;概要&lt;/b&gt;を見る</VALUE> -->
+  </LeftTreeMenu>
+  <LeftTreeMenu>
+    <NAME>DecisionDiagramMenuTitle</NAME>
+    <VALUE>&lt;b&gt;アルゴリズム&lt;/b&gt;を見る</VALUE>
+  </LeftTreeMenu>
+  <LeftTreeMenu>
+        <NAME>SituationOrderSetSamplLabMenuTitle</NAME>
+        <VALUE>&lt;b&gt;検査例&lt;/b&gt;を見る</VALUE>
+    </LeftTreeMenu>
+    <LeftTreeMenu>
+        <NAME>SituationOrderSetSamplePrescriptionMenuTitle</NAME>
+        <VALUE>&lt;b&gt;処方例&lt;/b&gt;を見る</VALUE>
+    </LeftTreeMenu>
+    <LeftTreeMenu>
+        <NAME>SituationMenuTitle</NAME>
+        <VALUE>&lt;b&gt;オーダーセット&lt;/b&gt;を見る</VALUE>
+    </LeftTreeMenu>
+    <LeftTreeMenu>
+        <NAME>OrderSetSampleFirstItemTitle</NAME>
+        <VALUE>検査・処方例</VALUE>
+    </LeftTreeMenu>
+    
+    <LeftTreeMenu>
+        <NAME>ActionMenuTitle</NAME>
+        <VALUE>&lt;b&gt;詳細情報&lt;/b&gt;を見る</VALUE>
+    </LeftTreeMenu>
+    <LeftTreeMenu>
+        <NAME>EvidenceMenuTitle</NAME>
+        <VALUE>&lt;b&gt;エビデンス・解説&lt;/b&gt;を見る</VALUE>
+    </LeftTreeMenu>
+    <LeftTreeMenu>
+      <NAME>HandoutMenuTitle</NAME>
+      <VALUE>患者向け説明資料</VALUE>
+    </LeftTreeMenu>
+    <!--LeftTreeMenu(左メニュー) End-->
+
+    <!--DrugDetailsQuickNavi(薬剤情報画面クイックナビ) Start-->
+    <DrugDetailsQuickNavi>
+        <NAME>YouryouMenuTitle</NAME>
+        <VALUE>&lt;b&gt;用法・用量&lt;/b&gt;を見る</VALUE>
+    </DrugDetailsQuickNavi>
+
+    <DrugDetailsQuickNavi>
+        <NAME>DoukouMenuTitle</NAME>
+        <VALUE>&lt;b&gt;同効薬&lt;/b&gt;を見る</VALUE>
+    </DrugDetailsQuickNavi>
+
+    <DrugDetailsQuickNavi>
+        <NAME>OtherFormsMenuTitle</NAME>
+        <VALUE>&lt;b&gt;他剤形&lt;/b&gt;を見る</VALUE>
+    </DrugDetailsQuickNavi>
+
+    <DrugDetailsQuickNavi>
+        <NAME>KouhatsuMenuTitle</NAME>
+        <VALUE>&lt;b&gt;後発薬&lt;/b&gt;を見る</VALUE>
+    </DrugDetailsQuickNavi>
+    
+    <DrugDetailsQuickNavi>
+        <NAME>ZinzouMenuTitle</NAME>
+        <VALUE>&lt;b&gt;腎機能低下時投与量&lt;/b&gt;を見る</VALUE>
+    </DrugDetailsQuickNavi>
+
+    <DrugDetailsQuickNavi>
+        <NAME>NinshinMenuTitle</NAME>
+        <VALUE>&lt;b&gt;妊娠への危険度&lt;/b&gt;を見る</VALUE>
+    </DrugDetailsQuickNavi>
+    
+    <DrugDetailsQuickNavi>  
+        <NAME>YakuriMenuTitle</NAME>
+        <VALUE>&lt;b&gt;薬理情報&lt;/b&gt;を見る</VALUE>
+    </DrugDetailsQuickNavi>
+
+  <DrugDetailsQuickNavi>
+    <NAME>DrugInfoPdfMenuTitle</NAME>
+    <VALUE>&lt;b&gt;添付文書&lt;/b&gt;を見る</VALUE>
+  </DrugDetailsQuickNavi>
+  
+  <DrugDetailsQuickNavi>
+    <NAME>FukusayouMenuTitle</NAME>
+    <VALUE>&lt;b&gt;副作用&lt;/b&gt;を見る</VALUE>
+  </DrugDetailsQuickNavi>
+  <!--DrugDetailsQuickNavi(薬剤情報画面クイックナビ) End-->
+
+</Settings>

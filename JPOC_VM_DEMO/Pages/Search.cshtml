@@ -14,6 +14,7 @@
 <link rel="stylesheet" type="text/css" href="~/common/css/jquery.ui/jquery.ui.all.css" />
 <link rel="stylesheet" type="text/css" href="~/css/search/search_style.min.css?v=1.02.11" />
 <link rel="stylesheet" href="~/common/css/bootstrap.v3.3.7.min.css" />
+<link rel="stylesheet" href="~/css/search/media_style.css" />
 
 <script src="~/common/js/jquery-1.12.4.min.js"></script>
 <script src="~/common/js/bootstrap.v3.3.7.min.js"></script>
@@ -24,6 +25,7 @@
 <script src="~/common/js/header.min.js?v=1.02.21"></script>
 <script src="~/common/js/jquery.lazyload.js"></script>
 <script src="~/common/js/contentsCommonAppend.js"></script>
+<script type="text/javascript" src="~/common/js/first_description.js"></script>
 
 <!-- TODO: REMOVE MESSAGES FOR NOW -->
 @* <script src="~/common/js/first_description.js"></script> *@
@@ -578,235 +580,223 @@
                     margin-left: 1em;
                 }
 </style>
-<style type="text/css">
-    #spLinkBlockInPc {
-        width: 100%;
-        height: 70px;
-        background-color: Black;
-        color: White;
-        font-size: 50px;
-        display: none;
-        text-align: center;
-    }
+@* <style type="text/css"> *@
+@*         #spLinkBlockInPc { *@
+@*             width: 100%; *@
+@*             height: 70px; *@
+@*             background-color: Black; *@
+@*             color: White; *@
+@*             font-size: 50px; *@
+@*             display: none; *@
+@*             text-align: center; *@
+@*         } *@
 
-    #anchorToSpInPc {
-        color: white;
-        text-decoration: none;
-    }
+@*         #anchorToSpInPc { *@
+@*             color: white; *@
+@*             text-decoration: none; *@
+@*         } *@
 
-    div.top_image img {
-        /*width:389px!important;*/
-        height: inherit !important;
-    }
+@*         div.top_image img { *@
+@*             /*width:389px!important;*/ *@
+@*             height: inherit !important; *@
+@*         } *@
 
-    a.helpmenu {
-        text-decoration: none;
-        cursor: pointer;
-        margin-right: 30px;
-        color: #004F69;
-    }
+@*         a.helpmenu { *@
+@*             text-decoration: none; *@
+@*             cursor: pointer; *@
+@*             margin-right: 30px; *@
+@*             color: #004F69; *@
+@*         } *@
 
-        a.helpmenu:hover {
-            text-decoration: underline;
-        }
-
-
-    .mainlogo {
-        margin-left: 10px;
-        margin-bottom: 3px;
-    }
-
-    /*
-                    styles for JPOC-156 medical calculator relocate, from medical calculator.aspx
-                    */
-
-    h1 {
-        border-bottom: 2px solid #004F69;
-        line-height: 37px;
-    }
-
-    .tvMenu1 {
-        vertical-align: top;
-        width: 249px;
-        max-width: 249px;
-        min-width: 249px;
-    }
-
-    .menu_link_table {
-    }
-
-    .menu_link_row {
-        line-height: 20px;
-    }
-
-    .suffix_mark {
-        text-decoration: none;
-    }
-
-    .prefix_mark_cell {
-        width: 10px;
-        vertical-align: top;
-    }
-
-    .title_cell {
-        vertical-align: top;
-    }
-
-    .prefix_icon_main {
-        margin-top: 7px;
-    }
-
-    .prefix_icon_sub {
-        margin-top: 7px;
-    }
-
-    .manu_link {
-    }
-
-    .suffix_mark {
-    }
-
-    /*div#ctl00_BodyPlaceHolder_tvMenu1 > div > table td {
-                text-indent: -16px;
-                padding-left: 10px;
-            }
-
-            div#ctl00_BodyPlaceHolder_tvMenu2 > div > table td {
-                text-indent: -16px;
-                padding-left: 10px;
-            }
-
-            div#ctl00_BodyPlaceHolder_tvMenu3 > div > table td {
-                text-indent: -16px;
-                padding-left: 10px;
-            }*/
-
-    /*
-                    styles for JPOC-156 search page layout update
-                    */
-    /*.nav > li.active > a, .nav > li.active > a:focus, .nav > li.active > a:hover {
-                border-top: 4px solid #ff8200;
-            }*/
-
-    .ddlSearchTerm {
-        padding: 5px 0;
-        height: 30px;
-        width: 125px;
-        background: url('/common/images/dropdown.png') no-repeat right 8px #fff;
-        -webkit-appearance: textfield;
-        padding-left: 3px;
-        background-position: right 5px center;
-        border: 1px solid #ddd;
-        border-radius: 0;
-    }
-
-    .hoken-entry {
-        text-align: left;
-    }
-
-    .hoken-category-title {
-        padding-top: 10px;
-    }
-
-    .nav > li > a {
-        border-radius: 0;
-        /*width:150px;*/
-    }
-
-    .jpoc-navtab-container {
-        display: block;
-        width: 100%;
-    }
-
-        .jpoc-navtab-container .nav > li > a {
-            padding: 4px 15px;
-            font-weight: bold;
-        }
-
-    .jpoc-navtab-list {
-        display: table;
-        width: 100%;
-    }
-
-        .jpoc-navtab-list li {
-            display: table-cell;
-            border-bottom: 1px solid #ddd;
-            font-weight: bold;
-            *float: left;
-        }
-
-            .jpoc-navtab-list li.active {
-                /*border: 1px solid #ddd;
-                        border-bottom: none;
-                        border-bottom-color: transparent;
-                        border-top: 4px solid #ff8200;*/
-                border-bottom: none;
-            }
-
-                .jpoc-navtab-list li.active div.active-top {
-                    border-top: 4px solid #ff8200;
-                }
-
-                .jpoc-navtab-list li.active div.active-content {
-                    border-right: 1px solid #ddd;
-                    border-left: 1px solid #ddd;
-                    height: 26px;
-                    /*border:outset ;*/
-                }
+@*             a.helpmenu:hover { *@
+@*                 text-decoration: underline; *@
+@*             } *@
 
 
-    .panel-default {
-        border-top: none;
-    }
+@*         .mainlogo { *@
+@*             margin-left: 10px; *@
+@*             margin-bottom: 3px; *@
+@*         } *@
 
-    .jpoc-navtab-list a {
-        display: block;
-        /*margin: 0 5px;*/
-    }
+@*         /* *@
+@*                         styles for JPOC-156 medical calculator relocate, from medical calculator.aspx *@
+@*                         */ *@
 
-    .panel-iframe-calculator {
-        display: table;
-        width: 100%;
-        height: 450px;
-    }
+@*         h1 { *@
+@*             border-bottom: 2px solid #004F69; *@
+@*             line-height: 37px; *@
+@*         } *@
 
-    .tbl-calculator {
-        width: 100%;
-        text-align: left;
-    }
+@*         .tvMenu1 { *@
+@*             vertical-align: top; *@
+@*             width: 249px; *@
+@*             max-width: 249px; *@
+@*             min-width: 249px; *@
+@*         } *@
 
-    .tab-content .panel {
-        border-radius: 0;
-    }
+@*         .menu_link_table { *@
+@*         } *@
 
-    .jpoc-page-search #HeaderLink {
-        position: relative;
-        top: -50%;
-        float: right;
-    }
+@*         .menu_link_row { *@
+@*             line-height: 20px; *@
+@*         } *@
 
-    ::-ms-clear {
-        display: none;
-        width: 0;
-        height: 0;
-    }
+@*         .suffix_mark { *@
+@*             text-decoration: none; *@
+@*         } *@
 
-    .tablinks :hover, .tablinks a {
-        text-decoration: none;
-    }
+@*         .prefix_mark_cell { *@
+@*             width: 10px; *@
+@*             vertical-align: top; *@
+@*         } *@
 
-       
-        (-webkit-appearance:none) and (stroke-color:transparent)
+@*         .title_cell { *@
+@*             vertical-align: top; *@
+@*         } *@
 
-    {
-        .tab-content
+@*         .prefix_icon_main { *@
+@*             margin-top: 7px; *@
+@*         } *@
 
-    {
-        padding-left: 1px;
-        padding-right: 2px;
-    }
-    }
-</style>
+@*         .prefix_icon_sub { *@
+@*             margin-top: 7px; *@
+@*         } *@
+
+@*         .manu_link { *@
+@*         } *@
+
+@*         .suffix_mark { *@
+@*         } *@
+
+@*         /*div#ctl00_BodyPlaceHolder_tvMenu1 > div > table td { *@
+@*                     text-indent: -16px; *@
+@*                     padding-left: 10px; *@
+@*                 } *@
+
+@*                 div#ctl00_BodyPlaceHolder_tvMenu2 > div > table td { *@
+@*                     text-indent: -16px; *@
+@*                     padding-left: 10px; *@
+@*                 } *@
+
+@*                 div#ctl00_BodyPlaceHolder_tvMenu3 > div > table td { *@
+@*                     text-indent: -16px; *@
+@*                     padding-left: 10px; *@
+@*                 }*/ *@
+
+@*         /* *@
+@*                         styles for JPOC-156 search page layout update *@
+@*                         */ *@
+@*         /*.nav > li.active > a, .nav > li.active > a:focus, .nav > li.active > a:hover { *@
+@*                     border-top: 4px solid #ff8200; *@
+@*                 }*/ *@
+
+@*         .ddlSearchTerm { *@
+@*             padding: 5px 0; *@
+@*             height: 30px; *@
+@*             width: 125px; *@
+@*             background: url(../jpoc/common/images/dropdown.png) no-repeat right 8px #fff; *@
+@*             -webkit-appearance: textfield; *@
+@*             padding-left: 3px; *@
+@*             background-position: right 5px center; *@
+@*             border: 1px solid #ddd; *@
+@*             border-radius: 0; *@
+@*         } *@
+
+@*         .hoken-entry { *@
+@*             text-align: left; *@
+@*         } *@
+
+@*         .hoken-category-title { *@
+@*             padding-top: 10px; *@
+@*         } *@
+
+@*         .nav > li > a { *@
+@*             border-radius: 0; *@
+@*             /*width:150px;*/ *@
+@*         } *@
+
+@*         .jpoc-navtab-container { *@
+@*             display: block; *@
+@*             width: 100%; *@
+@*         } *@
+
+@*             .jpoc-navtab-container .nav > li > a { *@
+@*                 padding: 4px 15px; *@
+@*                 font-weight: bold; *@
+@*             } *@
+
+@*         .jpoc-navtab-list { *@
+@*             display: table; *@
+@*             width: 100%; *@
+@*         } *@
+
+@*             .jpoc-navtab-list li { *@
+@*                 display: table-cell; *@
+@*                 border-bottom: 1px solid #ddd; *@
+@*                 font-weight: bold; *@
+@*                 *float: left; *@
+@*             } *@
+
+@*                 .jpoc-navtab-list li.active { *@
+@*                     /*border: 1px solid #ddd; *@
+@*                             border-bottom: none; *@
+@*                             border-bottom-color: transparent; *@
+@*                             border-top: 4px solid #ff8200;*/ *@
+@*                     border-bottom: none; *@
+@*                 } *@
+
+@*                     .jpoc-navtab-list li.active div.active-top { *@
+@*                         border-top: 4px solid #ff8200; *@
+@*                     } *@
+
+@*                     .jpoc-navtab-list li.active div.active-content { *@
+@*                         border-right: 1px solid #ddd; *@
+@*                         border-left: 1px solid #ddd; *@
+@*                         height: 26px; *@
+@*                         /*border:outset ;*/ *@
+@*                     } *@
+
+
+@*         .panel-default { *@
+@*             border-top: none; *@
+@*         } *@
+
+@*         .jpoc-navtab-list a { *@
+@*             display: block; *@
+@*             /*margin: 0 5px;*/ *@
+@*         } *@
+
+@*         .panel-iframe-calculator { *@
+@*             display: table; *@
+@*             width: 100%; *@
+@*             height: 450px; *@
+@*         } *@
+
+@*         .tbl-calculator { *@
+@*             width: 100%; *@
+@*             text-align: left; *@
+@*         } *@
+
+@*         .tab-content .panel { *@
+@*             border-radius: 0; *@
+@*         } *@
+
+@*         .jpoc-page-search #HeaderLink { *@
+@*             position: relative; *@
+@*             top: -50%; *@
+@*             float: right; *@
+@*         } *@
+
+@*         ::-ms-clear { *@
+@*             display: none; *@
+@*             width: 0; *@
+@*             height: 0; *@
+@*         } *@
+
+@*         .tablinks :hover, .tablinks a { *@
+@*             text-decoration: none; *@
+@*         } *@
+@*     </style> *@
 }
 
 <div id="wrapper" class="jpoc-page-search">
@@ -859,7 +849,7 @@
                                                        id="btnSearch"
                                                        name="btnSearch"
                                                        src="~/common/images/spectacle_64.png"
-                                                       style="margin-left: -44px; margin-bottom: 7px; width: 15px;" />
+                                                   style="margin-left:-44px;margin-bottom:7px;width:15px;margin-top:-3px;vertical-align:middle;" />
                                                 <input type='text' name='dummy' style='display: none' />
                                                 <label id="resultTable"></label>
                                             </p>
@@ -892,14 +882,14 @@
                 </table>
 
                 <!-- Category Tabs -->
-                <div class='category-view-tab'>
+                <div id="phCategoryTab" class='category-view-tab'>
                     <div style='margin-top:15px;'>
                         <div class="jpoc-navtab-container ">
                             <ul class="nav jpoc-navtab-list">
                                 <li class="tablinks active" id="tablink1" style='width: 180px;' onmouseover ="openTab(event, 'tab1', 'tablink1')">
                                     <div class ="active-top"></div>
                                     <div class ="active-content">
-                                        <a href="#tab1" data-toggle="tab">症状・疾患</a>
+                                        <a href="#tab1" data-toggle="tab">@Model.GetTab1Text()</a>
                                     </div>
                                 </li>
                                 <li class="tablinks" id="tablink2" style='width: 180px;' onmouseover ="openTab(event, 'tab3','tablink2')">
@@ -931,10 +921,19 @@
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab1">
                                 <div class="panel panel-default">
+                                    <div class="">
+                                        <!-- .panel-heading -->
+                                    </div>
                                     <div class="panel-body">
                                         <div class='row'>
                                             <ul style='text-align: left; padding-left:0px'>
                                                 @* Render disease categories here *@
+                                                @foreach (var category in Model.DiseaseCategories)
+                                                {
+                                                    <li class="col-sm-3" style='list-style-type: none; text-align:left;'>
+                                                         <a href="@category.Url">@category.Title</a>
+                                                    </li>
+                                                }
                                             </ul>
                                         </div>
                                     </div>
@@ -942,6 +941,9 @@
                             </div>
                             <div class="tab-pane" id="tab2">
                                 <div class="panel panel-default">
+                                    <div class="">
+                                        <!-- .panel-heading -->
+                                    </div>
                                     <div class="panel-body">
                                         <table class='tbl-calculator'>
                                             <tr>
@@ -955,6 +957,9 @@
                             </div>
                             <div class="tab-pane" id="tab3">
                                 <div class="panel panel-default">
+                                    <div class="">
+                                        <!-- .panel-heading -->
+                                    </div>
                                     <div class="panel-body">
                                         <div class='row'>
                                             <ul style='text-align: left; padding-left'>
@@ -966,6 +971,9 @@
                             </div>
                             <div class="tab-pane" id="tab4">
                                 <div class="panel panel-default">
+                                    <div class="">
+                                        <!-- .panel-heading -->
+                                    </div>
                                     <div class="panel-body">
                                         <div class='row'>
                                             <ul style='text-align: left; padding-left'>
@@ -977,6 +985,9 @@
                             </div>
                             <div class="tab-pane" id="tab5">
                                 <div class="panel panel-default">
+                                    <div class="">
+                                        <!-- .panel-heading -->
+                                    </div>
                                     <div class="panel-body">
                                         @* Render hoken categories and links here *@
                                     </div>

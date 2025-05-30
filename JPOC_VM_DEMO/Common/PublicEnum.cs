@@ -7,7 +7,7 @@ namespace JPOC_VM_DEMO.Common
     /// </summary>
     public static class PublicEnum
     {
-        public enum ApplicationType
+        public enum eApplicationType
         {
             Undefined,
             WindowForm,
@@ -18,7 +18,7 @@ namespace JPOC_VM_DEMO.Common
         /// <summary>
         /// User type enumeration
         /// </summary>
-        public enum UserType
+        public enum eUserType
         {
             /// <summary>
             /// Undefined
@@ -47,7 +47,7 @@ namespace JPOC_VM_DEMO.Common
         /// <remarks>
         /// ENV_[XXXX] part of AppSettings
         /// </remarks>
-        public enum RuntimeEnvironment
+        public enum eRuntimeEnvironment
         {
             /// <summary>
             /// LOCAL (Development) environment
@@ -118,6 +118,24 @@ namespace JPOC_VM_DEMO.Common
             /// E-Nurse environment
             /// </summary>
             ENURSE
+        }
+
+        public enum eRtnCD
+        {
+            /// <summary>
+            /// Operation completed successfully
+            /// </summary>
+            Normal = 0,
+
+            /// <summary>
+            /// Business logic error occurred
+            /// </summary>
+            LogicalError = 1,
+
+            /// <summary>
+            /// Critical system error occurred
+            /// </summary>
+            FatalError = 9  // Fixed typo from 'Faital' to 'Fatal'
         }
 
         /// <summary>
@@ -271,7 +289,7 @@ namespace JPOC_VM_DEMO.Common
         /// User role numbers
         /// Must match T_JP_Role table
         /// </remarks>
-        public enum Role
+        public enum eRole
         {
             [Description("Undefined")]
             Undefined = 0,
@@ -367,7 +385,7 @@ namespace JPOC_VM_DEMO.Common
         /// <summary>
         /// Login type
         /// </summary>
-        public enum LoginType
+        public enum eLoginType
         {
             /// <summary>
             /// Undefined (Not logged in)

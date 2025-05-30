@@ -57,7 +57,7 @@ namespace JPOC_VM_DEMO.Models
         /// <summary>
         /// User type
         /// </summary>
-        public UserType UserType { get; set; }
+        public eUserType UserType { get; set; }
 
         /// <summary>
         /// Login expiration date
@@ -102,7 +102,7 @@ namespace JPOC_VM_DEMO.Models
         /// <summary>
         /// Login type
         /// </summary>
-        public LoginType LoginType { get; set; }
+        public eLoginType LoginType { get; set; }
 
         /// <summary>
         /// Subscription ID
@@ -129,10 +129,10 @@ namespace JPOC_VM_DEMO.Models
         /// <returns>True if user is an administrator</returns>
         /// <remarks>Administrator conditions: UserType is INT and RoleId is ElsevierAdmin or ElsevierManager</remarks>
         public bool IsElsevierManager =>
-            UserType == UserType.INT &&
-            (RoleId == (int)Role.ElsevierAdmin ||
-             RoleId == (int)Role.ElsevierManager ||
-             RoleId == (int)Role.TechnicalSupport);
+            UserType == eUserType.INT &&
+            (RoleId == (int)eRole.ElsevierAdmin ||
+             RoleId == (int)eRole.ElsevierManager ||
+             RoleId == (int)eRole.TechnicalSupport);
 
         private readonly IDbService _dbService;
         private bool _disposedValue;
@@ -149,14 +149,14 @@ namespace JPOC_VM_DEMO.Models
             RoleId = -1;
             LastLogin = new DateTime(1901, 1, 1);
             InstitutionId = string.Empty;
-            UserType = UserType.Undefined;
+            UserType = eUserType.Undefined;
             LoginExpire = new DateTime(2099, 12, 31);
             AdminFlag = false;
             UserHostAddress = string.Empty;
             UserHostName = string.Empty;
             UserAgent = string.Empty;
             InstitutionName = string.Empty;
-            LoginType = LoginType.Undefined;
+            LoginType = eLoginType.Undefined;
             IndTcAcceptance = false;
             IndRuAcceptance = false;
             IndPpAcceptance = false;
